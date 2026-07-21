@@ -6,9 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate-sb-types": "storyblok-generate-ts source=./.storyblok/components/293282198194866/components.json target=./src/types/component-types-sb --unknownAny=true"
   },
   "dependencies": {
+    "@storyblok/react": "^7.2.2",
     "next": "16.2.10",
     "react": "19.2.4",
     "react-dom": "19.2.4"
@@ -20,6 +22,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
+    "storyblok-generate-ts": "^2.2.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
