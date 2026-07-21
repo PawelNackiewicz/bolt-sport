@@ -1,19 +1,18 @@
-import { getStoryblokApi } from "@/src/lib/storyblok";
-import { StoryblokStory } from "@storyblok/react/rsc";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
-export default async function Home() {
-  const { data } = await fetchData();
-  console.log("data", data);
+export default async function Page() {
+  const cookieStore = await cookies();
+  const langCookie = cookieStore?.get("lang")?.value;
+  const preferredLanguage = langCookie?.toLowerCase() ?? "pl";
 
-  return (
-    <div className="page">
-      <StoryblokStory story={data.story} />
-    </div>
-  );
-}
+  let redirectTo = "/pl";
 
-export async function fetchData() {
-  const storyblokApi = getStoryblokApi();
-  console.log("storyblokApi", storyblokApi);
-  return await storyblokApi.get(`cdn/stories/pl/`, { version: "draft" });
+  if (preferredLanguage === "de") {
+    redirectTo = "/de";
+  } else if (preferredLanguage === "en") {
+    redirectTo = "/en";
+  }
+
+  redirect(redirectTo);
 }
