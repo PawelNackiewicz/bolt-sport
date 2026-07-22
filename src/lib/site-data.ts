@@ -61,6 +61,12 @@ export const company = {
 /** `key` wskazuje na wpis w `nav.items` w słownikach `src/i18n/dictionaries`. */
 export type NavItem = { key: keyof Dictionary["nav"]["items"]; href: string };
 
+/**
+ * UWAGA: etykiety są tłumaczone, ale slugi zostają polskie we wszystkich
+ * językach (`/de/sklep`, nie `/de/shop`). Świadoma decyzja na czas PoC —
+ * tłumaczenie ścieżek wymaga mapy slugów per locale w `localePath` i w `proxy.ts`.
+ */
+
 export const navItems: NavItem[] = [
   { key: "shop", href: "/sklep" },
   { key: "configurator", href: "/konfigurator" },

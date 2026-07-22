@@ -3,11 +3,10 @@
 import { createElement } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import * as Icons from "lucide-react";
-import type { LucideIcon } from "lucide-react";
 
 import { Button, Container } from "@/src/components/ui";
 import { cn } from "@/src/lib/utils";
+import { resolveIcon } from "@/src/lib/icons";
 import { useI18n } from "@/src/i18n/i18n-provider";
 import type {
   ActionButtonStoryblok,
@@ -26,25 +25,6 @@ const DEFAULT_ALT = "Hala treningowa z profesjonalnym sprzętem sportowym";
 const DEFAULT_TITLE = "Sprzęt do sportów walki";
 const DEFAULT_DESCRIPTION =
   "Produkujemy i dostarczamy sprzęt do treningu, klubów sportowych i profesjonalnych aren walki.";
-
-function toPascalCase(value: string) {
-  return value
-    .trim()
-    .replace(/[-_\s]+(.)?/g, (_, char?: string) =>
-      char ? char.toUpperCase() : "",
-    )
-    .replace(/^(.)/, (char) => char.toUpperCase());
-}
-
-function resolveIcon(name?: string): LucideIcon | undefined {
-  if (!name) return undefined;
-  const icon = (Icons as unknown as Record<string, LucideIcon>)[
-    toPascalCase(name)
-  ];
-  return typeof icon === "function" || typeof icon === "object"
-    ? icon
-    : undefined;
-}
 
 function renderIcon(name: string | undefined, className: string) {
   const icon = resolveIcon(name);

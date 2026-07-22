@@ -8,6 +8,7 @@
     "openMenu": "Open menu",
     "quote": "Get a quote",
     "languageLabel": "Language",
+    "themeLabel": "Toggle light/dark theme",
     "items": {
       "shop": "Shop",
       "configurator": "Configurator",

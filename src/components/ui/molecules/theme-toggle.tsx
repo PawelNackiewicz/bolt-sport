@@ -3,8 +3,11 @@
 import { Moon, Sun } from "lucide-react";
 
 import { Button } from "../atoms";
+import { useI18n } from "@/src/i18n/i18n-provider";
 
 export function ThemeToggle({ className }: { className?: string }) {
+  const { dictionary } = useI18n();
+
   function toggle() {
     const root = document.documentElement;
     const next = !root.classList.contains("dark");
@@ -21,7 +24,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       variant="ghost"
       size="icon"
       onClick={toggle}
-      aria-label="Przełącz motyw jasny/ciemny"
+      aria-label={dictionary.nav.themeLabel}
       className={className}
     >
       <Sun className="hidden size-5 dark:block" />

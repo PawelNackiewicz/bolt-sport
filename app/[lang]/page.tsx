@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { StoryblokStory } from "@storyblok/react/rsc";
 
-import { getStoryblokApi } from "@/src/lib/storyblok";
+import { getStoryblokApi, storyblokVersion } from "@/src/lib/storyblok";
 import { isLocale, type Locale } from "@/src/i18n/config";
 
 type HomeProps = { params: Promise<{ lang: string }> };
@@ -21,5 +21,7 @@ export default async function Home({ params }: HomeProps) {
 
 export async function fetchData(lang: Locale) {
   const storyblokApi = getStoryblokApi();
-  return await storyblokApi.get(`cdn/stories/${lang}/`, { version: "draft" });
+  return await storyblokApi.get(`cdn/stories/${lang}/`, {
+    version: storyblokVersion,
+  });
 }

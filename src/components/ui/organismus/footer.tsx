@@ -1,15 +1,18 @@
-"use client";
-
 import { Phone, Mail, MapPin } from "lucide-react";
 
 import Link from "next/link";
 
 import { Container, Logo, Separator } from "@/src/components/ui";
 import { navItems, company } from "@/src/lib/site-data";
-import { useI18n } from "@/src/i18n/i18n-provider";
+import { localePath, type Dictionary, type Locale } from "@/src/i18n/config";
 
-export function Footer() {
-  const { dictionary, href } = useI18n();
+type FooterProps = {
+  locale: Locale;
+  dictionary: Dictionary;
+};
+
+export function Footer({ locale, dictionary }: FooterProps) {
+  const href = (path: string) => localePath(locale, path);
   const t = dictionary.footer;
   const navT = dictionary.nav;
 
