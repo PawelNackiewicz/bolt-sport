@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "title": "Bolt-Sport — Polish manufacturer of combat sports equipment",
+    "description": "Bolt-Sport is a Polish manufacturer of combat sports equipment. Punching bags, gloves, mats and crash mats, as well as boxing rings, MMA cages and complete training gym fit-outs."
+  },
+  "nav": {
+    "home": "home page",
+    "openMenu": "Open menu",
+    "quote": "Get a quote",
+    "languageLabel": "Language",
+    "items": {
+      "shop": "Shop",
+      "configurator": "Configurator",
+      "bagConfigurator": "Custom punching bag",
+      "facilities": "Gym fit-out",
+      "rings": "Rings & cages",
+      "projects": "Projects",
+      "guide": "Guide",
+      "contact": "Contact"
+    }
+  },
+  "footer": {
+    "description": "Polish manufacturer of combat sports equipment. We make our products in Krasiejów — from training gear to rings, MMA cages, and complete gym fit-outs.",
+    "navHeading": "Navigation"
+  }
+}

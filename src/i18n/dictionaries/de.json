@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "title": "Bolt-Sport — polnischer Hersteller von Kampfsportausrüstung",
+    "description": "Bolt-Sport ist ein polnischer Hersteller von Kampfsportausrüstung. Boxsäcke, Handschuhe, Matten und Turnmatten sowie Boxringe, MMA-Käfige und komplette Ausstattung für Trainingshallen."
+  },
+  "nav": {
+    "home": "Startseite",
+    "openMenu": "Menü öffnen",
+    "quote": "Projekt anfragen",
+    "languageLabel": "Sprache wählen",
+    "items": {
+      "shop": "Shop",
+      "configurator": "Konfigurator",
+      "bagConfigurator": "Sandsack nach Maß",
+      "facilities": "Hallenausstattung",
+      "rings": "Ringe und Käfige",
+      "projects": "Referenzen",
+      "guide": "Ratgeber",
+      "contact": "Kontakt"
+    }
+  },
+  "footer": {
+    "description": "Polnischer Hersteller von Kampfsportausrüstung. Wir fertigen in Krasiejów — von Trainingsgeräten bis zu Ringen, MMA-Käfigen und kompletter Hallenausstattung.",
+    "navHeading": "Navigation"
+  }
+}

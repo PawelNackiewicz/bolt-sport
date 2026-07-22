@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "title": "Bolt-Sport — polski producent sprzętu do sportów walki",
+    "description": "Bolt-Sport to polski producent sprzętu do sportów walki. Worki bokserskie, rękawice, maty i materace, a także ringi bokserskie, klatki MMA i kompletne wyposażenie sal treningowych."
+  },
+  "nav": {
+    "home": "strona główna",
+    "openMenu": "Otwórz menu",
+    "quote": "Wyceń projekt",
+    "languageLabel": "Wybór języka",
+    "items": {
+      "shop": "Sklep",
+      "configurator": "Konfigurator",
+      "bagConfigurator": "Worek na wymiar",
+      "facilities": "Wyposażenie sal",
+      "rings": "Ringi i klatki",
+      "projects": "Realizacje",
+      "guide": "Poradnik",
+      "contact": "Kontakt"
+    }
+  },
+  "footer": {
+    "description": "Polski producent sprzętu do sportów walki. Produkty wykonujemy w Krasiejowie — od sprzętu treningowego po ringi, klatki MMA i kompletne wyposażenie sal.",
+    "navHeading": "Nawigacja"
+  }
+}

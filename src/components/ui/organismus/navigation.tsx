@@ -21,14 +21,17 @@ import {
 } from "@/src/components/ui";
 import { cn } from "@/src/lib/utils";
 import { navItems, company } from "@/src/lib/site-data";
+import { useI18n } from "@/src/i18n/i18n-provider";
 
 export function Navigation() {
   const [open, setOpen] = useState(false);
+  const { dictionary, href } = useI18n();
+  const t = dictionary.nav;
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <Container className="flex h-16 items-center justify-between gap-4">
-        <Link href="/" aria-label={`${company.name} — strona główna`}>
+        <Link href={href("/")} aria-label={`${company.name} — ${t.home}`}>
           <Logo />
         </Link>
 
@@ -37,10 +40,10 @@ export function Navigation() {
           {navItems.map((item) => (
             <Link
               key={item.href}
-              href={item.href}
+              href={href(item.href)}
               className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
-              {item.label}
+              {t.items[item.key]}
             </Link>
           ))}
         </nav>
@@ -49,10 +52,10 @@ export function Navigation() {
           <LanguageSwitcher />
           <ThemeToggle />
           <Link
-            href="#kontakt"
+            href={href("/#kontakt")}
             className={cn(buttonVariants(), "hidden sm:inline-flex")}
           >
-            Wyceń projekt
+            {t.quote}
           </Link>
 
           {/* Mobile menu */}
@@ -63,7 +66,7 @@ export function Navigation() {
                   variant="outline"
                   size="icon"
                   className="lg:hidden"
-                  aria-label="Otwórz menu"
+                  aria-label={t.openMenu}
                 />
               }
             >
@@ -80,11 +83,11 @@ export function Navigation() {
                 {navItems.map((item) => (
                   <Link
                     key={item.href}
-                    href={item.href}
+                    href={href(item.href)}
                     onClick={() => setOpen(false)}
                     className="rounded-md px-3 py-3 text-base font-medium text-foreground transition-colors hover:bg-accent"
                   >
-                    {item.label}
+                    {t.items[item.key]}
                   </Link>
                 ))}
               </nav>
@@ -99,11 +102,11 @@ export function Navigation() {
                   {company.phone}
                 </a>
                 <Link
-                  href="#kontakt"
+                  href={href("/#kontakt")}
                   onClick={() => setOpen(false)}
                   className={cn(buttonVariants({ size: "lg" }), "w-full")}
                 >
-                  Wyceń projekt
+                  {t.quote}
                 </Link>
               </div>
             </SheetContent>

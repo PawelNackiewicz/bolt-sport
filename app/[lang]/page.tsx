@@ -1,8 +1,16 @@
-import { getStoryblokApi } from "@/src/lib/storyblok";
+import { notFound } from "next/navigation";
 import { StoryblokStory } from "@storyblok/react/rsc";
 
-export default async function Home() {
-  const { data } = await fetchData();
+import { getStoryblokApi } from "@/src/lib/storyblok";
+import { isLocale, type Locale } from "@/src/i18n/config";
+
+type HomeProps = { params: Promise<{ lang: string }> };
+
+export default async function Home({ params }: HomeProps) {
+  const { lang } = await params;
+  if (!isLocale(lang)) notFound();
+
+  const { data } = await fetchData(lang);
 
   return (
     <div className="page">
@@ -11,7 +19,7 @@ export default async function Home() {
   );
 }
 
-export async function fetchData() {
+export async function fetchData(lang: Locale) {
   const storyblokApi = getStoryblokApi();
-  return await storyblokApi.get(`cdn/stories/pl/`, { version: "draft" });
+  return await storyblokApi.get(`cdn/stories/${lang}/`, { version: "draft" });
 }

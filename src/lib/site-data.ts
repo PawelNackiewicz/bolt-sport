@@ -1,4 +1,5 @@
 import type { LucideIcon } from "lucide-react";
+import type { Dictionary } from "@/src/i18n/config";
 import {
   Dumbbell,
   Building2,
@@ -57,17 +58,18 @@ export const company = {
 /*  Navigation                                                                */
 /* -------------------------------------------------------------------------- */
 
-export type NavItem = { label: string; href: string };
+/** `key` wskazuje na wpis w `nav.items` w słownikach `src/i18n/dictionaries`. */
+export type NavItem = { key: keyof Dictionary["nav"]["items"]; href: string };
 
 export const navItems: NavItem[] = [
-  { label: "Sklep", href: "/sklep" },
-  { label: "Konfigurator", href: "/konfigurator" },
-  { label: "Worek na wymiar", href: "/konfigurator-worka" },
-  { label: "Wyposażenie sal", href: "/#wyposazenie" },
-  { label: "Ringi i klatki", href: "/#ringi" },
-  { label: "Realizacje", href: "/#realizacje" },
-  { label: "Poradnik", href: "/#poradnik" },
-  { label: "Kontakt", href: "/#kontakt" },
+  { key: "shop", href: "/sklep" },
+  { key: "configurator", href: "/konfigurator" },
+  { key: "bagConfigurator", href: "/konfigurator-worka" },
+  { key: "facilities", href: "/#wyposazenie" },
+  { key: "rings", href: "/#ringi" },
+  { key: "projects", href: "/#realizacje" },
+  { key: "guide", href: "/#poradnik" },
+  { key: "contact", href: "/#kontakt" },
 ];
 
 /* -------------------------------------------------------------------------- */
