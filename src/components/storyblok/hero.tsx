@@ -1,39 +1,27 @@
-"use client";
-
-import { createElement } from "react";
 import Image from "next/image";
-import Link from "next/link";
 
-import { Button, Container } from "@/src/components/ui";
+import { Container } from "@/src/components/ui";
 import { cn } from "@/src/lib/utils";
-import { resolveIcon } from "@/src/lib/icons";
-import { useI18n } from "@/src/i18n/i18n-provider";
 import type {
-  ActionButtonStoryblok,
   HeroBodyStoryblok,
   HeroHeadlineGroupStoryblok,
   HeroSectionStoryblok,
   CtaGroupStoryblok,
   TrustBarStoryblok,
 } from "@/src/types/component-types-sb";
+import { HeroHeadlineGroup } from "./hero-headline-group";
+import { CtaGroup } from "./cta-group";
+import { TrustBar } from "./trust-bar";
 
 type HeroProps = {
   blok: HeroSectionStoryblok;
 };
 
 const DEFAULT_ALT = "Hala treningowa z profesjonalnym sprzętem sportowym";
-const DEFAULT_TITLE = "Sprzęt do sportów walki";
 const DEFAULT_DESCRIPTION =
   "Produkujemy i dostarczamy sprzęt do treningu, klubów sportowych i profesjonalnych aren walki.";
 
-function renderIcon(name: string | undefined, className: string) {
-  const icon = resolveIcon(name);
-  return icon ? createElement(icon, { className }) : null;
-}
-
 export function Hero({ blok }: HeroProps) {
-  const { href } = useI18n();
-
   const headline = blok.body?.find(
     (nested): nested is HeroHeadlineGroupStoryblok =>
       nested.component === "hero_headline_group",
@@ -60,13 +48,6 @@ export function Hero({ blok }: HeroProps) {
     blok.background_image_light?.alt ||
     blok.background_image_dark?.alt ||
     DEFAULT_ALT;
-
-  const hasSplitTitle = headline?.title_prefix || headline?.title_highlight;
-  const ctaButtons = [
-    ...(ctaGroup?.primary_button ?? []),
-    ...(ctaGroup?.secondary_button ?? []),
-  ];
-  const trustItems = trustBar?.items ?? [];
 
   return (
     <section className="relative isolate flex min-h-[calc(100svh-4rem)] items-center overflow-hidden border-b border-border">
@@ -126,121 +107,17 @@ export function Hero({ blok }: HeroProps) {
             isRight && "ml-auto",
           )}
         >
-          <span className="kicker flex items-center gap-2 text-primary">
-            <span className="inline-block h-px w-6 bg-primary" />
-            {renderIcon(headline?.eyebrow_icon, "size-4")}
-            {headline?.eyebrow}
-          </span>
-
-          <h1 className="text-4xl leading-[0.98] font-bold tracking-tight uppercase sm:text-5xl lg:text-6xl xl:text-7xl">
-            {hasSplitTitle ? (
-              <>
-                {headline?.title_prefix}
-                {headline?.title_prefix && headline?.title_highlight && (
-                  <br className="hidden sm:block" />
-                )}{" "}
-                <span className="text-primary">
-                  {headline?.title_highlight}
-                </span>
-              </>
-            ) : (
-              (headline?.title ?? DEFAULT_TITLE)
-            )}
-          </h1>
+          {headline && <HeroHeadlineGroup blok={headline} />}
 
           <p className="text-muted-foreground max-w-xl text-lg leading-relaxed">
             {bodyText?.description ?? DEFAULT_DESCRIPTION}
           </p>
 
-          {ctaButtons.length > 0 && (
-            <div
-              className={cn(
-                "flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center",
-                ctaGroup?.alignment === "right" && "sm:justify-end",
-              )}
-            >
-              {ctaButtons.map((button) => (
-                <CtaButton key={button._uid} button={button} href={href} />
-              ))}
-            </div>
-          )}
+          {ctaGroup && <CtaGroup blok={ctaGroup} />}
 
-          {/* trust proof */}
-          {trustItems.length > 0 && (
-            <ul className="mt-2 flex flex-wrap gap-x-6 gap-y-3 border-t border-border/70 pt-6">
-              {trustItems.map((item) => {
-                const content = (
-                  <>
-                    {renderIcon(item.icon, "size-4 text-primary")}
-                    {item.label}
-                    {item.value && (
-                      <span
-                        className={cn(
-                          item.highlight
-                            ? "font-semibold text-foreground"
-                            : "text-muted-foreground",
-                        )}
-                      >
-                        {item.value}
-                      </span>
-                    )}
-                  </>
-                );
-
-                return (
-                  <li
-                    key={item._uid}
-                    className={cn(
-                      "flex items-center gap-2 text-sm font-medium",
-                      item.highlight
-                        ? "text-foreground"
-                        : "text-muted-foreground",
-                    )}
-                  >
-                    {item.link ? (
-                      <Link
-                        href={href(item.link)}
-                        className="flex items-center gap-2 transition-colors hover:text-foreground"
-                      >
-                        {content}
-                      </Link>
-                    ) : (
-                      content
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-          )}
+          {trustBar && <TrustBar blok={trustBar} />}
         </div>
       </Container>
     </section>
-  );
-}
-
-function CtaButton({
-  button,
-  href,
-}: {
-  button: ActionButtonStoryblok;
-  href: (path: string) => string;
-}) {
-  const isSecondary = button.variant === "secondary";
-
-  return (
-    <Button
-      size="lg"
-      variant={isSecondary ? "outline" : "default"}
-      aria-label={button.aria_label || undefined}
-      className={cn(
-        isSecondary &&
-          "border-primary/60 bg-background/30 text-primary backdrop-blur-sm hover:bg-primary/10 hover:text-primary",
-      )}
-      render={<Link href={href(button.link ?? "/")} />}
-    >
-      {renderIcon(button.icon_left, "size-4")}
-      {button.text}
-      {renderIcon(button.icon_right, "size-4")}
-    </Button>
   );
 }
