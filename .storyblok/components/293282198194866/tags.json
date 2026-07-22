@@ -3,5 +3,25 @@
     "name": "hero_section",
     "id": 200829692611794,
     "object_type": "component"
+  },
+  {
+    "name": "action_cards_section",
+    "id": 200951150394611,
+    "object_type": "component"
+  },
+  {
+    "name": "equipment_section",
+    "id": 200953811688692,
+    "object_type": "component"
+  },
+  {
+    "name": "image_text_section",
+    "id": 200957175295221,
+    "object_type": "component"
+  },
+  {
+    "name": "process_section",
+    "id": 200960167042294,
+    "object_type": "component"
   }
 ]

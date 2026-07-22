@@ -69,6 +69,121 @@
     "metadata": {}
   },
   {
+    "name": "action_card",
+    "display_name": null,
+    "description": "",
+    "created_at": "2026-07-22T19:53:08.051Z",
+    "updated_at": "2026-07-22T19:53:36.557Z",
+    "id": 200951349463475,
+    "schema": {
+      "icon": {
+        "type": "text",
+        "pos": 0,
+        "id": "WTMpI3VzRyGIPFVE9E_dtQ"
+      },
+      "title": {
+        "type": "text",
+        "pos": 1,
+        "id": "Jz8ktELyRLquzVNmXLdsVg"
+      },
+      "text": {
+        "type": "text",
+        "pos": 2,
+        "id": "6HcwjlIlTJqBQN14mN0A6A"
+      },
+      "linkLabel": {
+        "type": "text",
+        "pos": 3,
+        "id": "nn9wFyOkTJ6nZL_3jsBsDg"
+      },
+      "link": {
+        "type": "text",
+        "pos": 4,
+        "id": "ZphsBv4mSjK6v4XumZIaFw"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "action_card",
+    "component_group_uuid": "5f87eb54-f2db-4448-aa7d-76549c0b54fa",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [
+      {
+        "id": 200951150394611,
+        "name": "action_cards_section"
+      }
+    ],
+    "internal_tag_ids": [
+      "200951150394611"
+    ],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "action_cards_section",
+    "display_name": null,
+    "description": "",
+    "created_at": "2026-07-22T19:52:20.871Z",
+    "updated_at": "2026-07-22T19:53:57.998Z",
+    "id": 200951156214194,
+    "schema": {
+      "pre_title": {
+        "type": "text",
+        "pos": 0,
+        "id": "yt4UZ802QT2BCD1EX7bCLA"
+      },
+      "title": {
+        "type": "text",
+        "pos": 1,
+        "id": "7qsCEMQ9Q9CoAak_JzIG1w"
+      },
+      "description": {
+        "type": "text",
+        "pos": 2,
+        "id": "J8CQDh-yRv6KrobdXprupQ"
+      },
+      "cards": {
+        "type": "bloks",
+        "pos": 3,
+        "id": "IuStTEHwRqaKeiuVHVdwAg",
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "action_card"
+        ],
+        "component_denylist": []
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "action_cards_section",
+    "component_group_uuid": "5f87eb54-f2db-4448-aa7d-76549c0b54fa",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [
+      {
+        "id": 200951150394611,
+        "name": "action_cards_section"
+      }
+    ],
+    "internal_tag_ids": [
+      "200951150394611"
+    ],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
     "name": "blog_post",
     "display_name": null,
     "description": "",
@@ -202,6 +317,127 @@
     ],
     "internal_tag_ids": [
       "200829692611794"
+    ],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "equipment_card",
+    "display_name": null,
+    "description": "",
+    "created_at": "2026-07-22T20:04:28.769Z",
+    "updated_at": "2026-07-22T20:05:03.365Z",
+    "id": 200954137684411,
+    "schema": {
+      "icon": {
+        "type": "text",
+        "pos": 0,
+        "id": "aKJcUqdKQMisHIyp6B94LQ"
+      },
+      "title": {
+        "type": "text",
+        "pos": 1,
+        "id": "RWo7BcmMTE2munzxBbKjzw"
+      },
+      "description": {
+        "type": "text",
+        "pos": 2,
+        "id": "r6iSJ4H8TW64qLHbq9G9Ig"
+      },
+      "features": {
+        "type": "richtext",
+        "pos": 3,
+        "id": "6Ut7LR8NTg2NlN3swAfw1Q"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "equipment_card",
+    "component_group_uuid": "5f87eb54-f2db-4448-aa7d-76549c0b54fa",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [
+      {
+        "id": 200953811688692,
+        "name": "equipment_section"
+      }
+    ],
+    "internal_tag_ids": [
+      "200953811688692"
+    ],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "equipment_section",
+    "display_name": null,
+    "description": "",
+    "created_at": "2026-07-22T20:03:13.351Z",
+    "updated_at": "2026-07-22T20:05:33.894Z",
+    "id": 200953828772282,
+    "schema": {
+      "pre_title": {
+        "type": "text",
+        "pos": 0,
+        "id": "ysRjj9TFSl6Y1an9sH3Fhw"
+      },
+      "title": {
+        "type": "text",
+        "pos": 1,
+        "id": "mZQW0kJsSOGTAEHdDYhAJQ"
+      },
+      "description": {
+        "type": "text",
+        "pos": 2,
+        "id": "fyPOi-whRN2nqTcyHwXC8g"
+      },
+      "cards": {
+        "type": "bloks",
+        "pos": 3,
+        "id": "iLfyAAoARm-jThA8XtHatQ",
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "equipment_card"
+        ],
+        "component_denylist": []
+      },
+      "cta_button": {
+        "type": "bloks",
+        "pos": 4,
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "action_button"
+        ],
+        "component_denylist": [],
+        "id": "prpkcSO7T4G4o08AYMo-4g"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "equipment_section",
+    "component_group_uuid": "5f87eb54-f2db-4448-aa7d-76549c0b54fa",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [
+      {
+        "id": 200953811688692,
+        "name": "equipment_section"
+      }
+    ],
+    "internal_tag_ids": [
+      "200953811688692"
     ],
     "content_type_asset_preview": null,
     "metadata": {}
@@ -371,6 +607,151 @@
     "metadata": {}
   },
   {
+    "name": "icon_text_row",
+    "display_name": null,
+    "description": "",
+    "created_at": "2026-07-22T20:20:09.642Z",
+    "updated_at": "2026-07-22T20:20:25.208Z",
+    "id": 200957991500222,
+    "schema": {
+      "icon": {
+        "type": "text",
+        "pos": 0,
+        "id": "B1XWlCcqQDKKzEYYs7smug"
+      },
+      "title": {
+        "type": "text",
+        "pos": 1,
+        "id": "nswcg6S2SUS0kUsn0ZMjmg"
+      },
+      "description": {
+        "type": "text",
+        "pos": 2,
+        "id": "Boy4T-IRTT2xaB16iCDR-Q"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "icon_text_row",
+    "component_group_uuid": "5f87eb54-f2db-4448-aa7d-76549c0b54fa",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [
+      {
+        "id": 200957175295221,
+        "name": "image_text_section"
+      }
+    ],
+    "internal_tag_ids": [
+      "200957175295221"
+    ],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "image_text_section",
+    "display_name": null,
+    "description": "",
+    "created_at": "2026-07-22T20:16:52.024Z",
+    "updated_at": "2026-07-22T20:20:43.394Z",
+    "id": 200957182056893,
+    "schema": {
+      "image": {
+        "type": "asset",
+        "pos": 0,
+        "id": "AzyKTDkKQ92UCimgMxND5Q"
+      },
+      "badge_subtitle": {
+        "type": "text",
+        "pos": 1,
+        "id": "GP7E6JL1RcuQFZq6YUh0iw"
+      },
+      "badge_title": {
+        "type": "text",
+        "pos": 2,
+        "id": "AEfDLrZFTBiEXZWb4iV8-w"
+      },
+      "pre_title": {
+        "type": "text",
+        "pos": 3,
+        "id": "XghYxQXLQ2S8553V9-xYvg"
+      },
+      "title": {
+        "type": "text",
+        "pos": 4,
+        "id": "LrzLZFKtSganR9qLngFgsw"
+      },
+      "features": {
+        "type": "bloks",
+        "pos": 5,
+        "id": "X0avaDtoQsG_5Z71kU3xxg",
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "icon_text_row"
+        ],
+        "component_denylist": []
+      },
+      "image_position": {
+        "type": "option",
+        "pos": 6,
+        "use_uuid": true,
+        "options": [
+          {
+            "_uid": "94fb8769-62eb-473c-b5e1-a64a5551a46e",
+            "name": "left",
+            "value": "left"
+          },
+          {
+            "_uid": "2a90a3d5-436a-415e-98c2-dbc0fef4196c",
+            "value": "right",
+            "name": "right"
+          }
+        ],
+        "default_value": "left",
+        "id": "nsK5lUmFSICSZYYHmeYa_g"
+      },
+      "cta_button": {
+        "type": "bloks",
+        "pos": 7,
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "action_button"
+        ],
+        "component_denylist": [],
+        "id": "vqG2jhO1TXGFdd0VViM0pg"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "image_text_section",
+    "component_group_uuid": "5f87eb54-f2db-4448-aa7d-76549c0b54fa",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [
+      {
+        "id": 200957175295221,
+        "name": "image_text_section"
+      }
+    ],
+    "internal_tag_ids": [
+      "200957175295221"
+    ],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
     "name": "page",
     "display_name": null,
     "description": null,
@@ -406,6 +787,111 @@
     "icon": null,
     "internal_tags_list": [],
     "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "process_section",
+    "display_name": null,
+    "description": "",
+    "created_at": "2026-07-22T20:29:32.786Z",
+    "updated_at": "2026-07-22T20:30:05.047Z",
+    "id": 200960298138086,
+    "schema": {
+      "pre_title": {
+        "type": "text",
+        "pos": 0,
+        "id": "SMHmnSTeRnCeSkLsS_eoIA"
+      },
+      "title": {
+        "type": "text",
+        "pos": 1,
+        "id": "6FcvkEO8Tp-ViPmgQ4EeUw"
+      },
+      "description": {
+        "type": "text",
+        "pos": 2,
+        "id": "LKnM2-3nTauMBixQ0CivgQ"
+      },
+      "steps": {
+        "type": "bloks",
+        "pos": 3,
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "process_step"
+        ],
+        "component_denylist": [],
+        "id": "j_LUe8YKQEmQTMSQt3C5tA"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "process_section",
+    "component_group_uuid": "5f87eb54-f2db-4448-aa7d-76549c0b54fa",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [
+      {
+        "id": 200960167042294,
+        "name": "process_section"
+      }
+    ],
+    "internal_tag_ids": [
+      "200960167042294"
+    ],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "process_step",
+    "display_name": null,
+    "description": "",
+    "created_at": "2026-07-22T20:29:01.778Z",
+    "updated_at": "2026-07-22T20:29:15.195Z",
+    "id": 200960171129317,
+    "schema": {
+      "icon": {
+        "type": "text",
+        "pos": 0,
+        "id": "BCyHcfDLQci9OsdZmEdCgg"
+      },
+      "title": {
+        "type": "text",
+        "pos": 1,
+        "id": "PPVwhctKQPSK5UxMTCbwnA"
+      },
+      "description": {
+        "type": "text",
+        "pos": 2,
+        "id": "ceZhOUjOSmmMo2rvC_59kA"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "process_step",
+    "component_group_uuid": "5f87eb54-f2db-4448-aa7d-76549c0b54fa",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [
+      {
+        "id": 200960167042294,
+        "name": "process_section"
+      }
+    ],
+    "internal_tag_ids": [
+      "200960167042294"
+    ],
     "content_type_asset_preview": null,
     "metadata": {}
   },

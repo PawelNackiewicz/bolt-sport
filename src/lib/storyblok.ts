@@ -1,5 +1,16 @@
 import { apiPlugin, storyblokInit } from "@storyblok/react/rsc";
-import { Page, Hero } from "@/src/components/storyblok";
+import {
+  Page,
+  Hero,
+  ActionCard,
+  ActionCardsSection,
+  EquipmentCard,
+  EquipmentSection,
+  IconTextRow,
+  ImageTextSection,
+  ProcessStep,
+  ProcessSection,
+} from "@/src/components/storyblok";
 
 const accessToken = process.env.STORYBLOK_DELIVERY_API_TOKEN;
 
@@ -25,5 +36,13 @@ export const getStoryblokApi = storyblokInit({
   components: {
     page: Page,
     hero_section: Hero,
+    action_card: ActionCard,
+    action_cards_section: ActionCardsSection,
+    equipment_card: EquipmentCard,
+    equipment_section: EquipmentSection,
+    icon_text_row: IconTextRow,
+    image_text_section: ImageTextSection,
+    process_step: ProcessStep,
+    process_section: ProcessSection,
   },
 });
