@@ -32,6 +32,7 @@ export function ImageTextSection({ blok }: ImageTextSectionProps) {
               src={imageUrl}
               alt={blok.image?.alt || ""}
               fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
               className="rounded-xl object-cover"
             />
             {hasBadge && (

@@ -51,8 +51,10 @@ export function Hero({ blok }: HeroProps) {
 
   return (
     <section className="relative isolate flex min-h-[calc(100svh-4rem)] items-center overflow-hidden border-b border-border">
-      {/* Full-bleed hero photograph — swaps with the theme. Only the visible
-          one loads: the hidden (display:none) image is skipped by lazy loading. */}
+      {/* Full-bleed hero photograph — swaps with the theme. Both images have
+          `priority`, so both load eagerly regardless; the inactive one is faded
+          out (not display:none) so it keeps its full-viewport layout width,
+          which the visible one needs for `sizes="100vw"` to stay accurate. */}
       {lightImage && (
         <Image
           src={lightImage}
@@ -61,7 +63,7 @@ export function Hero({ blok }: HeroProps) {
           priority
           sizes="100vw"
           className={cn(
-            "-z-20 object-cover dark:hidden",
+            "-z-20 object-cover opacity-100 dark:opacity-0",
             isRight ? "object-[38%_50%]" : "object-[62%_50%]",
           )}
         />
@@ -74,7 +76,7 @@ export function Hero({ blok }: HeroProps) {
           priority
           sizes="100vw"
           className={cn(
-            "hidden -z-20 object-cover dark:block",
+            "-z-20 object-cover opacity-0 dark:opacity-100",
             isRight ? "object-[38%_50%]" : "object-[62%_50%]",
           )}
         />
