@@ -25,17 +25,12 @@ export function LanguageSwitcher({ className }: { className?: string }) {
     const target = event.target.value as Locale;
     if (target === locale) return;
 
-    // Zapamiętujemy wybór — `proxy.ts` użyje go przy wejściu na ścieżkę bez locale.
     document.cookie = `${LOCALE_COOKIE}=${target}; path=/; max-age=${LOCALE_COOKIE_MAX_AGE}; samesite=lax`;
 
-    // `search` i `hash` czytamy z `window` (jesteśmy w handlerze, więc zawsze
-    // po stronie klienta) — dzięki temu unikamy `useSearchParams`, które
-    // wymusiłoby Suspense boundary w statycznie renderowanym layoucie.
     const { search, hash } = window.location;
     const nextPath = switchLocaleInPath(pathname, target);
 
     startTransition(() => {
-      // `replace`, żeby przełączanie języka nie zaśmiecało historii przeglądarki.
       router.replace(`${nextPath}${search}${hash}`);
     });
   }
