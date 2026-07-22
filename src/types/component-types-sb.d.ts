@@ -1,38 +1,14 @@
 import { StoryblokStory } from 'storyblok-generate-ts'
 
-export type MultilinkStoryblok =
-  | {
-    id?: string;
-    cached_url?: string;
-    anchor?: string;
-    linktype?: "story";
-    target?: "_self" | "_blank";
-    [k: string]: unknown;
-  }
-  | {
-    url?: string;
-    cached_url?: string;
-    anchor?: string;
-    linktype?: "asset" | "url";
-    target?: "_self" | "_blank";
-    [k: string]: unknown;
-  }
-  | {
-    email?: string;
-    linktype?: "email";
-    target?: "_self" | "_blank";
-    [k: string]: unknown;
-  };
-
 export interface ActionButtonStoryblok {
   text?: string;
-  link?: Exclude<MultilinkStoryblok, { linktype?: "email" } | { linktype?: "asset" }>;
-  link_target?: Exclude<MultilinkStoryblok, { linktype?: "email" } | { linktype?: "asset" }>;
-  style_variant?: "" | "primary" | "secondary";
-  icon?: string;
+  link?: string;
+  variant?: "" | "primary" | "secondary";
+  icon_left?: string;
+  icon_right?: string;
   aria_label?: string;
   _uid: string;
-  component: "Action Button";
+  component: "action_button";
   [k: string]: unknown;
 }
 
@@ -74,67 +50,65 @@ export interface BlogPostStoryblok {
   body?: (
     | ActionButtonStoryblok
     | BlogPostStoryblok
-    | CtaBannerStoryblok
-    | HeroFeaturedPostStoryblok
-    | HeroImageStoryblok
+    | CtaGroupStoryblok
+    | HeroBodyStoryblok
+    | HeroHeadlineGroupStoryblok
+    | HeroSectionStoryblok
     | PageStoryblok
+    | TrustBarStoryblok
+    | TrustItemStoryblok
   )[];
   _uid: string;
   component: "blog_post";
   [k: string]: unknown;
 }
 
-export interface CtaBannerStoryblok {
-  headline?: string;
-  text?: string;
-  secondary_cta_button?: (
-    | ActionButtonStoryblok
-    | BlogPostStoryblok
-    | CtaBannerStoryblok
-    | HeroFeaturedPostStoryblok
-    | HeroImageStoryblok
-    | PageStoryblok
-  )[];
+export interface CtaGroupStoryblok {
+  alignment?: "" | "left" | "right";
+  primary_button?: ActionButtonStoryblok[];
+  secondary_button?: ActionButtonStoryblok[];
   _uid: string;
-  component: "CTA Banner";
+  component: "cta_group";
   [k: string]: unknown;
 }
 
-export interface HeroFeaturedPostStoryblok {
-  headline?: string;
-  intro?: string;
-  background_image?: AssetStoryblok;
+export interface HeroBodyStoryblok {
+  description?: string;
+  _uid: string;
+  component: "hero_body";
+  [k: string]: unknown;
+}
+
+export interface HeroHeadlineGroupStoryblok {
+  eyebrow?: string;
+  eyebrow_icon?: string;
+  title_prefix?: string;
+  title_highlight?: string;
+  title?: string;
+  title_seo_override?: string;
+  _uid: string;
+  component: "hero_headline_group";
+  [k: string]: unknown;
+}
+
+export interface HeroSectionStoryblok {
+  content_alignment?: "" | "left" | "right";
+  background_image_dark?: AssetStoryblok;
+  background_image_light?: AssetStoryblok;
   background_image_alt?: string;
-  CTA?: (
+  body?: (
     | ActionButtonStoryblok
     | BlogPostStoryblok
-    | CtaBannerStoryblok
-    | HeroFeaturedPostStoryblok
-    | HeroImageStoryblok
+    | CtaGroupStoryblok
+    | HeroBodyStoryblok
+    | HeroHeadlineGroupStoryblok
+    | HeroSectionStoryblok
     | PageStoryblok
+    | TrustBarStoryblok
+    | TrustItemStoryblok
   )[];
   _uid: string;
-  component: "Hero Featured Post";
-  [k: string]: unknown;
-}
-
-export interface HeroImageStoryblok {
-  headline?: string;
-  subheadline?: string;
-  image?: AssetStoryblok;
-  image_alt?: string;
-  image_title?: string;
-  primary_cta?: unknown[];
-  secondary_cta?: (
-    | ActionButtonStoryblok
-    | BlogPostStoryblok
-    | CtaBannerStoryblok
-    | HeroFeaturedPostStoryblok
-    | HeroImageStoryblok
-    | PageStoryblok
-  )[];
-  _uid: string;
-  component: "Hero Image";
+  component: "hero_section";
   [k: string]: unknown;
 }
 
@@ -144,13 +118,34 @@ export interface PageStoryblok {
   body?: (
     | ActionButtonStoryblok
     | BlogPostStoryblok
-    | CtaBannerStoryblok
-    | HeroFeaturedPostStoryblok
-    | HeroImageStoryblok
+    | CtaGroupStoryblok
+    | HeroBodyStoryblok
+    | HeroHeadlineGroupStoryblok
+    | HeroSectionStoryblok
     | PageStoryblok
+    | TrustBarStoryblok
+    | TrustItemStoryblok
   )[];
   _uid: string;
   component: "page";
   uuid?: string;
+  [k: string]: unknown;
+}
+
+export interface TrustBarStoryblok {
+  items?: TrustItemStoryblok[];
+  _uid: string;
+  component: "trust_bar";
+  [k: string]: unknown;
+}
+
+export interface TrustItemStoryblok {
+  icon?: string;
+  label?: string;
+  value?: string;
+  link?: string;
+  highlight: boolean;
+  _uid: string;
+  component: "trust_item";
   [k: string]: unknown;
 }

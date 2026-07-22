@@ -1,26 +1,138 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --radius: 0.5rem;
+
+  /* surfaces */
+  --background: oklch(0.985 0.002 286);
+  --foreground: oklch(0.205 0.004 285);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.205 0.004 285);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.205 0.004 285);
+
+  /* Ring-Sport red accent */
+  --primary: oklch(0.585 0.214 23.5);
+  --primary-foreground: oklch(0.985 0.002 286);
+
+  --secondary: oklch(0.967 0.003 286);
+  --secondary-foreground: oklch(0.245 0.006 285);
+
+  --muted: oklch(0.967 0.003 286);
+  --muted-foreground: oklch(0.475 0.008 286);
+
+  --accent: oklch(0.955 0.004 286);
+  --accent-foreground: oklch(0.245 0.006 285);
+
+  --destructive: oklch(0.585 0.214 23.5);
+  --destructive-foreground: oklch(0.985 0.002 286);
+
+  --border: oklch(0.21 0.006 285 / 0.12);
+  --input: oklch(0.21 0.006 285 / 0.16);
+  --ring: oklch(0.585 0.214 23.5);
+}
+
+.dark {
+  --background: oklch(0.145 0.004 285);
+  --foreground: oklch(0.97 0.002 286);
+  --card: oklch(0.185 0.004 285);
+  --card-foreground: oklch(0.97 0.002 286);
+  --popover: oklch(0.185 0.004 285);
+  --popover-foreground: oklch(0.97 0.002 286);
+  --primary: oklch(0.585 0.214 23.5);
+  --primary-foreground: oklch(0.985 0.002 286);
+  --secondary: oklch(0.245 0.005 285);
+  --secondary-foreground: oklch(0.97 0.002 286);
+  --muted: oklch(0.245 0.005 285);
+  --muted-foreground: oklch(0.712 0.012 286);
+  --accent: oklch(0.27 0.006 285);
+  --accent-foreground: oklch(0.97 0.002 286);
+  --destructive: oklch(0.585 0.214 23.5);
+  --destructive-foreground: oklch(0.985 0.002 286);
+  --border: oklch(1 0 0 / 9%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.585 0.214 23.5);
 }
 
 @theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-plex);
+  --font-display: var(--font-oswald);
+  --font-mono: var(--font-plex-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    border-color: var(--border);
+    outline-color: color-mix(in oklch, var(--ring) 50%, transparent);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-plex), ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-oswald), ui-sans-serif, system-ui, sans-serif;
+  }
+
+  /* Selection in Ring-Sport red */
+  ::selection {
+    background-color: oklch(0.585 0.214 23.5);
+    color: oklch(0.99 0.002 286);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Utility: tight uppercase eyebrow / kicker text */
+@utility kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Subtle film-grain / graphite texture for atmosphere */
+@utility grain-overlay {
+  position: relative;
+}
+
+/* Hide the scrollbar but keep the element scrollable (e.g. stepper rail) */
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }

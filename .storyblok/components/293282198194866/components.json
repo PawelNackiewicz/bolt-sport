@@ -1,64 +1,65 @@
 [
   {
-    "name": "Action Button",
+    "name": "action_button",
     "display_name": null,
     "description": "",
-    "created_at": "2026-07-21T11:08:02.500Z",
-    "updated_at": "2026-07-21T11:14:14.856Z",
-    "id": 200468408325023,
+    "created_at": "2026-07-22T11:35:07.945Z",
+    "updated_at": "2026-07-22T11:36:19.572Z",
+    "id": 200828960558480,
     "schema": {
       "text": {
         "type": "text",
         "pos": 0,
-        "id": "iZvydnjCT3K5RRfBqZ5I0w"
+        "id": "H3mgGbJAThawOoVvYVoHTA"
       },
       "link": {
-        "type": "multilink",
+        "type": "text",
         "pos": 1,
-        "id": "3s-Rj6Y7TsG148TPdxhwsw"
+        "id": "Sx-EEitkSQCf4MZjQp4nCw"
       },
-      "link_target": {
-        "type": "multilink",
-        "pos": 2,
-        "id": "leTADQA2Rcm_E8q4J5wANQ"
-      },
-      "style_variant": {
+      "variant": {
         "type": "option",
-        "pos": 3,
+        "pos": 2,
         "use_uuid": true,
         "options": [
           {
-            "_uid": "e878158a-f400-49c8-9263-474976d8f63c",
+            "_uid": "7125e504-c1f8-4bda-aed8-b3852f7bf042",
             "name": "primary",
             "value": "primary"
           },
           {
-            "_uid": "6571c342-8560-4173-bfd7-6b11c6adefcf",
+            "_uid": "5c5ad3a3-996d-4045-8319-cb5b98dc4da9",
             "value": "secondary",
             "name": "secondary"
           }
         ],
-        "id": "H9-4qfBaR_qdh9qkf8JbsA"
+        "id": "H37VlaNHQeGD_4aNC-lcdA",
+        "default_value": "primary"
       },
-      "icon": {
+      "icon_left": {
+        "type": "text",
+        "pos": 3,
+        "id": "c_MUzQAHRz23GeUFLj1vUA"
+      },
+      "icon_right": {
         "type": "text",
         "pos": 4,
-        "id": "qIw7VzYqS7qUTlpNmKw21w"
+        "id": "81r7198hRqeVrOHVBWJsag"
       },
       "aria_label": {
         "type": "text",
         "pos": 5,
-        "id": "ENq-XW3-SOCxY6sb4rhv3g"
+        "id": "RLeXnSw1QJaa9gDgEwg7Ng"
       }
     },
     "image": null,
     "preview_field": null,
-    "is_root": true,
+    "is_root": false,
     "preview_tmpl": null,
-    "is_nestable": false,
+    "is_nestable": true,
     "all_presets": [],
     "preset_id": null,
-    "real_name": "Action Button",
+    "real_name": "action_button",
     "component_group_uuid": "5f87eb54-f2db-4448-aa7d-76549c0b54fa",
     "color": null,
     "icon": null,
@@ -133,170 +134,234 @@
     "metadata": {}
   },
   {
-    "name": "CTA Banner",
+    "name": "cta_group",
     "display_name": null,
     "description": "",
-    "created_at": "2026-07-21T11:18:02.916Z",
-    "updated_at": "2026-07-21T11:19:13.268Z",
-    "id": 200470867629091,
+    "created_at": "2026-07-22T11:34:24.001Z",
+    "updated_at": "2026-07-22T11:38:40.689Z",
+    "id": 200828780580239,
     "schema": {
-      "headline": {
-        "type": "text",
+      "alignment": {
+        "type": "option",
         "pos": 0,
-        "id": "X0jjYKsXSpSmWMraed6xdQ"
+        "use_uuid": true,
+        "options": [
+          {
+            "_uid": "97ffda58-7e12-42f3-9a75-89d38f63252b",
+            "name": "left",
+            "value": "left"
+          },
+          {
+            "_uid": "9c3124c1-84c7-492f-b0ed-8dfc19650ddc",
+            "value": "right",
+            "name": "right"
+          }
+        ],
+        "default_value": "left",
+        "id": "u4FPLa2TRmGyWsQ1YBcN_Q"
       },
-      "text": {
-        "type": "text",
-        "pos": 1,
-        "id": "ITDOXxvgRYOKvz8VVpzgEA"
-      },
-      "secondary_cta_button": {
+      "primary_button": {
         "type": "bloks",
-        "pos": 3,
-        "id": "02bG2NzQSYqLEG7lVgzzPg"
+        "pos": 1,
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "action_button"
+        ],
+        "component_denylist": [],
+        "id": "iS-ad2uDTpe-YXbEMUSLFA"
+      },
+      "secondary_button": {
+        "type": "bloks",
+        "pos": 2,
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "action_button"
+        ],
+        "component_denylist": [],
+        "id": "nRLycAS_Tl-j2Ko2huKthQ"
       }
     },
     "image": null,
     "preview_field": null,
-    "is_root": true,
+    "is_root": false,
     "preview_tmpl": null,
-    "is_nestable": false,
+    "is_nestable": true,
     "all_presets": [],
     "preset_id": null,
-    "real_name": "CTA Banner",
-    "component_group_uuid": null,
+    "real_name": "cta_group",
+    "component_group_uuid": "5f87eb54-f2db-4448-aa7d-76549c0b54fa",
     "color": null,
     "icon": null,
-    "internal_tags_list": [],
-    "internal_tag_ids": [],
+    "internal_tags_list": [
+      {
+        "id": 200829692611794,
+        "name": "hero_section"
+      }
+    ],
+    "internal_tag_ids": [
+      "200829692611794"
+    ],
     "content_type_asset_preview": null,
     "metadata": {}
   },
   {
-    "name": "Hero Featured Post",
+    "name": "hero_body",
     "display_name": null,
     "description": "",
-    "created_at": "2026-07-21T11:16:56.561Z",
-    "updated_at": "2026-07-21T11:17:43.669Z",
-    "id": 200470595838940,
+    "created_at": "2026-07-22T11:33:57.785Z",
+    "updated_at": "2026-07-22T11:38:32.058Z",
+    "id": 200828673195406,
     "schema": {
-      "headline": {
+      "description": {
         "type": "text",
         "pos": 0,
-        "id": "d2L0yAfcSwyhdUZYIZc05w"
+        "id": "FKKk-rN1RvCbDuby5eHEEQ"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "hero_body",
+    "component_group_uuid": "5f87eb54-f2db-4448-aa7d-76549c0b54fa",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [
+      {
+        "id": 200829692611794,
+        "name": "hero_section"
+      }
+    ],
+    "internal_tag_ids": [
+      "200829692611794"
+    ],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "hero_headline_group",
+    "display_name": null,
+    "description": "",
+    "created_at": "2026-07-22T11:32:30.773Z",
+    "updated_at": "2026-07-22T11:38:20.849Z",
+    "id": 200828316777864,
+    "schema": {
+      "eyebrow": {
+        "type": "text",
+        "pos": 0,
+        "id": "-rOhz4htTOejVrXKiyB19A"
       },
-      "intro": {
+      "eyebrow_icon": {
         "type": "text",
         "pos": 1,
-        "id": "ZFqjh73ITcGLiPtF8mZARA"
+        "id": "NFvVZbA1Q3O0YEqCQm6f2Q"
       },
-      "background_image": {
+      "title_prefix": {
+        "type": "text",
+        "pos": 2,
+        "id": "beon4cUKSS-ELjUhO3XoYQ"
+      },
+      "title_highlight": {
+        "type": "text",
+        "pos": 3,
+        "id": "N6_WSbLqQ6CZSHxieAlxZg"
+      },
+      "title": {
+        "type": "text",
+        "pos": 4,
+        "id": "t-7c6mYSS82zE47j6USsRw"
+      },
+      "title_seo_override": {
+        "type": "text",
+        "pos": 5,
+        "id": "FxvYTqH9S9yr5hvvWAKXTw"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "hero_headline_group",
+    "component_group_uuid": "5f87eb54-f2db-4448-aa7d-76549c0b54fa",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [
+      {
+        "id": 200829692611794,
+        "name": "hero_section"
+      }
+    ],
+    "internal_tag_ids": [
+      "200829692611794"
+    ],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "hero_section",
+    "display_name": null,
+    "description": "",
+    "created_at": "2026-07-22T11:27:17.260Z",
+    "updated_at": "2026-07-22T11:29:09.911Z",
+    "id": 200827032640883,
+    "schema": {
+      "content_alignment": {
+        "type": "option",
+        "pos": 0,
+        "use_uuid": true,
+        "options": [
+          {
+            "_uid": "42ab22ca-4187-42aa-aa2d-d0737da8aad3",
+            "name": "left",
+            "value": "left"
+          },
+          {
+            "_uid": "4483fa48-fe72-48a9-9bf9-a91770594f30",
+            "value": "right",
+            "name": "right"
+          }
+        ],
+        "required": false,
+        "default_value": "left",
+        "id": "n9XfcEW0SIGGQE1e-S2V3Q"
+      },
+      "background_image_dark": {
+        "type": "asset",
+        "pos": 1,
+        "id": "ReV-MI36ScGpPP5EX6YmXA"
+      },
+      "background_image_light": {
         "type": "asset",
         "pos": 2,
-        "id": "eufZ0A7SSpyTNSwuW5wH2w"
+        "id": "-J85mZQVRrWLHL81vIHtCg"
       },
       "background_image_alt": {
         "type": "text",
         "pos": 3,
-        "id": "cQivWV5bQYKb68pO0C_UWg"
+        "id": "X-Xhb5VGTN6u95C5aYE2bg"
       },
-      "CTA": {
+      "body": {
         "type": "bloks",
         "pos": 4,
-        "id": "g6xA67AORbWUyb7PMQMZyw"
+        "id": "HuCSLpzsT_2Ps1EEd_JJvg"
       }
     },
     "image": null,
     "preview_field": null,
-    "is_root": true,
+    "is_root": false,
     "preview_tmpl": null,
-    "is_nestable": false,
+    "is_nestable": true,
     "all_presets": [],
     "preset_id": null,
-    "real_name": "Hero Featured Post",
-    "component_group_uuid": null,
-    "color": null,
-    "icon": null,
-    "internal_tags_list": [],
-    "internal_tag_ids": [],
-    "content_type_asset_preview": null,
-    "metadata": {}
-  },
-  {
-    "name": "Hero Image",
-    "display_name": null,
-    "description": "",
-    "created_at": "2026-07-21T11:05:47.881Z",
-    "updated_at": "2026-07-21T11:16:46.365Z",
-    "id": 200467856925589,
-    "schema": {
-      "headline": {
-        "type": "text",
-        "pos": 0,
-        "id": "V5u4S5mSRHCfJSrumcpyHw"
-      },
-      "subheadline": {
-        "type": "text",
-        "pos": 1,
-        "id": "6_YHOtd9Tsut1bjhNMhwGw"
-      },
-      "image": {
-        "type": "asset",
-        "pos": 2,
-        "id": "9iIB73AQSmiyRJopZ6pM1A"
-      },
-      "image_alt": {
-        "type": "text",
-        "pos": 3,
-        "id": "vY-AyhRLQh-zcISC8nGMRg"
-      },
-      "image_title": {
-        "type": "text",
-        "pos": 4,
-        "id": "FC0TjSPQRJqx4s2Xu5UZTw"
-      },
-      "primary_cta": {
-        "type": "bloks",
-        "pos": 5,
-        "required": false,
-        "tooltip": false,
-        "restrict_type": "",
-        "restrict_components": true,
-        "minimum": 1,
-        "maximum": 1,
-        "component_whitelist": [],
-        "component_denylist": [],
-        "component_group_whitelist": [],
-        "component_group_denylist": [],
-        "component_tag_whitelist": [],
-        "component_tag_denylist": [],
-        "id": "0oOexuuNSyOB40ehHr-ebA"
-      },
-      "secondary_cta": {
-        "type": "bloks",
-        "pos": 6,
-        "id": "IxS57bwISbC1BmV7qbqIbA",
-        "restrict_type": "tags",
-        "restrict_components": false,
-        "component_whitelist": [],
-        "component_denylist": [],
-        "component_group_whitelist": [],
-        "component_group_denylist": [],
-        "component_tag_whitelist": [],
-        "component_tag_denylist": [],
-        "tooltip": false,
-        "maximum": 1,
-        "minimum": 1
-      }
-    },
-    "image": null,
-    "preview_field": null,
-    "is_root": true,
-    "preview_tmpl": null,
-    "is_nestable": false,
-    "all_presets": [],
-    "preset_id": null,
-    "real_name": "Hero Image",
+    "real_name": "hero_section",
     "component_group_uuid": "5f87eb54-f2db-4448-aa7d-76549c0b54fa",
     "color": null,
     "icon": null,
@@ -341,6 +406,107 @@
     "icon": null,
     "internal_tags_list": [],
     "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "trust_bar",
+    "display_name": null,
+    "description": "",
+    "created_at": "2026-07-22T11:39:42.280Z",
+    "updated_at": "2026-07-22T11:39:58.185Z",
+    "id": 200830084234668,
+    "schema": {
+      "items": {
+        "type": "bloks",
+        "pos": 0,
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "trust_item"
+        ],
+        "component_denylist": [],
+        "id": "N7Fgg-7zQgCBXNJrUCJqgQ"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "trust_bar",
+    "component_group_uuid": "5f87eb54-f2db-4448-aa7d-76549c0b54fa",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [
+      {
+        "id": 200829692611794,
+        "name": "hero_section"
+      }
+    ],
+    "internal_tag_ids": [
+      "200829692611794"
+    ],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "trust_item",
+    "display_name": null,
+    "description": "",
+    "created_at": "2026-07-22T11:38:08.440Z",
+    "updated_at": "2026-07-22T11:39:28.106Z",
+    "id": 200829699861915,
+    "schema": {
+      "icon": {
+        "type": "text",
+        "pos": 0,
+        "id": "b2qjql_fRL2gMLssZ6asCQ"
+      },
+      "label": {
+        "type": "text",
+        "pos": 1,
+        "id": "mQ8ej7MATvGEAWts1EQDCg"
+      },
+      "value": {
+        "type": "text",
+        "pos": 2,
+        "id": "UBzuFCQjSn2uw6lknQKH4g"
+      },
+      "link": {
+        "type": "text",
+        "pos": 3,
+        "id": "zO4qHXECSPm8aPiyouFhuQ"
+      },
+      "highlight": {
+        "type": "boolean",
+        "pos": 4,
+        "default_value": false,
+        "id": "kXjVPvoiRaauAprsqm4r4g"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "trust_item",
+    "component_group_uuid": "5f87eb54-f2db-4448-aa7d-76549c0b54fa",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [
+      {
+        "id": 200829692611794,
+        "name": "hero_section"
+      }
+    ],
+    "internal_tag_ids": [
+      "200829692611794"
+    ],
     "content_type_asset_preview": null,
     "metadata": {}
   }
