@@ -12,6 +12,27 @@ export interface ActionButtonStoryblok {
   [k: string]: unknown;
 }
 
+export interface ActionCardStoryblok {
+  icon?: string;
+  title?: string;
+  text?: string;
+  linkLabel?: string;
+  link?: string;
+  _uid: string;
+  component: "action_card";
+  [k: string]: unknown;
+}
+
+export interface ActionCardsSectionStoryblok {
+  pre_title?: string;
+  title?: string;
+  description?: string;
+  cards?: ActionCardStoryblok[];
+  _uid: string;
+  component: "action_cards_section";
+  [k: string]: unknown;
+}
+
 export interface AssetStoryblok {
   _uid?: string;
   id: number | null;
@@ -49,12 +70,21 @@ export interface BlogPostStoryblok {
   faq_items?: RichtextStoryblok;
   body?: (
     | ActionButtonStoryblok
+    | ActionCardStoryblok
+    | ActionCardsSectionStoryblok
     | BlogPostStoryblok
     | CtaGroupStoryblok
+    | EquipmentCardStoryblok
+    | EquipmentSectionStoryblok
     | HeroBodyStoryblok
     | HeroHeadlineGroupStoryblok
     | HeroSectionStoryblok
+    | IconTextRowStoryblok
+    | ImageTextSectionStoryblok
     | PageStoryblok
+    | ProcessSectionStoryblok
+    | ProcessStepStoryblok
+    | ShopSectionStoryblok
     | TrustBarStoryblok
     | TrustItemStoryblok
   )[];
@@ -69,6 +99,27 @@ export interface CtaGroupStoryblok {
   secondary_button?: ActionButtonStoryblok[];
   _uid: string;
   component: "cta_group";
+  [k: string]: unknown;
+}
+
+export interface EquipmentCardStoryblok {
+  icon?: string;
+  title?: string;
+  description?: string;
+  features?: RichtextStoryblok;
+  _uid: string;
+  component: "equipment_card";
+  [k: string]: unknown;
+}
+
+export interface EquipmentSectionStoryblok {
+  pre_title?: string;
+  title?: string;
+  description?: string;
+  cards?: EquipmentCardStoryblok[];
+  cta_button?: ActionButtonStoryblok[];
+  _uid: string;
+  component: "equipment_section";
   [k: string]: unknown;
 }
 
@@ -98,12 +149,21 @@ export interface HeroSectionStoryblok {
   background_image_alt?: string;
   body?: (
     | ActionButtonStoryblok
+    | ActionCardStoryblok
+    | ActionCardsSectionStoryblok
     | BlogPostStoryblok
     | CtaGroupStoryblok
+    | EquipmentCardStoryblok
+    | EquipmentSectionStoryblok
     | HeroBodyStoryblok
     | HeroHeadlineGroupStoryblok
     | HeroSectionStoryblok
+    | IconTextRowStoryblok
+    | ImageTextSectionStoryblok
     | PageStoryblok
+    | ProcessSectionStoryblok
+    | ProcessStepStoryblok
+    | ShopSectionStoryblok
     | TrustBarStoryblok
     | TrustItemStoryblok
   )[];
@@ -112,23 +172,80 @@ export interface HeroSectionStoryblok {
   [k: string]: unknown;
 }
 
+export interface IconTextRowStoryblok {
+  icon?: string;
+  title?: string;
+  description?: string;
+  _uid: string;
+  component: "icon_text_row";
+  [k: string]: unknown;
+}
+
+export interface ImageTextSectionStoryblok {
+  image?: AssetStoryblok;
+  badge_subtitle?: string;
+  badge_title?: string;
+  pre_title?: string;
+  title?: string;
+  features?: IconTextRowStoryblok[];
+  image_position?: "" | "left" | "right";
+  cta_button?: ActionButtonStoryblok[];
+  _uid: string;
+  component: "image_text_section";
+  [k: string]: unknown;
+}
+
 export interface PageStoryblok {
   page_title?: string;
   seo_description?: string;
   body?: (
     | ActionButtonStoryblok
+    | ActionCardStoryblok
+    | ActionCardsSectionStoryblok
     | BlogPostStoryblok
     | CtaGroupStoryblok
+    | EquipmentCardStoryblok
+    | EquipmentSectionStoryblok
     | HeroBodyStoryblok
     | HeroHeadlineGroupStoryblok
     | HeroSectionStoryblok
+    | IconTextRowStoryblok
+    | ImageTextSectionStoryblok
     | PageStoryblok
+    | ProcessSectionStoryblok
+    | ProcessStepStoryblok
+    | ShopSectionStoryblok
     | TrustBarStoryblok
     | TrustItemStoryblok
   )[];
   _uid: string;
   component: "page";
   uuid?: string;
+  [k: string]: unknown;
+}
+
+export interface ProcessSectionStoryblok {
+  pre_title?: string;
+  title?: string;
+  description?: string;
+  steps?: ProcessStepStoryblok[];
+  _uid: string;
+  component: "process_section";
+  [k: string]: unknown;
+}
+
+export interface ProcessStepStoryblok {
+  icon?: string;
+  title?: string;
+  description?: string;
+  _uid: string;
+  component: "process_step";
+  [k: string]: unknown;
+}
+
+export interface ShopSectionStoryblok {
+  _uid: string;
+  component: "shop_section";
   [k: string]: unknown;
 }
 

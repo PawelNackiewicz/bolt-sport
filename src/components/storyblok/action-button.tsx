@@ -28,6 +28,7 @@ export function ActionButton({ blok }: ActionButtonProps) {
         isSecondary &&
           "border-primary/60 bg-background/30 text-primary backdrop-blur-sm hover:bg-primary/10 hover:text-primary",
       )}
+      nativeButton={false}
       render={<Link href={href(blok.link ?? "/")} />}
     >
       {iconLeft && createElement(iconLeft, { className: "size-4" })}
