@@ -10,6 +10,7 @@ import {
   ImageTextSection,
   ProcessStep,
   ProcessSection,
+  ShopSection,
 } from "@/src/components/storyblok";
 
 const accessToken = process.env.STORYBLOK_DELIVERY_API_TOKEN;
@@ -44,5 +45,6 @@ export const getStoryblokApi = storyblokInit({
     image_text_section: ImageTextSection,
     process_step: ProcessStep,
     process_section: ProcessSection,
+    shop_section: ShopSection,
   },
 });

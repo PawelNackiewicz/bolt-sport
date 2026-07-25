@@ -23,5 +23,10 @@
     "name": "process_section",
     "id": 200960167042294,
     "object_type": "component"
+  },
+  {
+    "name": "shop_section",
+    "id": 200988542188791,
+    "object_type": "component"
   }
 ]

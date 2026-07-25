@@ -11,5 +11,6 @@ export { IconTextRow } from "./icon-text-row";
 export { ImageTextSection } from "./image-text-section";
 export { ProcessStep } from "./process-step";
 export { ProcessSection } from "./process-section";
+export { ShopSection } from "./shop-section";
 export { TrustBar } from "./trust-bar";
 export { TrustItem } from "./trust-item";

@@ -84,6 +84,7 @@ export interface BlogPostStoryblok {
     | PageStoryblok
     | ProcessSectionStoryblok
     | ProcessStepStoryblok
+    | ShopSectionStoryblok
     | TrustBarStoryblok
     | TrustItemStoryblok
   )[];
@@ -162,6 +163,7 @@ export interface HeroSectionStoryblok {
     | PageStoryblok
     | ProcessSectionStoryblok
     | ProcessStepStoryblok
+    | ShopSectionStoryblok
     | TrustBarStoryblok
     | TrustItemStoryblok
   )[];
@@ -212,6 +214,7 @@ export interface PageStoryblok {
     | PageStoryblok
     | ProcessSectionStoryblok
     | ProcessStepStoryblok
+    | ShopSectionStoryblok
     | TrustBarStoryblok
     | TrustItemStoryblok
   )[];
@@ -237,6 +240,12 @@ export interface ProcessStepStoryblok {
   description?: string;
   _uid: string;
   component: "process_step";
+  [k: string]: unknown;
+}
+
+export interface ShopSectionStoryblok {
+  _uid: string;
+  component: "shop_section";
   [k: string]: unknown;
 }
 
