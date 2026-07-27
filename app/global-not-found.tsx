@@ -1,8 +1,11 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { IBM_Plex_Sans, Oswald } from "next/font/google";
 
 import "./globals.css";
+import { checkEnv } from "@/src/lib/env-check";
+import { NotFoundDebugPanel } from "./not-found-debug-panel";
 
 const display = Oswald({
   variable: "--font-oswald",
@@ -21,7 +24,24 @@ export const metadata: Metadata = {
   description: "Strona, której szukasz, nie istnieje.",
 };
 
-export default function GlobalNotFound() {
+export default async function GlobalNotFound() {
+  const envStatuses = checkEnv();
+  const renderedAt = new Date().toISOString();
+
+  // global-not-found.tsx runs outside the matched-route render tree, so
+  // there's no request pathname available server-side (see not-found.md:
+  // "you must fetch data on the client-side instead"). We log what we do
+  // have here (host/referer/env status); the exact path is logged
+  // client-side by <NotFoundDebugPanel />.
+  const headersList = await headers();
+  console.error("[global-not-found]", {
+    renderedAt,
+    host: headersList.get("host"),
+    referer: headersList.get("referer"),
+    userAgent: headersList.get("user-agent"),
+    envStatuses,
+  });
+
   return (
     <html
       lang="pl"
@@ -41,6 +61,11 @@ export default function GlobalNotFound() {
         >
           Wróć na stronę główną
         </Link>
+        <NotFoundDebugPanel
+          envStatuses={envStatuses}
+          renderedAt={renderedAt}
+          nodeEnv={process.env.NODE_ENV}
+        />
       </body>
     </html>
   );
