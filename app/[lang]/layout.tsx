@@ -7,6 +7,7 @@ import { Footer, Navigation } from "@/src/components/ui";
 import { getDictionary } from "@/src/i18n/dictionaries";
 import { I18nProvider } from "@/src/i18n/i18n-provider";
 import { isLocale, locales } from "@/src/i18n/config";
+import { getContactData } from "@/src/lib/storyblok";
 
 const themeScript = `try{const t=localStorage.theme;if(t==="dark"||(!t&&matchMedia("(prefers-color-scheme:dark)").matches))document.documentElement.classList.add("dark")}catch{}`;
 const display = Oswald({
@@ -63,6 +64,7 @@ export default async function RootLayout({
   if (!isLocale(lang)) notFound();
 
   const dictionary = await getDictionary(lang);
+  const contactData = await getContactData().catch(() => null);
 
   return (
     <html
@@ -78,7 +80,7 @@ export default async function RootLayout({
           <Navigation />
           {children}
         </I18nProvider>
-        <Footer locale={lang} dictionary={dictionary} />
+        <Footer locale={lang} dictionary={dictionary} contactData={contactData} />
       </body>
     </html>
   );
