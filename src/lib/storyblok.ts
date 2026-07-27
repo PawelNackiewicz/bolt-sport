@@ -48,3 +48,45 @@ export const getStoryblokApi = storyblokInit({
     shop_section: ShopSection,
   },
 });
+
+export type ContactData = {
+  phone: string;
+  email: string;
+  address: string;
+  nip: string;
+  krs: string;
+  regon: string;
+  legalName: string;
+};
+
+type DatasourceEntry = {
+  name: string;
+  value: string;
+};
+
+/**
+ * Dane kontaktowe utrzymywane w Storyblok jako datasource `contact-data`
+ * (Settings → Datasources), żeby dało się je edytować bez deployu.
+ */
+export async function getContactData(): Promise<ContactData> {
+  const storyblokApi = getStoryblokApi();
+  const { data } = await storyblokApi.get("cdn/datasource_entries", {
+    datasource: "contact-data",
+    version: storyblokVersion,
+  });
+
+  const entries: DatasourceEntry[] = data.datasource_entries;
+  const byName = Object.fromEntries(
+    entries.map((entry) => [entry.name, entry.value]),
+  );
+
+  return {
+    phone: byName.phone ?? "",
+    email: byName.email ?? "",
+    address: byName.address ?? "",
+    nip: byName.nip ?? "",
+    krs: byName.krs ?? "",
+    regon: byName.regon ?? "",
+    legalName: byName.legal_name ?? "",
+  };
+}

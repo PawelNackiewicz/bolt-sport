@@ -5,16 +5,30 @@ import Link from "next/link";
 import { Container, Logo, Separator } from "@/src/components/ui";
 import { navItems, company } from "@/src/lib/site-data";
 import { localePath, type Dictionary, type Locale } from "@/src/i18n/config";
+import type { ContactData } from "@/src/lib/storyblok";
 
 type FooterProps = {
   locale: Locale;
   dictionary: Dictionary;
+  contactData: ContactData | null;
 };
 
-export function Footer({ locale, dictionary }: FooterProps) {
+export function Footer({ locale, dictionary, contactData }: FooterProps) {
   const href = (path: string) => localePath(locale, path);
   const t = dictionary.footer;
   const navT = dictionary.nav;
+
+  const phone = contactData?.phone || company.phone;
+  const phoneHref = `tel:${phone.replace(/\s+/g, "")}`;
+  const email = contactData?.email || company.email;
+  const emailHref = `mailto:${email}`;
+  const address =
+    contactData?.address ||
+    `${company.address.street}, ${company.address.city}`;
+  const nip = contactData?.nip || company.registry.nip;
+  const krs = contactData?.krs || company.registry.krs;
+  const regon = contactData?.regon || company.registry.regon;
+  const legalName = contactData?.legalName || company.legalName;
 
   return (
     <footer className="border-t border-border bg-card/30">
@@ -28,25 +42,25 @@ export function Footer({ locale, dictionary }: FooterProps) {
             <ul className="flex flex-col gap-2 text-sm">
               <li>
                 <a
-                  href={company.phoneHref}
+                  href={phoneHref}
                   className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
                 >
                   <Phone className="size-4 text-primary" />
-                  {company.phone}
+                  {phone}
                 </a>
               </li>
               <li>
                 <a
-                  href={company.emailHref}
+                  href={emailHref}
                   className="flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
                 >
                   <Mail className="size-4 text-primary" />
-                  {company.email}
+                  {email}
                 </a>
               </li>
               <li className="flex items-center gap-2 text-muted-foreground">
                 <MapPin className="size-4 text-primary" />
-                {company.address.street}, {company.address.city}
+                {address}
               </li>
             </ul>
           </div>
@@ -74,13 +88,12 @@ export function Footer({ locale, dictionary }: FooterProps) {
 
         <div className="flex flex-col gap-4 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>
-            {company.legalName} · {company.address.street},{" "}
-            {company.address.city}
+            {legalName} · {address}
           </p>
           <p className="flex flex-wrap gap-x-4 gap-y-1">
-            <span>NIP: {company.registry.nip}</span>
-            <span>KRS: {company.registry.krs}</span>
-            <span>REGON: {company.registry.regon}</span>
+            <span>NIP: {nip}</span>
+            <span>KRS: {krs}</span>
+            <span>REGON: {regon}</span>
           </p>
         </div>
       </Container>
