@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "worki-bokserskie",
+    "name": "Worki bokserskie",
+    "description": "Worki treningowe, gruszki i worki wolnostojące do boksu i sportów walki.",
+    "order": 1
+  },
+  {
+    "slug": "rekawice",
+    "name": "Rękawice",
+    "description": "Rękawice bokserskie, MMA, przyrządowe i dziecięce.",
+    "order": 2
+  },
+  {
+    "slug": "ochraniacze",
+    "name": "Ochraniacze",
+    "description": "Kaski, nagolenniki, ochraniacze korpusu i szczęki.",
+    "order": 3
+  },
+  {
+    "slug": "tarcze-i-lapy",
+    "name": "Tarcze i łapy",
+    "description": "Tarcze trenerskie, łapy, thai pady i makiwary.",
+    "order": 4
+  },
+  {
+    "slug": "maty-i-materace",
+    "name": "Maty i materace",
+    "description": "Maty do sportów walki, puzzle EVA i materace gimnastyczne.",
+    "order": 5
+  },
+  {
+    "slug": "ringi-bokserskie",
+    "name": "Ringi bokserskie",
+    "description": "Ringi treningowe i turniejowe wykonywane na wymiar.",
+    "order": 6
+  },
+  {
+    "slug": "klatki-mma",
+    "name": "Klatki MMA",
+    "description": "Klatki ośmiokątne, przyścienne i konstrukcje na wymiar.",
+    "order": 7
+  },
+  {
+    "slug": "akcesoria-treningowe",
+    "name": "Akcesoria treningowe",
+    "description": "Skakanki, owijki, piłki lekarskie i sprzęt kondycyjny.",
+    "order": 8
+  },
+  {
+    "slug": "mocowania-i-stelaze",
+    "name": "Mocowania i stelaże",
+    "description": "Mocowania sufitowe i ścienne, stelaże, łańcuchy i obrotnice.",
+    "order": 9
+  }
+]

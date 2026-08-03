@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, PhoneCall } from "lucide-react";
+import { Menu, PhoneCall, UserRound } from "lucide-react";
 
 import Link from "next/link";
+
+import { CartButton } from "@/src/components/shop/cart-button";
 
 import {
   Button,
@@ -48,12 +50,24 @@ export function Navigation() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 sm:gap-2">
           <LanguageSwitcher />
           <ThemeToggle />
+
+          {/* `/konto` is guarded in proxy.ts, so a signed-out visitor lands on
+              the login page without the header needing to know the session. */}
+          <Link
+            href={href("/konto")}
+            aria-label={dictionary.shop.nav.account}
+            className={cn(buttonVariants({ variant: "ghost", size: "icon" }))}
+          >
+            <UserRound className="size-5" />
+          </Link>
+          <CartButton />
+
           <Link
             href={href("/#kontakt")}
-            className={cn(buttonVariants(), "hidden sm:inline-flex")}
+            className={cn(buttonVariants(), "ml-1 hidden sm:inline-flex")}
           >
             {t.quote}
           </Link>
