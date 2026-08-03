@@ -4,6 +4,7 @@ import { IBM_Plex_Mono, IBM_Plex_Sans, Oswald } from "next/font/google";
 
 import "../globals.css";
 import { Footer, Navigation } from "@/src/components/ui";
+import { CartProvider } from "@/src/components/shop/cart-provider";
 import { getDictionary } from "@/src/i18n/dictionaries";
 import { I18nProvider } from "@/src/i18n/i18n-provider";
 import { isLocale, locales } from "@/src/i18n/config";
@@ -77,8 +78,11 @@ export default async function RootLayout({
       </head>
       <body>
         <I18nProvider locale={lang} dictionary={dictionary}>
-          <Navigation />
-          {children}
+          {/* Cart state is loaded client-side so this layout stays static. */}
+          <CartProvider>
+            <Navigation />
+            {children}
+          </CartProvider>
         </I18nProvider>
         <Footer locale={lang} dictionary={dictionary} contactData={contactData} />
       </body>

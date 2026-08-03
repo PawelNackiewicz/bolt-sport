@@ -7,23 +7,56 @@ import {
   locales,
   type Locale,
 } from "@/src/i18n/config";
+import { verifyToken } from "@/src/lib/auth/jwt";
+import { ACCESS_COOKIE, REFRESH_COOKIE } from "@/src/lib/shop/constants";
 
 /**
  * Każdy request bez prefiksu locale (`/sklep`) dostaje redirect na wersję
  * z prefiksem (`/pl/sklep`). Język wybieramy z ciasteczka, a jeśli go nie ma —
  * z nagłówka `Accept-Language`.
  */
-export function proxy(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  const hasLocale = locales.some(
+  const matched = locales.find(
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
   );
-  if (hasLocale) return NextResponse.next();
+
+  if (matched) return guardAccount(request, matched);
 
   const locale = resolveLocale(request);
   const url = request.nextUrl.clone();
   url.pathname = pathname === "/" ? `/${locale}` : `/${locale}${pathname}`;
+
+  return NextResponse.redirect(url);
+}
+
+/**
+ * Gate for `/konto/**`. This only checks that a session cookie carries a valid
+ * signature — the authoritative check (does the user still exist, was the
+ * password changed since) happens in the page itself, which can reach the data
+ * store. Proxy runs before rendering and should stay cheap and side-effect free.
+ */
+async function guardAccount(request: NextRequest, locale: Locale) {
+  const accountPath = `/${locale}/konto`;
+  const { pathname } = request.nextUrl;
+
+  if (pathname !== accountPath && !pathname.startsWith(`${accountPath}/`)) {
+    return NextResponse.next();
+  }
+
+  const hasSession =
+    (await verifyToken(request.cookies.get(ACCESS_COOKIE)?.value, "access")) ??
+    (await verifyToken(request.cookies.get(REFRESH_COOKIE)?.value, "refresh"));
+
+  if (hasSession) return NextResponse.next();
+
+  const url = request.nextUrl.clone();
+  url.pathname = `/${locale}/logowanie`;
+  url.search = "";
+  // Preserve the original target (including its query) so login can return the
+  // user to where they were heading.
+  url.searchParams.set("redirect", `${pathname}${request.nextUrl.search}`);
 
   return NextResponse.redirect(url);
 }
