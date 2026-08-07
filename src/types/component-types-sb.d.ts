@@ -3,13 +3,13 @@ import { StoryblokStory } from 'storyblok-generate-ts'
 export interface ActionButtonStoryblok {
   text?: string;
   link?: string;
-  variant?: "" | "primary" | "secondary";
+  variant?: "" | "primary" | "secondary" | "link";
   icon_left?: string;
   icon_right?: string;
   aria_label?: string;
   _uid: string;
   component: "action_button";
-  [k: string]: unknown;
+  [k: string]: unknwon;
 }
 
 export interface ActionCardStoryblok {
@@ -20,7 +20,7 @@ export interface ActionCardStoryblok {
   link?: string;
   _uid: string;
   component: "action_card";
-  [k: string]: unknown;
+  [k: string]: unknwon;
 }
 
 export interface ActionCardsSectionStoryblok {
@@ -30,7 +30,7 @@ export interface ActionCardsSectionStoryblok {
   cards?: ActionCardStoryblok[];
   _uid: string;
   component: "action_cards_section";
-  [k: string]: unknown;
+  [k: string]: unknwon;
 }
 
 export interface AssetStoryblok {
@@ -45,29 +45,17 @@ export interface AssetStoryblok {
   copyright: string | null;
   fieldtype?: string;
   meta_data?: null | {
-    [k: string]: unknown;
+    [k: string]: unknwon;
   };
   is_external_url?: boolean;
-  [k: string]: unknown;
-}
-
-export interface RichtextStoryblok {
-  type: string;
-  content?: RichtextStoryblok[];
-  marks?: RichtextStoryblok[];
-  attrs?: unknown;
-  text?: string;
-  [k: string]: unknown;
+  [k: string]: unknwon;
 }
 
 export interface BlogPostStoryblok {
   title?: string;
-  featured_image?: AssetStoryblok;
-  featured_image_alt?: string;
-  seo_title?: string;
-  seo_description?: string;
-  canonical_url?: string;
-  faq_items?: RichtextStoryblok;
+  category?: string;
+  cover_image?: AssetStoryblok;
+  image_caption?: string;
   body?: (
     | ActionButtonStoryblok
     | ActionCardStoryblok
@@ -79,18 +67,24 @@ export interface BlogPostStoryblok {
     | HeroBodyStoryblok
     | HeroHeadlineGroupStoryblok
     | HeroSectionStoryblok
+    | HighlightedCtaStoryblok
     | IconTextRowStoryblok
     | ImageTextSectionStoryblok
+    | InlineCtaStoryblok
+    | NumberedFeatureItemStoryblok
+    | NumberedFeaturesStoryblok
     | PageStoryblok
     | ProcessSectionStoryblok
     | ProcessStepStoryblok
+    | RelatedArticlesStoryblok
+    | RichTextSectionStoryblok
     | ShopSectionStoryblok
     | TrustBarStoryblok
     | TrustItemStoryblok
   )[];
   _uid: string;
   component: "blog_post";
-  [k: string]: unknown;
+  [k: string]: unknwon;
 }
 
 export interface CtaGroupStoryblok {
@@ -99,7 +93,16 @@ export interface CtaGroupStoryblok {
   secondary_button?: ActionButtonStoryblok[];
   _uid: string;
   component: "cta_group";
-  [k: string]: unknown;
+  [k: string]: unknwon;
+}
+
+export interface RichtextStoryblok {
+  type: string;
+  content?: RichtextStoryblok[];
+  marks?: RichtextStoryblok[];
+  attrs?: unknwon;
+  text?: string;
+  [k: string]: unknwon;
 }
 
 export interface EquipmentCardStoryblok {
@@ -109,7 +112,7 @@ export interface EquipmentCardStoryblok {
   features?: RichtextStoryblok;
   _uid: string;
   component: "equipment_card";
-  [k: string]: unknown;
+  [k: string]: unknwon;
 }
 
 export interface EquipmentSectionStoryblok {
@@ -120,14 +123,14 @@ export interface EquipmentSectionStoryblok {
   cta_button?: ActionButtonStoryblok[];
   _uid: string;
   component: "equipment_section";
-  [k: string]: unknown;
+  [k: string]: unknwon;
 }
 
 export interface HeroBodyStoryblok {
   description?: string;
   _uid: string;
   component: "hero_body";
-  [k: string]: unknown;
+  [k: string]: unknwon;
 }
 
 export interface HeroHeadlineGroupStoryblok {
@@ -139,7 +142,7 @@ export interface HeroHeadlineGroupStoryblok {
   title_seo_override?: string;
   _uid: string;
   component: "hero_headline_group";
-  [k: string]: unknown;
+  [k: string]: unknwon;
 }
 
 export interface HeroSectionStoryblok {
@@ -158,18 +161,35 @@ export interface HeroSectionStoryblok {
     | HeroBodyStoryblok
     | HeroHeadlineGroupStoryblok
     | HeroSectionStoryblok
+    | HighlightedCtaStoryblok
     | IconTextRowStoryblok
     | ImageTextSectionStoryblok
+    | InlineCtaStoryblok
+    | NumberedFeatureItemStoryblok
+    | NumberedFeaturesStoryblok
     | PageStoryblok
     | ProcessSectionStoryblok
     | ProcessStepStoryblok
+    | RelatedArticlesStoryblok
+    | RichTextSectionStoryblok
     | ShopSectionStoryblok
     | TrustBarStoryblok
     | TrustItemStoryblok
   )[];
   _uid: string;
   component: "hero_section";
-  [k: string]: unknown;
+  [k: string]: unknwon;
+}
+
+export interface HighlightedCtaStoryblok {
+  pre_title?: string;
+  title?: string;
+  description?: string;
+  button_primary?: ActionButtonStoryblok[];
+  button_secondary?: ActionButtonStoryblok[];
+  _uid: string;
+  component: "highlighted_cta";
+  [k: string]: unknwon;
 }
 
 export interface IconTextRowStoryblok {
@@ -178,7 +198,7 @@ export interface IconTextRowStoryblok {
   description?: string;
   _uid: string;
   component: "icon_text_row";
-  [k: string]: unknown;
+  [k: string]: unknwon;
 }
 
 export interface ImageTextSectionStoryblok {
@@ -192,7 +212,33 @@ export interface ImageTextSectionStoryblok {
   cta_button?: ActionButtonStoryblok[];
   _uid: string;
   component: "image_text_section";
-  [k: string]: unknown;
+  [k: string]: unknwon;
+}
+
+export interface InlineCtaStoryblok {
+  pre_title?: string;
+  title?: string;
+  cta_button?: ActionButtonStoryblok[];
+  phone?: string;
+  _uid: string;
+  component: "inline_cta";
+  [k: string]: unknwon;
+}
+
+export interface NumberedFeatureItemStoryblok {
+  title?: string;
+  description?: string;
+  _uid: string;
+  component: "numbered_feature_item";
+  [k: string]: unknwon;
+}
+
+export interface NumberedFeaturesStoryblok {
+  title?: string;
+  items?: NumberedFeatureItemStoryblok[];
+  _uid: string;
+  component: "numbered_features";
+  [k: string]: unknwon;
 }
 
 export interface PageStoryblok {
@@ -209,11 +255,17 @@ export interface PageStoryblok {
     | HeroBodyStoryblok
     | HeroHeadlineGroupStoryblok
     | HeroSectionStoryblok
+    | HighlightedCtaStoryblok
     | IconTextRowStoryblok
     | ImageTextSectionStoryblok
+    | InlineCtaStoryblok
+    | NumberedFeatureItemStoryblok
+    | NumberedFeaturesStoryblok
     | PageStoryblok
     | ProcessSectionStoryblok
     | ProcessStepStoryblok
+    | RelatedArticlesStoryblok
+    | RichTextSectionStoryblok
     | ShopSectionStoryblok
     | TrustBarStoryblok
     | TrustItemStoryblok
@@ -221,7 +273,7 @@ export interface PageStoryblok {
   _uid: string;
   component: "page";
   uuid?: string;
-  [k: string]: unknown;
+  [k: string]: unknwon;
 }
 
 export interface ProcessSectionStoryblok {
@@ -231,7 +283,7 @@ export interface ProcessSectionStoryblok {
   steps?: ProcessStepStoryblok[];
   _uid: string;
   component: "process_section";
-  [k: string]: unknown;
+  [k: string]: unknwon;
 }
 
 export interface ProcessStepStoryblok {
@@ -240,20 +292,35 @@ export interface ProcessStepStoryblok {
   description?: string;
   _uid: string;
   component: "process_step";
-  [k: string]: unknown;
+  [k: string]: unknwon;
+}
+
+export interface RelatedArticlesStoryblok {
+  title?: string;
+  articles?: any[];
+  _uid: string;
+  component: "related_articles";
+  [k: string]: unknwon;
+}
+
+export interface RichTextSectionStoryblok {
+  content?: RichtextStoryblok;
+  _uid: string;
+  component: "rich_text_section";
+  [k: string]: unknwon;
 }
 
 export interface ShopSectionStoryblok {
   _uid: string;
   component: "shop_section";
-  [k: string]: unknown;
+  [k: string]: unknwon;
 }
 
 export interface TrustBarStoryblok {
   items?: TrustItemStoryblok[];
   _uid: string;
   component: "trust_bar";
-  [k: string]: unknown;
+  [k: string]: unknwon;
 }
 
 export interface TrustItemStoryblok {
@@ -264,5 +331,5 @@ export interface TrustItemStoryblok {
   highlight: boolean;
   _uid: string;
   component: "trust_item";
-  [k: string]: unknown;
+  [k: string]: unknwon;
 }

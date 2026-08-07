@@ -74,7 +74,7 @@ export const navItems: NavItem[] = [
   { key: "facilities", href: "/#wyposazenie" },
   { key: "rings", href: "/#ringi" },
   { key: "projects", href: "/#realizacje" },
-  { key: "guide", href: "/#poradnik" },
+  { key: "blog", href: "/blog" },
   { key: "contact", href: "/#kontakt" },
 ];
 
@@ -330,16 +330,16 @@ export const trustPoints: TrustChip[] = [
 ];
 
 /* -------------------------------------------------------------------------- */
-/*  Poradnik — guide                                                          */
+/*  Blog                                                                      */
 /* -------------------------------------------------------------------------- */
 
-export type GuideArticle = {
+export type BlogArticle = {
   title: string;
   category: string;
   readingTime: string;
 };
 
-export const guideArticles: GuideArticle[] = [
+export const blogArticles: BlogArticle[] = [
   {
     title: "Jaki sprzęt zabrać na obóz sportowy? Checklista fightera",
     category: "Jak wybrać sprzęt",
@@ -357,7 +357,7 @@ export const guideArticles: GuideArticle[] = [
   },
 ];
 
-export const guideCategories: string[] = [
+export const blogCategories: string[] = [
   "Jak wybrać sprzęt",
   "Wyposażenie klubu",
   "Bezpieczeństwo i montaż",
