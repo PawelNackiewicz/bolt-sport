@@ -20,6 +20,13 @@
       "contact": "Kontakt"
     }
   },
+  "blog": {
+    "title": "Blog",
+    "empty": "Es wurden noch keine Beiträge veröffentlicht.",
+    "seeAll": "Zum gesamten Blog",
+    "breadcrumbLabel": "Navigationspfad",
+    "home": "Startseite"
+  },
   "footer": {
     "description": "Polnischer Hersteller von Kampfsportausrüstung. Wir fertigen in Krasiejów — von Trainingsgeräten bis zu Ringen, MMA-Käfigen und kompletter Hallenausstattung.",
     "navHeading": "Navigation"

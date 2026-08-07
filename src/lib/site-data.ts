@@ -329,37 +329,4 @@ export const trustPoints: TrustChip[] = [
   { label: "4.9/5 z 200 opinii", icon: Star },
 ];
 
-/* -------------------------------------------------------------------------- */
-/*  Blog                                                                      */
-/* -------------------------------------------------------------------------- */
-
-export type BlogArticle = {
-  title: string;
-  category: string;
-  readingTime: string;
-};
-
-export const blogArticles: BlogArticle[] = [
-  {
-    title: "Jaki sprzęt zabrać na obóz sportowy? Checklista fightera",
-    category: "Jak wybrać sprzęt",
-    readingTime: "6 min",
-  },
-  {
-    title: "Jak wyposażyć domową siłownię? Praktyczny przewodnik dla osób aktywnych",
-    category: "Trening w domu",
-    readingTime: "8 min",
-  },
-  {
-    title: "Jak dobrać sprzęt do sali treningowej?",
-    category: "Wyposażenie klubu",
-    readingTime: "7 min",
-  },
-];
-
-export const blogCategories: string[] = [
-  "Jak wybrać sprzęt",
-  "Wyposażenie klubu",
-  "Bezpieczeństwo i montaż",
-  "Trening w domu",
-];
+/* Artykuły bloga przychodzą ze Storybloka (`src/lib/blog.ts`) — bez atrap. */

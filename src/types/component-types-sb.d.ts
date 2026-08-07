@@ -9,7 +9,7 @@ export interface ActionButtonStoryblok {
   aria_label?: string;
   _uid: string;
   component: "action_button";
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }
 
 export interface ActionCardStoryblok {
@@ -20,7 +20,7 @@ export interface ActionCardStoryblok {
   link?: string;
   _uid: string;
   component: "action_card";
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }
 
 export interface ActionCardsSectionStoryblok {
@@ -30,7 +30,7 @@ export interface ActionCardsSectionStoryblok {
   cards?: ActionCardStoryblok[];
   _uid: string;
   component: "action_cards_section";
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }
 
 export interface AssetStoryblok {
@@ -45,10 +45,10 @@ export interface AssetStoryblok {
   copyright: string | null;
   fieldtype?: string;
   meta_data?: null | {
-    [k: string]: unknwon;
+    [k: string]: unknown;
   };
   is_external_url?: boolean;
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }
 
 export interface BlogPostStoryblok {
@@ -84,7 +84,7 @@ export interface BlogPostStoryblok {
   )[];
   _uid: string;
   component: "blog_post";
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }
 
 export interface CtaGroupStoryblok {
@@ -93,16 +93,16 @@ export interface CtaGroupStoryblok {
   secondary_button?: ActionButtonStoryblok[];
   _uid: string;
   component: "cta_group";
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }
 
 export interface RichtextStoryblok {
   type: string;
   content?: RichtextStoryblok[];
   marks?: RichtextStoryblok[];
-  attrs?: unknwon;
+  attrs?: unknown;
   text?: string;
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }
 
 export interface EquipmentCardStoryblok {
@@ -112,7 +112,7 @@ export interface EquipmentCardStoryblok {
   features?: RichtextStoryblok;
   _uid: string;
   component: "equipment_card";
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }
 
 export interface EquipmentSectionStoryblok {
@@ -123,14 +123,14 @@ export interface EquipmentSectionStoryblok {
   cta_button?: ActionButtonStoryblok[];
   _uid: string;
   component: "equipment_section";
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }
 
 export interface HeroBodyStoryblok {
   description?: string;
   _uid: string;
   component: "hero_body";
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }
 
 export interface HeroHeadlineGroupStoryblok {
@@ -142,7 +142,7 @@ export interface HeroHeadlineGroupStoryblok {
   title_seo_override?: string;
   _uid: string;
   component: "hero_headline_group";
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }
 
 export interface HeroSectionStoryblok {
@@ -178,7 +178,7 @@ export interface HeroSectionStoryblok {
   )[];
   _uid: string;
   component: "hero_section";
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }
 
 export interface HighlightedCtaStoryblok {
@@ -189,7 +189,7 @@ export interface HighlightedCtaStoryblok {
   button_secondary?: ActionButtonStoryblok[];
   _uid: string;
   component: "highlighted_cta";
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }
 
 export interface IconTextRowStoryblok {
@@ -198,7 +198,7 @@ export interface IconTextRowStoryblok {
   description?: string;
   _uid: string;
   component: "icon_text_row";
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }
 
 export interface ImageTextSectionStoryblok {
@@ -212,7 +212,7 @@ export interface ImageTextSectionStoryblok {
   cta_button?: ActionButtonStoryblok[];
   _uid: string;
   component: "image_text_section";
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }
 
 export interface InlineCtaStoryblok {
@@ -222,7 +222,7 @@ export interface InlineCtaStoryblok {
   phone?: string;
   _uid: string;
   component: "inline_cta";
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }
 
 export interface NumberedFeatureItemStoryblok {
@@ -230,7 +230,7 @@ export interface NumberedFeatureItemStoryblok {
   description?: string;
   _uid: string;
   component: "numbered_feature_item";
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }
 
 export interface NumberedFeaturesStoryblok {
@@ -238,7 +238,7 @@ export interface NumberedFeaturesStoryblok {
   items?: NumberedFeatureItemStoryblok[];
   _uid: string;
   component: "numbered_features";
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }
 
 export interface PageStoryblok {
@@ -273,7 +273,7 @@ export interface PageStoryblok {
   _uid: string;
   component: "page";
   uuid?: string;
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }
 
 export interface ProcessSectionStoryblok {
@@ -283,7 +283,7 @@ export interface ProcessSectionStoryblok {
   steps?: ProcessStepStoryblok[];
   _uid: string;
   component: "process_section";
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }
 
 export interface ProcessStepStoryblok {
@@ -292,7 +292,7 @@ export interface ProcessStepStoryblok {
   description?: string;
   _uid: string;
   component: "process_step";
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }
 
 export interface RelatedArticlesStoryblok {
@@ -300,27 +300,27 @@ export interface RelatedArticlesStoryblok {
   articles?: any[];
   _uid: string;
   component: "related_articles";
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }
 
 export interface RichTextSectionStoryblok {
   content?: RichtextStoryblok;
   _uid: string;
   component: "rich_text_section";
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }
 
 export interface ShopSectionStoryblok {
   _uid: string;
   component: "shop_section";
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }
 
 export interface TrustBarStoryblok {
   items?: TrustItemStoryblok[];
   _uid: string;
   component: "trust_bar";
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }
 
 export interface TrustItemStoryblok {
@@ -331,5 +331,5 @@ export interface TrustItemStoryblok {
   highlight: boolean;
   _uid: string;
   component: "trust_item";
-  [k: string]: unknwon;
+  [k: string]: unknown;
 }

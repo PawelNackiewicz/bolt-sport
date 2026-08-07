@@ -20,6 +20,13 @@
       "contact": "Contact"
     }
   },
+  "blog": {
+    "title": "Blog",
+    "empty": "No articles published yet.",
+    "seeAll": "See the whole blog",
+    "breadcrumbLabel": "Breadcrumb",
+    "home": "Home"
+  },
   "footer": {
     "description": "Polish manufacturer of combat sports equipment. We make our products in Krasiejów — from training gear to rings, MMA cages, and complete gym fit-outs.",
     "navHeading": "Navigation"

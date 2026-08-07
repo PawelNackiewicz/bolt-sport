@@ -11,9 +11,11 @@ import type { ActionButtonStoryblok } from "@/src/types/component-types-sb";
 
 type ActionButtonProps = {
   blok: ActionButtonStoryblok;
+  /** Na ciemnym panelu (`highlighted_cta`) obrys musi być jasny, nie czerwony. */
+  onDark?: boolean;
 };
 
-export function ActionButton({ blok }: ActionButtonProps) {
+export function ActionButton({ blok, onDark }: ActionButtonProps) {
   const { href } = useI18n();
   const isSecondary = blok.variant === "secondary";
   const iconLeft = resolveIcon(blok.icon_left);
@@ -26,7 +28,11 @@ export function ActionButton({ blok }: ActionButtonProps) {
       aria-label={blok.aria_label || undefined}
       className={cn(
         isSecondary &&
+          !onDark &&
           "border-primary/60 bg-background/30 text-primary backdrop-blur-sm hover:bg-primary/10 hover:text-primary",
+        isSecondary &&
+          onDark &&
+          "border-white/25 bg-transparent text-white hover:bg-white/10 hover:text-white",
       )}
       nativeButton={false}
       render={<Link href={href(blok.link ?? "/")} />}

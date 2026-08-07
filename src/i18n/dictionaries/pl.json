@@ -20,6 +20,13 @@
       "contact": "Kontakt"
     }
   },
+  "blog": {
+    "title": "Blog",
+    "empty": "Nie opublikowaliśmy jeszcze żadnego artykułu.",
+    "seeAll": "Zobacz cały blog",
+    "breadcrumbLabel": "Ścieżka nawigacji",
+    "home": "Strona główna"
+  },
   "footer": {
     "description": "Polski producent sprzętu do sportów walki. Produkty wykonujemy w Krasiejowie — od sprzętu treningowego po ringi, klatki MMA i kompletne wyposażenie sal.",
     "navHeading": "Nawigacja"
