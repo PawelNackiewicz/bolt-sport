@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
+import { JsonLd } from "../atoms";
+import { breadcrumbJsonLd } from "@/src/lib/seo";
+
 export type Crumb = {
   label: string;
   /** Ostatni okruszek to bieżąca strona — bez linku. */
@@ -15,6 +18,8 @@ type BreadcrumbsProps = {
 export function Breadcrumbs({ items, label }: BreadcrumbsProps) {
   return (
     <nav aria-label={label}>
+      {/* Built from the same `items`, so the markup can't drift from the trail. */}
+      <JsonLd data={breadcrumbJsonLd(items)} />
       <ol className="text-muted-foreground flex flex-wrap items-center gap-x-2 gap-y-1 text-xs">
         {items.map((item, index) => {
           const isLast = index === items.length - 1;

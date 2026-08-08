@@ -22,6 +22,7 @@
   },
   "blog": {
     "title": "Blog",
+    "description": "Guides and articles on combat sports equipment — how to choose it, fit out a training space, and keep it in shape.",
     "empty": "No articles published yet.",
     "seeAll": "See the whole blog",
     "breadcrumbLabel": "Breadcrumb",

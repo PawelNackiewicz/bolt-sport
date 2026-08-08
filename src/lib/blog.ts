@@ -1,9 +1,12 @@
 import { cache } from "react";
 import type { ISbStoryData } from "@storyblok/react/rsc";
 
-import type { BlogPostStoryblok } from "@/src/types/component-types-sb";
+import type {
+  BlogPostStoryblok,
+  RichtextStoryblok,
+} from "@/src/types/component-types-sb";
 import { getStories, getStory } from "./storyblok";
-import type { Locale } from "@/src/i18n/config";
+import { locales, type Locale } from "@/src/i18n/config";
 
 /** Content type of a single article in Storyblok. */
 export const BLOG_CONTENT_TYPE = "blog_post";
@@ -82,6 +85,73 @@ export function toResolvedStories(articles: unknown): BlogStory[] {
       typeof entry === "object" && entry !== null && "full_slug" in entry,
   );
 }
+
+/** Search engines cut meta descriptions around here. */
+const EXCERPT_MAX_LENGTH = 160;
+
+/** Concatenates every text leaf below a richtext node. */
+function nodeText(node: RichtextStoryblok): string {
+  if (typeof node.text === "string") return node.text;
+  if (!Array.isArray(node.content)) return "";
+
+  return node.content.map(nodeText).join("");
+}
+
+function truncateAtWord(text: string, maxLength: number): string {
+  const normalized = text.replace(/\s+/g, " ").trim();
+  if (normalized.length <= maxLength) return normalized;
+
+  const cut = normalized.slice(0, maxLength);
+  const lastSpace = cut.lastIndexOf(" ");
+  const trimmed = lastSpace > 0 ? cut.slice(0, lastSpace) : cut;
+
+  return `${trimmed.replace(/[\s.,;:–—-]+$/, "")}…`;
+}
+
+/**
+ * Meta description for an article. The `blog_post` schema carries no SEO field,
+ * so the opening paragraphs of the body are the only per-article copy there is.
+ * Give the content type a real excerpt field and this should read that instead.
+ */
+export function toExcerpt(content: BlogPostStoryblok): string | undefined {
+  const paragraphs: string[] = [];
+
+  for (const blok of content.body ?? []) {
+    if (blok.component !== "rich_text_section") continue;
+
+    for (const node of blok.content?.content ?? []) {
+      if (node.type !== "paragraph") continue;
+
+      const text = nodeText(node).trim();
+      if (text) paragraphs.push(text);
+    }
+
+    if (paragraphs.join(" ").length >= EXCERPT_MAX_LENGTH) break;
+  }
+
+  if (paragraphs.length === 0) return undefined;
+
+  return truncateAtWord(paragraphs.join(" "), EXCERPT_MAX_LENGTH);
+}
+
+/**
+ * Locales that publish an article under this slug. Each locale lives in its own
+ * Storyblok folder with no cross-links (the CDN returns `alternates: []` and
+ * `translated_slugs: null`), so a shared slug is the only evidence of a
+ * translation — anything else would emit hreflang pointing at 404s.
+ */
+export const getBlogPostLocales = cache(
+  async (slug: string): Promise<Locale[]> => {
+    const matches = await Promise.all(
+      locales.map(async (locale) => {
+        const stories = await getBlogPosts(locale);
+        return stories.some((story) => story.slug === slug) ? locale : null;
+      }),
+    );
+
+    return matches.filter((locale): locale is Locale => locale !== null);
+  },
+);
 
 export function formatPublishedAt(
   value: string | undefined,

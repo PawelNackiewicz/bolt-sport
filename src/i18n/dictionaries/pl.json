@@ -22,6 +22,7 @@
   },
   "blog": {
     "title": "Blog",
+    "description": "Poradniki i artykuły o sprzęcie do sportów walki — jak dobierać wyposażenie, urządzać salę treningową i dbać o sprzęt.",
     "empty": "Nie opublikowaliśmy jeszcze żadnego artykułu.",
     "seeAll": "Zobacz cały blog",
     "breadcrumbLabel": "Ścieżka nawigacji",

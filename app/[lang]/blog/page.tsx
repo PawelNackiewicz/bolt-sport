@@ -8,6 +8,13 @@ import { formatPublishedAt, getBlogPosts, toBlogPostSummary } from "@/src/lib/bl
 
 type BlogIndexProps = { params: Promise<{ lang: string }> };
 
+/**
+ * Storyblok has no publish webhook wired up, so the listing is rebuilt on a
+ * timer — without this the page is frozen at build time and a newly published
+ * article never shows up. Must stay a literal for Next to read it statically.
+ */
+export const revalidate = 300;
+
 export async function generateMetadata({
   params,
 }: BlogIndexProps): Promise<Metadata> {
@@ -18,6 +25,12 @@ export async function generateMetadata({
 
   return {
     title: blog.title,
+    description: blog.description,
+    openGraph: {
+      type: "website",
+      title: blog.title,
+      description: blog.description,
+    },
     alternates: {
       canonical: `/${lang}/blog`,
       languages: Object.fromEntries(
