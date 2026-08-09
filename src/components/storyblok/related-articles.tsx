@@ -9,7 +9,6 @@ import type { RelatedArticlesStoryblok } from "@/src/types/component-types-sb";
 
 type RelatedArticlesProps = {
   blok: RelatedArticlesStoryblok;
-  /** Podaje `BlogPost` — blok sam nie wie, w jakim jest locale. */
   locale?: Locale;
 };
 

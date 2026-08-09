@@ -11,7 +11,6 @@ import type { ActionButtonStoryblok } from "@/src/types/component-types-sb";
 
 type ActionButtonProps = {
   blok: ActionButtonStoryblok;
-  /** Na ciemnym panelu (`highlighted_cta`) obrys musi być jasny, nie czerwony. */
   onDark?: boolean;
 };
 

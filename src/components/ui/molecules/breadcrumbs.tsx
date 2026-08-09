@@ -6,7 +6,6 @@ import { breadcrumbJsonLd } from "@/src/lib/seo";
 
 export type Crumb = {
   label: string;
-  /** Ostatni okruszek to bieżąca strona — bez linku. */
   href?: string;
 };
 

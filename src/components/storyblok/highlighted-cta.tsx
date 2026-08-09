@@ -5,10 +5,6 @@ type HighlightedCtaProps = {
   blok: HighlightedCtaStoryblok;
 };
 
-/**
- * Panel jest ciemny w obu motywach — to celowy kontrastowy blok z designu,
- * więc kolory bierzemy wprost z ciemnej palety zamiast z tokenów motywu.
- */
 const PANEL_BG = "bg-[oklch(0.185_0.004_285)]";
 const PANEL_HEADING = "text-[oklch(0.97_0.002_286)]";
 const PANEL_BODY = "text-[oklch(0.712_0.012_286)]";

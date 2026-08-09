@@ -58,14 +58,7 @@ export const company = {
 /*  Navigation                                                                */
 /* -------------------------------------------------------------------------- */
 
-/** `key` wskazuje na wpis w `nav.items` w słownikach `src/i18n/dictionaries`. */
 export type NavItem = { key: keyof Dictionary["nav"]["items"]; href: string };
-
-/**
- * UWAGA: etykiety są tłumaczone, ale slugi zostają polskie we wszystkich
- * językach (`/de/sklep`, nie `/de/shop`). Świadoma decyzja na czas PoC —
- * tłumaczenie ścieżek wymaga mapy slugów per locale w `localePath` i w `proxy.ts`.
- */
 
 export const navItems: NavItem[] = [
   { key: "shop", href: "/sklep" },
@@ -92,7 +85,7 @@ export const heroTrust: TrustChip[] = [
 ];
 
 /* -------------------------------------------------------------------------- */
-/*  "Czego potrzebujesz?" — intent cards                                      */
+/*  Intent cards                                                              */
 /* -------------------------------------------------------------------------- */
 
 export type Intent = {
@@ -210,7 +203,7 @@ export const categories: Category[] = [
 ];
 
 /* -------------------------------------------------------------------------- */
-/*  Facilities — kompletne wyposażenie sal                                    */
+/*  Facilities                                                                */
 /* -------------------------------------------------------------------------- */
 
 export type Facility = {
@@ -281,7 +274,7 @@ export const ringItems: RingItem[] = [
 ];
 
 /* -------------------------------------------------------------------------- */
-/*  Process — jak wygląda realizacja                                          */
+/*  Process                                                                   */
 /* -------------------------------------------------------------------------- */
 
 export type ProcessStep = {
@@ -328,5 +321,3 @@ export const trustPoints: TrustChip[] = [
   { label: "15-letnie doświadczenie", icon: Award },
   { label: "4.9/5 z 200 opinii", icon: Star },
 ];
-
-/* Artykuły bloga przychodzą ze Storybloka (`src/lib/blog.ts`) — bez atrap. */

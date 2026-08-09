@@ -33,7 +33,6 @@ function blogRoot(locale: Locale): string {
   return `${locale}/blog/`;
 }
 
-/** `cache` dedupes — `generateMetadata` i sam route pytają o tę samą historię. */
 export const getBlogPosts = cache(
   async (locale: Locale): Promise<BlogStory[]> => {
     const stories = await getStories({

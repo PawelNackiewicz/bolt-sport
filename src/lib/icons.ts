@@ -19,7 +19,6 @@ export const ICONS = {
 
 export type IconName = keyof typeof ICONS;
 
-/** Nieznana nazwa → `undefined`, komponent po prostu nie renderuje ikony. */
 export function resolveIcon(name?: string): LucideIcon | undefined {
   if (!name) return undefined;
   return ICONS[name.trim().toLowerCase() as IconName];

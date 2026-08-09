@@ -33,10 +33,6 @@ if (!accessToken) {
   );
 }
 
-/**
- * Na produkcji czytamy tylko opublikowane historie; lokalnie `draft`,
- * żeby widzieć zmiany z Visual Editora bez publikowania.
- */
 export const storyblokVersion =
   process.env.NODE_ENV === "production" ? "published" : "draft";
 
@@ -77,10 +73,6 @@ function statusOf(error: unknown): number | undefined {
   return undefined;
 }
 
-/**
- * Zwraca `null` tylko dla brakującej historii (404). Każdy inny błąd —
- * zły token, padnięte API — leci dalej, żeby nie udawał pustej strony.
- */
 export async function getStory(
   slug: string,
   params: ISbStoriesParams = {},
@@ -126,10 +118,6 @@ type DatasourceEntry = {
   value: string;
 };
 
-/**
- * Dane kontaktowe utrzymywane w Storyblok jako datasource `contact-data`
- * (Settings → Datasources), żeby dało się je edytować bez deployu.
- */
 export async function getContactData(): Promise<ContactData> {
   const storyblokApi = getStoryblokApi();
   const { data } = await storyblokApi.get("cdn/datasource_entries", {

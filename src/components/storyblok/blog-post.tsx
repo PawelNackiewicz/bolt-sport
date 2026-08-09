@@ -8,10 +8,6 @@ import type { BlogPostStoryblok } from "@/src/types/component-types-sb";
 
 type BlogPostProps = {
   blok: BlogPostStoryblok;
-  /**
-   * Locale, słownik i data publikacji nie siedzą w `content`, więc podaje je
-   * route przez `<StoryblokStory>` — propsy lecą do bloka razem z `blok`.
-   */
   locale?: Locale;
   dictionary?: Dictionary;
   publishedAt?: string;
@@ -28,7 +24,6 @@ export function BlogPost({
   const coverUrl = blok.cover_image?.filename || undefined;
   const t = dictionary?.blog;
 
-  // Ostatni okruszek to tytuł z CMS-a — bez niego nie dorabiamy zastępnika.
   const crumbs: Crumb[] =
     locale && t
       ? [

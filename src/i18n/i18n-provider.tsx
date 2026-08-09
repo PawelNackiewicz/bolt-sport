@@ -7,7 +7,6 @@ import { localePath, type Dictionary, type Locale } from "./config";
 type I18nValue = {
   locale: Locale;
   dictionary: Dictionary;
-  /** `/sklep` → `/de/sklep` dla aktualnego locale. */
   href: (path: string) => string;
 };
 
