@@ -64,7 +64,7 @@ export const navItems: NavItem[] = [
   { key: "shop", href: "/sklep" },
   { key: "configurator", href: "/konfigurator" },
   { key: "bagConfigurator", href: "/konfigurator-worka" },
-  { key: "facilities", href: "/#wyposazenie" },
+  { key: "facilities", href: "/wyposazenie-sal" },
   { key: "rings", href: "/#ringi" },
   { key: "projects", href: "/#realizacje" },
   { key: "blog", href: "/blog" },
