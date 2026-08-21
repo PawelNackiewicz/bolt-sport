@@ -19,7 +19,7 @@ export function ActionCard({ blok }: ActionCardProps) {
   return (
     <Link
       href={href(blok.link ?? "/")}
-      className="group focus-visible:ring-ring/50 flex h-full flex-col justify-between gap-6 rounded-xl border border-border bg-card p-6 outline-none transition-colors focus-visible:ring-[3px] hover:border-primary/60 hover:bg-accent/40"
+      className="group focus-visible:ring-ring/50 flex h-full flex-col justify-between gap-6 rounded-xl border border-border bg-card p-6 outline-none transition-colors focus-visible:ring-3 hover:border-primary/60 hover:bg-accent/40"
     >
       <div className="flex flex-col gap-4">
         {icon && (

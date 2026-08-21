@@ -13,7 +13,7 @@ export function NumberedFeatures({ blok }: NumberedFeaturesProps) {
   return (
     <section className="flex flex-col gap-2">
       {blok.title && (
-        <h2 className="relative pt-6 font-sans text-xl font-bold leading-snug tracking-tight before:absolute before:left-0 before:top-0 before:h-[3px] before:w-10 before:bg-primary before:content-[''] sm:text-2xl">
+        <h2 className="relative pt-6 font-sans text-xl font-bold leading-snug tracking-tight before:absolute before:left-0 before:top-0 before:h-1 before:w-10 before:bg-primary before:content-[''] sm:text-2xl">
           {blok.title}
         </h2>
       )}

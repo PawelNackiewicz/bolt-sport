@@ -46,7 +46,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
         onChange={onChange}
         disabled={isPending}
         aria-label={dictionary.nav.languageLabel}
-        className="h-9 cursor-pointer appearance-none rounded-md border border-border bg-background pl-8 pr-7 text-sm font-medium text-muted-foreground outline-none transition-colors hover:text-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:opacity-60"
+        className="h-9 cursor-pointer appearance-none rounded-md border border-border bg-background pl-8 pr-7 text-sm font-medium text-muted-foreground outline-none transition-colors hover:text-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:opacity-60"
       >
         {locales.map((item) => (
           <option key={item} value={item}>

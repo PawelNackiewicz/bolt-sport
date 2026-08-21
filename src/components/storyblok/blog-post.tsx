@@ -45,7 +45,7 @@ export function BlogPost({
             <span className="kicker text-primary">{blok.category}</span>
           )}
           {blok.title && (
-            <h1 className="font-sans text-3xl font-bold leading-[1.15] tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem]">
+            <h1 className="font-sans text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl lg:text-5xl">
               {blok.title}
             </h1>
           )}
@@ -60,7 +60,7 @@ export function BlogPost({
 
         {coverUrl && (
           <figure className="flex flex-col gap-3">
-            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg bg-muted">
+            <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-muted">
               <Image
                 src={coverUrl}
                 alt={blok.cover_image?.alt || blok.title || ""}

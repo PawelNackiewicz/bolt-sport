@@ -59,7 +59,7 @@ export default async function BlogIndex({ params }: BlogIndexProps) {
         />
 
         <header className="border-b border-border pb-10">
-          <h1 className="font-sans text-3xl font-bold leading-[1.15] tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem]">
+          <h1 className="font-sans text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             {blog.title}
           </h1>
         </header>

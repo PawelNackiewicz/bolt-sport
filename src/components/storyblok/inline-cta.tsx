@@ -11,7 +11,7 @@ export function InlineCta({ blok }: InlineCtaProps) {
   const buttons = blok.cta_button ?? [];
 
   return (
-    <aside className="flex flex-col gap-6 rounded-lg border border-primary/20 border-l-[3px] border-l-primary bg-primary/5 p-6 sm:flex-row sm:items-center sm:justify-between sm:gap-10 sm:p-7">
+    <aside className="flex flex-col gap-6 rounded-lg border border-primary/20 border-l-3 border-l-primary bg-primary/5 p-6 sm:flex-row sm:items-center sm:justify-between sm:gap-10 sm:p-7">
       <div className="flex flex-col gap-2">
         {blok.pre_title && (
           <span className="kicker text-primary">{blok.pre_title}</span>

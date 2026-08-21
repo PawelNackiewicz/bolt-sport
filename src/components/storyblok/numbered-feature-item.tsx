@@ -21,7 +21,7 @@ export function NumberedFeatureItem({ blok, index }: NumberedFeatureItemProps) {
         )}
       </div>
       {blok.description && (
-        <p className="text-muted-foreground text-[0.95rem] leading-[1.75]">
+        <p className="text-muted-foreground text-base leading-relaxed">
           {blok.description}
         </p>
       )}

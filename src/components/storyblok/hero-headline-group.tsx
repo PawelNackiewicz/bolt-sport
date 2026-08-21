@@ -21,7 +21,7 @@ export function HeroHeadlineGroup({ blok }: HeroHeadlineGroupProps) {
         {blok.eyebrow}
       </span>
 
-      <h1 className="text-4xl leading-[0.98] font-bold tracking-tight uppercase sm:text-5xl lg:text-6xl xl:text-7xl">
+      <h1 className="text-4xl leading-none font-bold tracking-tight uppercase sm:text-5xl lg:text-6xl xl:text-7xl">
         {hasSplitTitle ? (
           <>
             {blok.title_prefix}
