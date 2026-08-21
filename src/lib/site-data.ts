@@ -58,14 +58,7 @@ export const company = {
 /*  Navigation                                                                */
 /* -------------------------------------------------------------------------- */
 
-/** `key` wskazuje na wpis w `nav.items` w słownikach `src/i18n/dictionaries`. */
 export type NavItem = { key: keyof Dictionary["nav"]["items"]; href: string };
-
-/**
- * UWAGA: etykiety są tłumaczone, ale slugi zostają polskie we wszystkich
- * językach (`/de/sklep`, nie `/de/shop`). Świadoma decyzja na czas PoC —
- * tłumaczenie ścieżek wymaga mapy slugów per locale w `localePath` i w `proxy.ts`.
- */
 
 export const navItems: NavItem[] = [
   { key: "shop", href: "/sklep" },
@@ -74,7 +67,7 @@ export const navItems: NavItem[] = [
   { key: "facilities", href: "/#wyposazenie" },
   { key: "rings", href: "/#ringi" },
   { key: "projects", href: "/#realizacje" },
-  { key: "guide", href: "/#poradnik" },
+  { key: "blog", href: "/blog" },
   { key: "contact", href: "/#kontakt" },
 ];
 
@@ -92,7 +85,7 @@ export const heroTrust: TrustChip[] = [
 ];
 
 /* -------------------------------------------------------------------------- */
-/*  "Czego potrzebujesz?" — intent cards                                      */
+/*  Intent cards                                                              */
 /* -------------------------------------------------------------------------- */
 
 export type Intent = {
@@ -210,7 +203,7 @@ export const categories: Category[] = [
 ];
 
 /* -------------------------------------------------------------------------- */
-/*  Facilities — kompletne wyposażenie sal                                    */
+/*  Facilities                                                                */
 /* -------------------------------------------------------------------------- */
 
 export type Facility = {
@@ -281,7 +274,7 @@ export const ringItems: RingItem[] = [
 ];
 
 /* -------------------------------------------------------------------------- */
-/*  Process — jak wygląda realizacja                                          */
+/*  Process                                                                   */
 /* -------------------------------------------------------------------------- */
 
 export type ProcessStep = {
@@ -327,39 +320,4 @@ export const trustPoints: TrustChip[] = [
   { label: "Profesjonalne doradztwo", icon: Headphones },
   { label: "15-letnie doświadczenie", icon: Award },
   { label: "4.9/5 z 200 opinii", icon: Star },
-];
-
-/* -------------------------------------------------------------------------- */
-/*  Poradnik — guide                                                          */
-/* -------------------------------------------------------------------------- */
-
-export type GuideArticle = {
-  title: string;
-  category: string;
-  readingTime: string;
-};
-
-export const guideArticles: GuideArticle[] = [
-  {
-    title: "Jaki sprzęt zabrać na obóz sportowy? Checklista fightera",
-    category: "Jak wybrać sprzęt",
-    readingTime: "6 min",
-  },
-  {
-    title: "Jak wyposażyć domową siłownię? Praktyczny przewodnik dla osób aktywnych",
-    category: "Trening w domu",
-    readingTime: "8 min",
-  },
-  {
-    title: "Jak dobrać sprzęt do sali treningowej?",
-    category: "Wyposażenie klubu",
-    readingTime: "7 min",
-  },
-];
-
-export const guideCategories: string[] = [
-  "Jak wybrać sprzęt",
-  "Wyposażenie klubu",
-  "Bezpieczeństwo i montaż",
-  "Trening w domu",
 ];

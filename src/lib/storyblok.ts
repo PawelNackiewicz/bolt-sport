@@ -1,15 +1,27 @@
-import { apiPlugin, storyblokInit } from "@storyblok/react/rsc";
+import {
+  apiPlugin,
+  storyblokInit,
+  type ISbStoriesParams,
+  type ISbStoryData,
+} from "@storyblok/react/rsc";
 import {
   Page,
   Hero,
   ActionCard,
   ActionCardsSection,
+  BlogPost,
   EquipmentCard,
   EquipmentSection,
+  HighlightedCta,
   IconTextRow,
   ImageTextSection,
+  InlineCta,
+  NumberedFeatureItem,
+  NumberedFeatures,
   ProcessStep,
   ProcessSection,
+  RelatedArticles,
+  RichTextSection,
   ShopSection,
 } from "@/src/components/storyblok";
 
@@ -21,10 +33,6 @@ if (!accessToken) {
   );
 }
 
-/**
- * Na produkcji czytamy tylko opublikowane historie; lokalnie `draft`,
- * żeby widzieć zmiany z Visual Editora bez publikowania.
- */
 export const storyblokVersion =
   process.env.NODE_ENV === "production" ? "published" : "draft";
 
@@ -36,18 +44,64 @@ export const getStoryblokApi = storyblokInit({
   },
   components: {
     page: Page,
+    blog_post: BlogPost,
     hero_section: Hero,
     action_card: ActionCard,
     action_cards_section: ActionCardsSection,
     equipment_card: EquipmentCard,
     equipment_section: EquipmentSection,
+    highlighted_cta: HighlightedCta,
     icon_text_row: IconTextRow,
     image_text_section: ImageTextSection,
+    inline_cta: InlineCta,
+    numbered_feature_item: NumberedFeatureItem,
+    numbered_features: NumberedFeatures,
     process_step: ProcessStep,
     process_section: ProcessSection,
+    related_articles: RelatedArticles,
+    rich_text_section: RichTextSection,
     shop_section: ShopSection,
   },
 });
+
+/** Storyblok's client rejects with this shape on a non-2xx response. */
+function statusOf(error: unknown): number | undefined {
+  if (typeof error === "object" && error !== null && "status" in error) {
+    const { status } = error as { status?: unknown };
+    return typeof status === "number" ? status : undefined;
+  }
+  return undefined;
+}
+
+export async function getStory(
+  slug: string,
+  params: ISbStoriesParams = {},
+): Promise<ISbStoryData | null> {
+  const storyblokApi = getStoryblokApi();
+
+  try {
+    const { data } = await storyblokApi.get(`cdn/stories/${slug}`, {
+      version: storyblokVersion,
+      ...params,
+    });
+    return data.story ?? null;
+  } catch (error) {
+    if (statusOf(error) === 404) return null;
+    throw error;
+  }
+}
+
+export async function getStories(
+  params: ISbStoriesParams = {},
+): Promise<ISbStoryData[]> {
+  const storyblokApi = getStoryblokApi();
+  const { data } = await storyblokApi.get("cdn/stories", {
+    version: storyblokVersion,
+    ...params,
+  });
+
+  return data.stories ?? [];
+}
 
 export type ContactData = {
   phone: string;
@@ -64,10 +118,6 @@ type DatasourceEntry = {
   value: string;
 };
 
-/**
- * Dane kontaktowe utrzymywane w Storyblok jako datasource `contact-data`
- * (Settings → Datasources), żeby dało się je edytować bez deployu.
- */
 export async function getContactData(): Promise<ContactData> {
   const storyblokApi = getStoryblokApi();
   const { data } = await storyblokApi.get("cdn/datasource_entries", {

@@ -8,11 +8,6 @@ import {
   type Locale,
 } from "@/src/i18n/config";
 
-/**
- * Każdy request bez prefiksu locale (`/sklep`) dostaje redirect na wersję
- * z prefiksem (`/pl/sklep`). Język wybieramy z ciasteczka, a jeśli go nie ma —
- * z nagłówka `Accept-Language`.
- */
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
@@ -38,10 +33,6 @@ function resolveLocale(request: NextRequest): Locale {
   return fromHeader ?? defaultLocale;
 }
 
-/**
- * Minimalny parser `Accept-Language` — sortuje tagi po `q` i zwraca pierwszy,
- * którego język bazowy obsługujemy (`de-AT` → `de`).
- */
 function matchAcceptLanguage(header: string | null): Locale | null {
   if (!header) return null;
 
@@ -64,6 +55,5 @@ function matchAcceptLanguage(header: string | null): Locale | null {
 }
 
 export const config = {
-  // Pomijamy API, pliki statyczne Next.js i wszystko z rozszerzeniem (public/).
   matcher: ["/((?!api|_next/static|_next/image|.*\\..*).*)"],
 };

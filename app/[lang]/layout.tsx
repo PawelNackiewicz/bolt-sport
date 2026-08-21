@@ -8,6 +8,7 @@ import { getDictionary } from "@/src/i18n/dictionaries";
 import { I18nProvider } from "@/src/i18n/i18n-provider";
 import { isLocale, locales } from "@/src/i18n/config";
 import { getContactData } from "@/src/lib/storyblok";
+import { SITE_URL } from "@/src/lib/site-url";
 
 const themeScript = `try{const t=localStorage.theme;if(t==="dark"||(!t&&matchMedia("(prefers-color-scheme:dark)").matches))document.documentElement.classList.add("dark")}catch{}`;
 const display = Oswald({
@@ -42,9 +43,7 @@ export async function generateMetadata({
 
   const { meta } = await getDictionary(lang);
   return {
-    metadataBase: new URL(
-      process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-    ),
+    metadataBase: SITE_URL,
     title: meta.title,
     description: meta.description,
     alternates: {

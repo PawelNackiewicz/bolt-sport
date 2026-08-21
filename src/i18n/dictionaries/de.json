@@ -16,9 +16,17 @@
       "facilities": "Hallenausstattung",
       "rings": "Ringe und Käfige",
       "projects": "Referenzen",
-      "guide": "Ratgeber",
+      "blog": "Blog",
       "contact": "Kontakt"
     }
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Ratgeber und Artikel rund um Kampfsportausrüstung — Auswahl, Einrichtung von Trainingsräumen und Pflege der Ausrüstung.",
+    "empty": "Es wurden noch keine Beiträge veröffentlicht.",
+    "seeAll": "Zum gesamten Blog",
+    "breadcrumbLabel": "Navigationspfad",
+    "home": "Startseite"
   },
   "footer": {
     "description": "Polnischer Hersteller von Kampfsportausrüstung. Wir fertigen in Krasiejów — von Trainingsgeräten bis zu Ringen, MMA-Käfigen und kompletter Hallenausstattung.",

@@ -28,5 +28,15 @@
     "name": "shop_section",
     "id": 200988542188791,
     "object_type": "component"
+  },
+  {
+    "name": "blog_page",
+    "id": 206475154305875,
+    "object_type": "component"
+  },
+  {
+    "name": "numbered_feature",
+    "id": 206475637601108,
+    "object_type": "component"
   }
 ]

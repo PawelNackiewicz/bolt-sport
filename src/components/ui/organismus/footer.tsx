@@ -33,8 +33,8 @@ export function Footer({ locale, dictionary, contactData }: FooterProps) {
   return (
     <footer className="border-t border-border bg-card/30">
       <Container className="flex flex-col gap-10 py-14">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr] lg:gap-16">
-          <div className="flex flex-col gap-4">
+        <div className="grid gap-10 md:grid-cols-12 lg:gap-16">
+          <div className="flex flex-col gap-4 md:col-span-7">
             <Logo />
             <p className="text-muted-foreground max-w-sm text-sm leading-relaxed">
               {t.description}
@@ -65,7 +65,7 @@ export function Footer({ locale, dictionary, contactData }: FooterProps) {
             </ul>
           </div>
 
-          <nav className="flex flex-col gap-3">
+          <nav className="flex flex-col gap-3 md:col-span-5">
             <span className="kicker text-muted-foreground">
               {t.navHeading}
             </span>

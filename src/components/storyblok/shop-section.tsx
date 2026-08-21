@@ -168,7 +168,7 @@ export function ShopSection(_props: ShopSectionProps) {
                 className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-primary/50 hover:text-foreground"
               >
                 {category.name}
-                <span className="text-[0.7rem] opacity-60">
+                <span className="text-xs opacity-60">
                   {category.productCount}
                 </span>
               </Link>

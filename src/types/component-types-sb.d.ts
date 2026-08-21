@@ -3,7 +3,7 @@ import { StoryblokStory } from 'storyblok-generate-ts'
 export interface ActionButtonStoryblok {
   text?: string;
   link?: string;
-  variant?: "" | "primary" | "secondary";
+  variant?: "" | "primary" | "secondary" | "link";
   icon_left?: string;
   icon_right?: string;
   aria_label?: string;
@@ -51,23 +51,11 @@ export interface AssetStoryblok {
   [k: string]: unknown;
 }
 
-export interface RichtextStoryblok {
-  type: string;
-  content?: RichtextStoryblok[];
-  marks?: RichtextStoryblok[];
-  attrs?: unknown;
-  text?: string;
-  [k: string]: unknown;
-}
-
 export interface BlogPostStoryblok {
   title?: string;
-  featured_image?: AssetStoryblok;
-  featured_image_alt?: string;
-  seo_title?: string;
-  seo_description?: string;
-  canonical_url?: string;
-  faq_items?: RichtextStoryblok;
+  category?: string;
+  cover_image?: AssetStoryblok;
+  image_caption?: string;
   body?: (
     | ActionButtonStoryblok
     | ActionCardStoryblok
@@ -79,11 +67,17 @@ export interface BlogPostStoryblok {
     | HeroBodyStoryblok
     | HeroHeadlineGroupStoryblok
     | HeroSectionStoryblok
+    | HighlightedCtaStoryblok
     | IconTextRowStoryblok
     | ImageTextSectionStoryblok
+    | InlineCtaStoryblok
+    | NumberedFeatureItemStoryblok
+    | NumberedFeaturesStoryblok
     | PageStoryblok
     | ProcessSectionStoryblok
     | ProcessStepStoryblok
+    | RelatedArticlesStoryblok
+    | RichTextSectionStoryblok
     | ShopSectionStoryblok
     | TrustBarStoryblok
     | TrustItemStoryblok
@@ -99,6 +93,15 @@ export interface CtaGroupStoryblok {
   secondary_button?: ActionButtonStoryblok[];
   _uid: string;
   component: "cta_group";
+  [k: string]: unknown;
+}
+
+export interface RichtextStoryblok {
+  type: string;
+  content?: RichtextStoryblok[];
+  marks?: RichtextStoryblok[];
+  attrs?: unknown;
+  text?: string;
   [k: string]: unknown;
 }
 
@@ -158,17 +161,34 @@ export interface HeroSectionStoryblok {
     | HeroBodyStoryblok
     | HeroHeadlineGroupStoryblok
     | HeroSectionStoryblok
+    | HighlightedCtaStoryblok
     | IconTextRowStoryblok
     | ImageTextSectionStoryblok
+    | InlineCtaStoryblok
+    | NumberedFeatureItemStoryblok
+    | NumberedFeaturesStoryblok
     | PageStoryblok
     | ProcessSectionStoryblok
     | ProcessStepStoryblok
+    | RelatedArticlesStoryblok
+    | RichTextSectionStoryblok
     | ShopSectionStoryblok
     | TrustBarStoryblok
     | TrustItemStoryblok
   )[];
   _uid: string;
   component: "hero_section";
+  [k: string]: unknown;
+}
+
+export interface HighlightedCtaStoryblok {
+  pre_title?: string;
+  title?: string;
+  description?: string;
+  button_primary?: ActionButtonStoryblok[];
+  button_secondary?: ActionButtonStoryblok[];
+  _uid: string;
+  component: "highlighted_cta";
   [k: string]: unknown;
 }
 
@@ -195,6 +215,32 @@ export interface ImageTextSectionStoryblok {
   [k: string]: unknown;
 }
 
+export interface InlineCtaStoryblok {
+  pre_title?: string;
+  title?: string;
+  cta_button?: ActionButtonStoryblok[];
+  phone?: string;
+  _uid: string;
+  component: "inline_cta";
+  [k: string]: unknown;
+}
+
+export interface NumberedFeatureItemStoryblok {
+  title?: string;
+  description?: string;
+  _uid: string;
+  component: "numbered_feature_item";
+  [k: string]: unknown;
+}
+
+export interface NumberedFeaturesStoryblok {
+  title?: string;
+  items?: NumberedFeatureItemStoryblok[];
+  _uid: string;
+  component: "numbered_features";
+  [k: string]: unknown;
+}
+
 export interface PageStoryblok {
   page_title?: string;
   seo_description?: string;
@@ -209,11 +255,17 @@ export interface PageStoryblok {
     | HeroBodyStoryblok
     | HeroHeadlineGroupStoryblok
     | HeroSectionStoryblok
+    | HighlightedCtaStoryblok
     | IconTextRowStoryblok
     | ImageTextSectionStoryblok
+    | InlineCtaStoryblok
+    | NumberedFeatureItemStoryblok
+    | NumberedFeaturesStoryblok
     | PageStoryblok
     | ProcessSectionStoryblok
     | ProcessStepStoryblok
+    | RelatedArticlesStoryblok
+    | RichTextSectionStoryblok
     | ShopSectionStoryblok
     | TrustBarStoryblok
     | TrustItemStoryblok
@@ -240,6 +292,21 @@ export interface ProcessStepStoryblok {
   description?: string;
   _uid: string;
   component: "process_step";
+  [k: string]: unknown;
+}
+
+export interface RelatedArticlesStoryblok {
+  title?: string;
+  articles?: any[];
+  _uid: string;
+  component: "related_articles";
+  [k: string]: unknown;
+}
+
+export interface RichTextSectionStoryblok {
+  content?: RichtextStoryblok;
+  _uid: string;
+  component: "rich_text_section";
   [k: string]: unknown;
 }
 

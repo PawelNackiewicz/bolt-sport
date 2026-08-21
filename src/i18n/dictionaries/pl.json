@@ -16,9 +16,17 @@
       "facilities": "Wyposażenie sal",
       "rings": "Ringi i klatki",
       "projects": "Realizacje",
-      "guide": "Poradnik",
+      "blog": "Blog",
       "contact": "Kontakt"
     }
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Poradniki i artykuły o sprzęcie do sportów walki — jak dobierać wyposażenie, urządzać salę treningową i dbać o sprzęt.",
+    "empty": "Nie opublikowaliśmy jeszcze żadnego artykułu.",
+    "seeAll": "Zobacz cały blog",
+    "breadcrumbLabel": "Ścieżka nawigacji",
+    "home": "Strona główna"
   },
   "footer": {
     "description": "Polski producent sprzętu do sportów walki. Produkty wykonujemy w Krasiejowie — od sprzętu treningowego po ringi, klatki MMA i kompletne wyposażenie sal.",
