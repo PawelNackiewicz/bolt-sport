@@ -3,8 +3,8 @@ import { notFound } from "next/navigation";
 
 import { buildFacilitiesMetadata, FacilitiesView } from "../_facilities/view";
 
-/** This slug is Polish-only — `/en` and `/de` live at their own translated route. */
-const LOCALE = "pl" as const;
+/** English translation of `/wyposazenie-sal` — see that folder's page.tsx. */
+const LOCALE = "en" as const;
 
 type FacilitiesPageProps = { params: Promise<{ lang: string }> };
 

@@ -1,11 +1,13 @@
 import { Container } from "@/src/components/ui";
-import { productionMeta } from "@/src/lib/facilities-data";
+import type { FacilitiesDictionary } from "../_lib/types";
+
+type ProductionSiteProps = { content: FacilitiesDictionary["production"] };
 
 /**
  * Theme-aware breather between two cinematic bands — light in the light theme,
  * dark in the dark one.
  */
-export function ProductionSite() {
+export function ProductionSite({ content }: ProductionSiteProps) {
   return (
     <section
       id="krasiejow"
@@ -14,22 +16,20 @@ export function ProductionSite() {
       <Container>
         <div data-reveal>
           <p className="kicker font-mono text-muted-foreground">
-            Produkcja własna
+            {content.kicker}
           </p>
           <h2 className="mt-7 max-w-[14ch] font-display text-4xl leading-[1.15] font-bold tracking-tight uppercase sm:text-6xl lg:text-7xl">
-            Wszystko powstaje u nas.
+            {content.heading[0]}
             <br />
-            Krasiejów.
+            {content.heading[1]}
           </h2>
           <p className="mt-8 max-w-[56ch] text-muted-foreground">
-            Spawalnia, tapicernia, krojownia i lakiernia w jednej hali. Nie
-            pośredniczymy w sprzedaży cudzego sprzętu — dlatego nietypowy wymiar
-            ringu czy kolor lin to zmiana w rysunku, a nie powód do odmowy.
+            {content.paragraph}
           </p>
         </div>
 
         <dl className="mt-12 flex flex-wrap gap-x-8 gap-y-6 border-t border-border pt-6 sm:gap-x-14 lg:mt-20 lg:gap-x-20">
-          {productionMeta.map(([label, value]) => (
+          {content.meta.map(([label, value]) => (
             <div key={label}>
               <dt className="kicker font-mono text-muted-foreground">
                 {label}

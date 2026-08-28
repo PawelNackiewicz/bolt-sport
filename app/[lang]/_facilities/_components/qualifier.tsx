@@ -3,15 +3,13 @@
 import { useState } from "react";
 
 import { Container } from "@/src/components/ui";
-import { qualifierQuestions, qualifierSteps } from "@/src/lib/facilities-data";
+import type { FacilitiesDictionary } from "../_lib/types";
 import { company } from "@/src/lib/site-data";
 import { cn } from "@/src/lib/utils";
 import { CtaButton } from "./cta-link";
 import { SectionHeading } from "./section-heading";
 
-const contactStep = qualifierQuestions.length;
-const initialProof =
-  "Wypełnij, a pokażemy, ile podobnych obiektów mamy już za sobą.";
+type QualifierProps = { content: FacilitiesDictionary["qualifier"] };
 
 type ContactFields = {
   name: string;
@@ -20,7 +18,9 @@ type ContactFields = {
   city: string;
 };
 
-export function Qualifier() {
+export function Qualifier({ content }: QualifierProps) {
+  const contactStep = content.questions.length;
+
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [fields, setFields] = useState<ContactFields>({
@@ -30,30 +30,28 @@ export function Qualifier() {
     city: "",
   });
   const [proofCount, setProofCount] = useState<number | null>(null);
-  const [proof, setProof] = useState(initialProof);
+  const [proof, setProof] = useState(content.initialProof);
   const [submitted, setSubmitted] = useState(false);
 
   const pick = (group: string, label: string, count?: number) => {
     setAnswers((current) => ({ ...current, [group]: label }));
     if (count) {
       setProofCount(count);
-      setProof(
-        `Zrealizowaliśmy ${count} obiektów w tym przedziale. Na wizji pokażemy dwa najbliższe Twojemu — z fakturami i kontaktem do klubu.`,
-      );
+      setProof(content.proofWithCount.replace("{count}", String(count)));
     }
   };
 
   const next = () => {
-    const question = qualifierQuestions[step];
+    const question = content.questions[step];
 
     if (question && !answers[question.group]) {
-      setProof("Wybierz jedną opcję, żeby przejść dalej.");
+      setProof(content.selectOnePrompt);
       return;
     }
 
     if (step === contactStep) {
       if (!fields.name.trim() || !fields.phone.trim() || !fields.email.trim()) {
-        setProof("Uzupełnij imię, telefon i e-mail — bez tego nie oddzwonimy.");
+        setProof(content.contactValidationPrompt);
         return;
       }
       // TODO: wire up the backend — POST { ...answers, ...fields } to an API
@@ -61,8 +59,8 @@ export function Qualifier() {
       setSubmitted(true);
       setProof(
         proofCount
-          ? `Zrealizowaliśmy ${proofCount} obiektów w tym przedziale.`
-          : "Dziękujemy — odzywamy się w ciągu dnia roboczego.",
+          ? content.submittedProofWithCount.replace("{count}", String(proofCount))
+          : content.submittedProofNoCount,
       );
       return;
     }
@@ -82,20 +80,20 @@ export function Qualifier() {
         <SectionHeading
           title={
             <>
-              Cztery pytania.
+              {content.heading[0]}
               <br />
-              Potem oddzwaniamy.
+              {content.heading[1]}
             </>
           }
-          eyebrow="Bez wyceny online — wycena bez pomiaru to zgadywanie"
+          eyebrow={content.eyebrow}
         />
 
         <div className="grid border border-border lg:grid-cols-[0.9fr_1.6fr]">
           <aside className="flex flex-col justify-between gap-8 border-b border-border p-6 sm:p-10 lg:border-r lg:border-b-0">
             <div className="kicker font-mono text-muted-foreground">
-              Krok {step + 1} / {qualifierSteps.length}
+              {content.stepLabel} {step + 1} / {content.steps.length}
               <ol className="mt-4 list-none p-0">
-                {qualifierSteps.map((label, index) => (
+                {content.steps.map((label, index) => (
                   <li
                     key={label}
                     className={cn(
@@ -122,23 +120,22 @@ export function Qualifier() {
             {submitted ? (
               <div>
                 <h3 className="font-display text-2xl font-semibold tracking-tight uppercase sm:text-3xl">
-                  Zgłoszenie przyjęte.
+                  {content.submittedHeading}
                 </h3>
                 <p className="mt-4 max-w-[56ch] text-muted-foreground">
-                  Oddzwaniamy w ciągu jednego dnia roboczego i umawiamy
-                  bezpłatną wizję lokalną. Jeśli spieszy się bardziej —{" "}
+                  {content.submittedBefore}{" "}
                   <a
                     href={company.phoneHref}
                     className="text-primary hover:underline"
                   >
                     {company.phone}
                   </a>
-                  .
+                  {content.submittedAfter}
                 </p>
               </div>
             ) : (
               <>
-                {qualifierQuestions.map((question, index) => (
+                {content.questions.map((question, index) => (
                   <fieldset
                     key={question.group}
                     className={cn(
@@ -162,7 +159,9 @@ export function Qualifier() {
                               pick(
                                 question.group,
                                 option.label,
-                                option.proofCount,
+                                "proofCount" in option
+                                  ? option.proofCount
+                                  : undefined,
                               )
                             }
                             className={cn(
@@ -192,24 +191,24 @@ export function Qualifier() {
                   )}
                 >
                   <legend className="mb-6 p-0 font-display text-2xl font-semibold tracking-tight uppercase sm:text-3xl">
-                    Gdzie mamy oddzwonić?
+                    {content.contactLegend}
                   </legend>
                   <div className="grid gap-5 sm:grid-cols-2">
                     <Field
-                      label="Imię i nazwisko"
+                      label={content.fields.name}
                       autoComplete="name"
                       value={fields.name}
                       onChange={updateField("name")}
                     />
                     <Field
-                      label="Telefon"
+                      label={content.fields.phone}
                       type="tel"
                       autoComplete="tel"
                       value={fields.phone}
                       onChange={updateField("phone")}
                     />
                     <Field
-                      label="E-mail"
+                      label={content.fields.email}
                       type="email"
                       autoComplete="email"
                       value={fields.email}
@@ -217,7 +216,7 @@ export function Qualifier() {
                       full
                     />
                     <Field
-                      label="Miejscowość obiektu"
+                      label={content.fields.city}
                       autoComplete="address-level2"
                       value={fields.city}
                       onChange={updateField("city")}
@@ -228,7 +227,7 @@ export function Qualifier() {
 
                 <div className="mt-8 flex flex-wrap items-center gap-3">
                   <CtaButton onClick={next}>
-                    {step === contactStep ? "Wyślij zgłoszenie" : "Dalej"}
+                    {step === contactStep ? content.submitLabel : content.nextLabel}
                   </CtaButton>
                   {step > 0 && (
                     <button
@@ -236,7 +235,7 @@ export function Qualifier() {
                       onClick={() => setStep((current) => current - 1)}
                       className="kicker cursor-pointer font-mono text-muted-foreground transition-colors hover:text-foreground"
                     >
-                      ← Wstecz
+                      {content.backLabel}
                     </button>
                   )}
                 </div>

@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 
 import { Container } from "@/src/components/ui";
-import { assemblySteps } from "@/src/lib/facilities-data";
-import { ScrollTrigger } from "@/src/lib/gsap";
+import { ScrollTrigger } from "../_lib/gsap";
+import type { FacilitiesDictionary } from "../_lib/types";
 import { cn } from "@/src/lib/utils";
 import { SectionHeading } from "./section-heading";
 
@@ -44,7 +44,9 @@ const figures = [
   </svg>,
 ];
 
-export function AssemblySteps() {
+type AssemblyStepsProps = { content: FacilitiesDictionary["assembly"] };
+
+export function AssemblySteps({ content }: AssemblyStepsProps) {
   const root = useRef<HTMLElement>(null);
   const [active, setActive] = useState(0);
 
@@ -75,12 +77,12 @@ export function AssemblySteps() {
         <SectionHeading
           title={
             <>
-              Pięć etapów.
+              {content.heading[0]}
               <br />
-              Bez niespodzianek.
+              {content.heading[1]}
             </>
           }
-          eyebrow="Jak powstaje sala — od pomiaru do odbioru"
+          eyebrow={content.eyebrow}
         />
 
         <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-20">
@@ -102,7 +104,7 @@ export function AssemblySteps() {
           </div>
 
           <div>
-            {assemblySteps.map((step, index) => (
+            {content.steps.map((step, index) => (
               <div
                 key={step.stage}
                 data-step

@@ -20,12 +20,12 @@ import {
   LanguageSwitcher,
 } from "@/src/components/ui";
 import { cn } from "@/src/lib/utils";
-import { navItems, company } from "@/src/lib/site-data";
+import { navItems, resolveNavHref, company } from "@/src/lib/site-data";
 import { useI18n } from "@/src/i18n/i18n-provider";
 
 export function Navigation() {
   const [open, setOpen] = useState(false);
-  const { dictionary, href } = useI18n();
+  const { dictionary, href, locale } = useI18n();
   const t = dictionary.nav;
 
   return (
@@ -39,8 +39,8 @@ export function Navigation() {
         <nav className="hidden items-center gap-1 lg:flex">
           {navItems.map((item) => (
             <Link
-              key={item.href}
-              href={href(item.href)}
+              key={item.key}
+              href={href(resolveNavHref(item, locale))}
               className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               {t.items[item.key]}
@@ -82,8 +82,8 @@ export function Navigation() {
               <nav className="flex flex-col gap-1 px-4">
                 {navItems.map((item) => (
                   <Link
-                    key={item.href}
-                    href={href(item.href)}
+                    key={item.key}
+                    href={href(resolveNavHref(item, locale))}
                     onClick={() => setOpen(false)}
                     className="rounded-md px-3 py-3 text-base font-medium text-foreground transition-colors hover:bg-accent"
                   >

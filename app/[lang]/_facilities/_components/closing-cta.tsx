@@ -2,11 +2,14 @@
 
 import { useEffect, useRef } from "react";
 
-import { facilitiesMedia } from "@/src/lib/facilities-data";
+import { facilitiesMedia } from "../_lib/facilities-data";
+import type { FacilitiesDictionary } from "../_lib/types";
 import { company } from "@/src/lib/site-data";
 import { CtaLink } from "./cta-link";
 
-export function ClosingCta() {
+type ClosingCtaProps = { content: FacilitiesDictionary["closing"] };
+
+export function ClosingCta({ content }: ClosingCtaProps) {
   const video = useRef<HTMLVideoElement>(null);
 
   // Loop only while on screen — a background video playing off-screen is pure
@@ -54,10 +57,10 @@ export function ClosingCta() {
 
       <div className="relative z-30 px-5 sm:px-8">
         <h2 className="mb-8 font-display text-4xl leading-[1.15] font-bold tracking-tight uppercase sm:text-6xl lg:text-7xl">
-          Zacznijmy od pomiaru.
+          {content.heading}
         </h2>
         <div className="flex flex-wrap justify-center gap-3">
-          <CtaLink href="#kwalifikator">Umów wizję lokalną</CtaLink>
+          <CtaLink href="#kwalifikator">{content.ctaPrimary}</CtaLink>
           <CtaLink href={company.phoneHref} tone="outline">
             {company.phone}
           </CtaLink>

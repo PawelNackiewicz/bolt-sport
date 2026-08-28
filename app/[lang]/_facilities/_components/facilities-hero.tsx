@@ -2,9 +2,10 @@
 
 import { useEffect, useRef } from "react";
 
-import { useVideoScrub } from "@/src/hooks/use-video-scrub";
-import { facilitiesMedia } from "@/src/lib/facilities-data";
-import { gsap } from "@/src/lib/gsap";
+import { useVideoScrub } from "../_hooks/use-video-scrub";
+import { facilitiesMedia } from "../_lib/facilities-data";
+import { gsap } from "../_lib/gsap";
+import type { FacilitiesDictionary } from "../_lib/types";
 import { CtaLink } from "./cta-link";
 
 /** Concatenated file when it exists, otherwise the separate clips in order. */
@@ -12,10 +13,12 @@ const heroParts = facilitiesMedia.heroVideo
   ? [facilitiesMedia.heroVideo]
   : facilitiesMedia.heroParts;
 
-export function FacilitiesHero() {
+type FacilitiesHeroProps = { content: FacilitiesDictionary["hero"] };
+
+export function FacilitiesHero({ content }: FacilitiesHeroProps) {
   const section = useRef<HTMLElement>(null);
   const videoLayer = useRef<HTMLDivElement>(null);
-  const content = useRef<HTMLDivElement>(null);
+  const headline = useRef<HTMLDivElement>(null);
 
   useVideoScrub({
     containerRef: videoLayer,
@@ -25,7 +28,7 @@ export function FacilitiesHero() {
 
   // Headline fades out over the first third of the scrub.
   useEffect(() => {
-    const animation = gsap.to(content.current, {
+    const animation = gsap.to(headline.current, {
       opacity: 0,
       y: -40,
       ease: "none",
@@ -61,12 +64,12 @@ export function FacilitiesHero() {
 
         <div className="absolute inset-y-0 right-5 z-30 hidden items-center sm:right-8 md:flex">
           <span className="font-mono text-[10px] tracking-[0.3em] text-muted-foreground uppercase [writing-mode:vertical-rl]">
-            Scroll — wejdź do środka
+            {content.scrollLabel}
           </span>
         </div>
 
         <div
-          ref={content}
+          ref={headline}
           className="absolute inset-0 z-30 flex flex-col justify-end px-5 pb-10 sm:px-8 sm:pb-16 lg:pb-20"
         >
           <div className="mx-auto w-full max-w-7xl">
@@ -74,14 +77,14 @@ export function FacilitiesHero() {
                 a diacritic — Oswald's uppercase accents would be swallowed by
                 the line above. Loosen it if this copy ever changes. */}
             <h1 className="mb-7 max-w-[16ch] font-display text-5xl leading-[0.9] font-bold tracking-tight uppercase sm:text-7xl lg:text-8xl xl:text-9xl">
-              Budujemy areny,
+              {content.headline[0]}
               <br />
-              nie tylko sale.
+              {content.headline[1]}
             </h1>
             <div className="flex flex-wrap gap-3">
-              <CtaLink href="#kwalifikator">Umów wizję lokalną</CtaLink>
+              <CtaLink href="#kwalifikator">{content.ctaPrimary}</CtaLink>
               <CtaLink href="#realizacje" tone="outline">
-                Zobacz realizacje
+                {content.ctaSecondary}
               </CtaLink>
             </div>
           </div>

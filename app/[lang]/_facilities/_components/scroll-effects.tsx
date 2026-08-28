@@ -2,8 +2,8 @@
 
 import { useEffect } from "react";
 
-import { useSmoothScroll } from "@/src/hooks/use-smooth-scroll";
-import { gsap, ScrollTrigger } from "@/src/lib/gsap";
+import { useSmoothScroll } from "../_hooks/use-smooth-scroll";
+import { gsap, ScrollTrigger } from "../_lib/gsap";
 
 /**
  * Page-wide scroll behaviour: Lenis smooth scrolling plus the shared reveal for

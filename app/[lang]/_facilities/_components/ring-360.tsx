@@ -2,13 +2,16 @@
 
 import { useCallback, useRef, useState } from "react";
 
-import { useVideoScrub } from "@/src/hooks/use-video-scrub";
-import { facilitiesMedia, ringDetails } from "@/src/lib/facilities-data";
+import { useVideoScrub } from "../_hooks/use-video-scrub";
+import { facilitiesMedia, ringHotspotPositions } from "../_lib/facilities-data";
+import type { FacilitiesDictionary } from "../_lib/types";
 import { cn } from "@/src/lib/utils";
 
 const ringParts = [facilitiesMedia.ring360];
 
-export function Ring360() {
+type Ring360Props = { content: FacilitiesDictionary["ring360"] };
+
+export function Ring360({ content }: Ring360Props) {
   const section = useRef<HTMLElement>(null);
   const videoLayer = useRef<HTMLDivElement>(null);
   const degrees = useRef<HTMLDivElement>(null);
@@ -28,7 +31,7 @@ export function Ring360() {
     onProgress,
   });
 
-  const detail = ringDetails[active];
+  const detail = content.details[active];
 
   return (
     <section
@@ -52,11 +55,11 @@ export function Ring360() {
             000°
           </div>
 
-          {ringDetails.map((hotspot, index) => (
+          {content.details.map((hotspot, index) => (
             <button
               key={hotspot.title}
               type="button"
-              style={hotspot.position}
+              style={ringHotspotPositions[index]}
               aria-label={hotspot.title}
               aria-pressed={active === index}
               onMouseEnter={() => setActive(index)}
@@ -82,10 +85,12 @@ export function Ring360() {
           <p className="text-sm text-muted-foreground">{detail.description}</p>
 
           <dl className="mt-6 border-t border-border pt-4 font-mono text-xs">
-            {Object.entries(detail.spec).map(([key, value]) => (
-              <div key={key}>
-                <dt className="kicker mt-3 text-muted-foreground">{key}</dt>
-                <dd className="mt-1 tracking-[0.08em]">{value}</dd>
+            {detail.spec.map((entry) => (
+              <div key={entry.label}>
+                <dt className="kicker mt-3 text-muted-foreground">
+                  {entry.label}
+                </dt>
+                <dd className="mt-1 tracking-[0.08em]">{entry.value}</dd>
               </div>
             ))}
           </dl>

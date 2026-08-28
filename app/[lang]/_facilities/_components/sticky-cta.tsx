@@ -2,16 +2,19 @@
 
 import { useEffect, useState } from "react";
 
-import { ScrollTrigger } from "@/src/lib/gsap";
+import { ScrollTrigger } from "../_lib/gsap";
+import type { FacilitiesDictionary } from "../_lib/types";
 import { company } from "@/src/lib/site-data";
 import { cn } from "@/src/lib/utils";
 import { CtaLink } from "./cta-link";
+
+type StickyCtaProps = { content: FacilitiesDictionary["stickyCta"] };
 
 /**
  * Slides in once the visitor is past the hero and hides again near the closing
  * section, where the same call to action is already on screen.
  */
-export function StickyCta() {
+export function StickyCta({ content }: StickyCtaProps) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -31,7 +34,7 @@ export function StickyCta() {
       )}
     >
       <p className="kicker hidden font-mono text-muted-foreground md:block">
-        15 lat · 200+ obiektów · montaż w całej Polsce
+        {content.stat}
       </p>
       <div className="flex flex-1 gap-3 md:flex-none">
         <CtaLink
@@ -39,10 +42,10 @@ export function StickyCta() {
           tone="outline"
           className="flex-1 md:flex-none"
         >
-          Zadzwoń
+          {content.call}
         </CtaLink>
         <CtaLink href="#kwalifikator" className="flex-1 md:flex-none">
-          Umów wizję
+          {content.bookVisit}
         </CtaLink>
       </div>
     </div>

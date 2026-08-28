@@ -2,11 +2,13 @@
 
 import { useEffect, useRef } from "react";
 
-import { facilityStats } from "@/src/lib/facilities-data";
-import { gsap, ScrollTrigger } from "@/src/lib/gsap";
+import { gsap, ScrollTrigger } from "../_lib/gsap";
+import type { FacilitiesDictionary } from "../_lib/types";
 import { cn } from "@/src/lib/utils";
 
-export function FacilitiesStats() {
+type FacilitiesStatsProps = { stats: FacilitiesDictionary["stats"] };
+
+export function FacilitiesStats({ stats }: FacilitiesStatsProps) {
   const root = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -45,7 +47,7 @@ export function FacilitiesStats() {
       className="dark relative border-y border-border bg-background text-foreground"
     >
       <div className="grid grid-cols-2 lg:grid-cols-4">
-        {facilityStats.map((cell, index) => (
+        {stats.map((cell, index) => (
           <div
             key={cell.label}
             className={cn(

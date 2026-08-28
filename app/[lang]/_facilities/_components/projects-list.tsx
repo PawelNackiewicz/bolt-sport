@@ -3,10 +3,12 @@
 import { useRef, useState } from "react";
 
 import { Container } from "@/src/components/ui";
-import { beforeAfter, projectRows } from "@/src/lib/facilities-data";
+import type { FacilitiesDictionary } from "../_lib/types";
 import { SectionHeading } from "./section-heading";
 
-export function ProjectsList() {
+type ProjectsListProps = { content: FacilitiesDictionary["projects"] };
+
+export function ProjectsList({ content }: ProjectsListProps) {
   const stage = useRef<HTMLDivElement>(null);
   const dragging = useRef(false);
   const [split, setSplit] = useState(50);
@@ -28,16 +30,16 @@ export function ProjectsList() {
         <SectionHeading
           title={
             <>
-              Ostatnie
+              {content.heading[0]}
               <br />
-              realizacje.
+              {content.heading[1]}
             </>
           }
-          eyebrow="Wybór z sześciu ostatnich kwartałów"
+          eyebrow={content.eyebrow}
         />
 
         <div className="border-t border-border">
-          {projectRows.map((row, index) => (
+          {content.rows.map((row, index) => (
             <div
               key={row.city}
               data-reveal
@@ -79,13 +81,13 @@ export function ProjectsList() {
             }}
           >
             <div className="kicker absolute inset-0 grid place-items-center bg-card p-5 text-center font-mono text-muted-foreground">
-              {beforeAfter.before}
+              {content.beforeAfter.before}
             </div>
             <div
               className="kicker absolute inset-0 grid place-items-center bg-accent p-5 text-center font-mono text-accent-foreground"
               style={{ clipPath: `inset(0 0 0 ${split}%)` }}
             >
-              {beforeAfter.after}
+              {content.beforeAfter.after}
             </div>
             <div
               className="absolute inset-y-0 w-px bg-primary after:absolute after:top-1/2 after:left-1/2 after:size-9 after:-translate-x-1/2 after:-translate-y-1/2 after:rotate-45 after:border after:border-primary after:bg-background after:content-['']"
@@ -93,8 +95,8 @@ export function ProjectsList() {
             />
           </div>
           <div className="kicker mt-3.5 flex justify-between gap-4 font-mono text-muted-foreground">
-            <span>{beforeAfter.caption}</span>
-            <span>{beforeAfter.hint}</span>
+            <span>{content.beforeAfter.caption}</span>
+            <span>{content.beforeAfter.hint}</span>
           </div>
         </div>
       </Container>

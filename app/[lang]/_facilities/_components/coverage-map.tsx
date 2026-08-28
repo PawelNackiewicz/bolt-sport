@@ -3,7 +3,8 @@
 import { useMemo, useState } from "react";
 
 import { Container } from "@/src/components/ui";
-import { mapCities, type MapCity } from "@/src/lib/facilities-data";
+import { mapCities, type MapCity } from "../_lib/facilities-data";
+import type { FacilitiesDictionary } from "../_lib/types";
 import { cn } from "@/src/lib/utils";
 import { SectionHeading } from "./section-heading";
 
@@ -26,7 +27,9 @@ const border: Array<[lon: number, lat: number]> = [
 const projectX = (lon: number) => (lon - 13.9) * 40;
 const projectY = (lat: number) => (55.1 - lat) * 60;
 
-export function CoverageMap() {
+type CoverageMapProps = { content: FacilitiesDictionary["coverageMap"] };
+
+export function CoverageMap({ content }: CoverageMapProps) {
   const [selected, setSelected] = useState<MapCity | null>(null);
 
   const outline = useMemo(
@@ -49,19 +52,19 @@ export function CoverageMap() {
         <SectionHeading
           title={
             <>
-              47 miast.
+              {content.heading[0]}
               <br />
-              Jedna ekipa.
+              {content.heading[1]}
             </>
           }
-          eyebrow="Montaż własnymi zespołami — bez podwykonawców"
+          eyebrow={content.eyebrow}
         />
 
         <div className="grid items-center gap-10 lg:grid-cols-[1.4fr_0.8fr] lg:gap-20">
           <svg
             viewBox="0 0 412 372"
             role="img"
-            aria-label="Mapa Polski z miastami realizacji bolt-sport"
+            aria-label={content.ariaLabel}
             className="h-auto w-full"
           >
             <path
@@ -96,23 +99,21 @@ export function CoverageMap() {
 
           <div>
             <p className="max-w-[56ch] text-muted-foreground">
-              Montaż robimy sami, tą samą ekipą, która składała sprzęt w hali.
-              Dojazd i nocleg są w wycenie — także wtedy, gdy trafiacie na drugi
-              koniec kraju.
+              {content.paragraph}
             </p>
             <div className="mt-6 border-t border-border pt-5 font-mono">
               <div className="kicker text-muted-foreground">
-                {selected ? "Realizacja" : "Najedź na punkt"}
+                {selected ? content.selectedKicker : content.hoverPrompt}
               </div>
               <b className="block text-2xl font-bold tracking-tight sm:text-3xl">
-                {selected ? selected[0] : "Cała Polska"}
+                {selected ? selected[0] : content.defaultRegion}
               </b>
               <div className="kicker mt-2.5 text-muted-foreground">
                 {selected
                   ? selected[3]
-                    ? "Obiekt referencyjny"
-                    : "Montaż zrealizowany"
-                  : "47 miast · 200+ obiektów"}
+                    ? content.referenceLabel
+                    : content.installedLabel
+                  : content.footerStat}
               </div>
             </div>
           </div>

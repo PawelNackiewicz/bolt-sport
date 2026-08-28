@@ -31,5 +31,176 @@
   "footer": {
     "description": "Polnischer Hersteller von Kampfsportausrüstung. Wir fertigen in Krasiejów — von Trainingsgeräten bis zu Ringen, MMA-Käfigen und kompletter Hallenausstattung.",
     "navHeading": "Navigation"
+  },
+  "facilities": {
+    "meta": {
+      "title": "Ausstattung für Box- und MMA-Hallen — Ringe, Käfige, Sandsäcke, Matten | bolt-sport",
+      "description": "Wir planen, fertigen und montieren die Ausstattung für Box- und MMA-Hallen. Ringe, Käfige, Sandsäcke und Matten. Produktion in Krasiejów, Montage in ganz Polen."
+    },
+    "hero": {
+      "scrollLabel": "Scrollen — mitten hinein",
+      "headline": ["Wir bauen Arenen,", "nicht nur Räume."],
+      "ctaPrimary": "Vor-Ort-Termin vereinbaren",
+      "ctaSecondary": "Referenzen ansehen"
+    },
+    "stats": [
+      { "value": "15", "countTo": 15, "label": "Jahre am Markt" },
+      { "value": "200+", "countTo": 200, "suffix": "+", "label": "ausgestattete Objekte" },
+      { "value": "PL", "label": "Montage in ganz Polen" },
+      { "value": "50–300 Tsd. PLN", "label": "netto – typisches Projekt" }
+    ],
+    "assembly": {
+      "eyebrow": "So entsteht eine Halle — von der Vermessung bis zur Abnahme",
+      "heading": ["Fünf Schritte.", "Keine Überraschungen."],
+      "steps": [
+        { "stage": "Schritt 01", "title": "Vermessung und Bestandsaufnahme", "description": "Wir kommen vor Ort. Wir messen lichte Höhe, Stützenraster, Leitungsführung und die tatsächliche Tragfähigkeit der Decke. Daraus entsteht die Zeichnung, nach der die Produktion arbeitet — nicht Ihr PDF-Grundriss." },
+        { "stage": "Schritt 02", "title": "Matten und Boden", "description": "Dicke und Härte passend zur Disziplin: andere Matte für Ringen und Grappling, andere für den Stand-up-Bereich. Wir schneiden auf das exakte Raummaß zu — keine Reststreifen an den Wänden." },
+        { "stage": "Schritt 03", "title": "Befestigungen und Konstruktion", "description": "Sackhalterungen, Wandrahmen, Aufhängungen. Jeder Befestigungspunkt wird passend zum tatsächlichen Wandaufbau verankert — Beton, Hohlblockstein, Stahlbeton — und in der Bestandsdokumentation festgehalten." },
+        { "stage": "Schritt 04", "title": "Ring oder Käfig", "description": "Montage von Podest, Konstruktion, Seilen oder Netz. Den Ring stellen und nivellieren wir vor Ort; der Käfig wird aus Segmenten zusammengesetzt, die durch Ihre Türen passen." },
+        { "stage": "Schritt 05", "title": "Abnahme und Dokumentation", "description": "Belastungstest der Befestigungen, Abnahmeprotokoll, Produktdatenblätter und Garantien. Wir zeigen, wie Sie das, was Sie selbst bewegen werden, ab- und wieder aufbauen." }
+      ]
+    },
+    "production": {
+      "kicker": "Eigene Produktion",
+      "heading": ["Alles entsteht bei uns.", "Krasiejów."],
+      "paragraph": "Schweißerei, Polsterei, Zuschnitt und Lackiererei unter einem Dach. Wir vermitteln keine fremde Ware — ein untypisches Ringmaß oder eine andere Seilfarbe ist bei uns eine Änderung in der Zeichnung, kein Ablehnungsgrund.",
+      "meta": [
+        ["Produktionshalle", "1.400 m²"],
+        ["Montageteams", "3 Teams"],
+        ["Typische Dauer", "4–8 Wochen"],
+        ["Montagegebiet", "Ganz Polen"]
+      ]
+    },
+    "facilityTypes": {
+      "eyebrow": "Wählen Sie das Nächstliegende — der Fragebogen grenzt den Rest ein",
+      "heading": ["Vier Arten", "von Projekten."],
+      "checkCta": "Umfang ansehen →",
+      "items": [
+        { "kind": "Typ 01", "title": "Boxclub", "description": "Ring 5×5 oder 6×6, Sackwand, Matten über die gesamte Trainingsfläche, Spiegel und Sprossenwände. Das häufigste erste Projekt eines Clubs, der aus einer gemieteten Halle auszieht.", "budget": "50–110 Tsd. PLN" },
+        { "kind": "Typ 02", "title": "MMA-Club", "description": "Achteckkäfig 6–8 m, Grappling-Zone mit 40 mm Matte, freistehende und wandmontierte Sandsäcke. Wichtiger als im Boxen ist die Zerlegbarkeit — Clubs ziehen alle paar Jahre um.", "budget": "90–180 Tsd. PLN" },
+        { "kind": "Typ 03", "title": "Sporteinrichtung und Schule", "description": "Ausstattung für Schichtbetrieb und Kontrolle durch den Betreiber: Prüfzeugnisse, Ausschreibungsunterlagen, zusammenklappbares und verstaubares Equipment. Abrechnung mit Zahlungsziel möglich.", "budget": "70–200 Tsd. PLN" },
+        { "kind": "Typ 04", "title": "Gala-Arena", "description": "Ring oder Käfig für Kampfabende, erhöhtes Podest, Sponsorenbanden, Transport und Montage vor Ort innerhalb von 24 Stunden. Miete oder Kauf — je nach Veranstaltungszyklus.", "budget": "150–300 Tsd. PLN" }
+      ]
+    },
+    "ring360": {
+      "details": [
+        { "label": "Detail 01", "title": "Seile", "description": "Stahlkern in Polyurethan-Ummantelung, mit Baumwollhülle bezogen. Lässt nach einer Saison nicht nach und scheuert die Unterarmhaut nicht auf wie eine blanke Persenning.", "spec": [ { "label": "Material", "value": "Stahl ⌀8 mm + PU + Baumwolle" }, { "label": "Spannschlösser", "value": "Spannschlösser M16, verzinkter Stahl" }, { "label": "Farben", "value": "Rot · Weiß · Blau" } ] },
+        { "label": "Detail 02", "title": "Eckpfosten", "description": "Pfosten aus Baustahl mit Schutzpolster aus hochelastischem Schaumstoff in PVC-Hülle. Die Hülle kann bedruckt werden — Clublogo, Sponsor oder unseres.", "spec": [ { "label": "Pfosten", "value": "Stahl S235, ⌀102 mm" }, { "label": "Polster", "value": "60 mm HR-Schaum + 650 g PVC" }, { "label": "Druck", "value": "Siebdruck, schweiß- und UV-beständig" } ] },
+        { "label": "Detail 03", "title": "Podest", "description": "Verschraubter Rahmen aus geschlossenen Profilen, 22 mm OSB-Platte und dämpfender Schaumstoff unter der Bespannung. Zerlegbar — passt durch eine Standardtür.", "spec": [ { "label": "Rahmen", "value": "Profil 60×40×3 mm" }, { "label": "Beplankung", "value": "22 mm OSB + 30 mm Schaumstoff" }, { "label": "Höhe", "value": "20 / 60 / 100 cm" } ] },
+        { "label": "Detail 04", "title": "Matte", "description": "Ringbespannung auf Schaumstoff mit kontrolliertem Rückstellverhalten — weich genug zum Fallen, fest genug für die Beinarbeit. Rutschfest und abwaschbar.", "spec": [ { "label": "Bespannung", "value": "PVC 900 g, rutschfest" }, { "label": "Schaumstoff", "value": "30 mm, Dichte 200 kg/m³" }, { "label": "Farbe", "value": "Schwarz, Streifen optional" } ] }
+      ]
+    },
+    "projects": {
+      "eyebrow": "Eine Auswahl der letzten sechs Quartale",
+      "heading": ["Aktuelle", "Referenzen."],
+      "rows": [
+        { "city": "Opole", "scope": "Boxclub — Ring 6×6, Sackwand", "area": "240 m²", "value": "96 Tsd. PLN" },
+        { "city": "Katowice", "scope": "MMA-Club — Käfig 8 m, Grappling-Zone", "area": "410 m²", "value": "178 Tsd. PLN" },
+        { "city": "Wrocław", "scope": "Stadthalle — Ausstattung für Schichtbetrieb", "area": "620 m²", "value": "204 Tsd. PLN" },
+        { "city": "Lublin", "scope": "Sportschule — Matten, Sandsäcke, Sprossenwände", "area": "180 m²", "value": "71 Tsd. PLN" },
+        { "city": "Gdynia", "scope": "Gala-Arena — erhöhter Ring, Banden", "area": "900 m²", "value": "286 Tsd. PLN" },
+        { "city": "Rzeszów", "scope": "Boxclub — Ring 5×5, Matten", "area": "150 m²", "value": "58 Tsd. PLN" }
+      ],
+      "beforeAfter": {
+        "before": "Vorher — Lagerhalle, 340 m²",
+        "after": "Nachher — MMA-Club, Käfig 8 m + Grappling-Zone",
+        "caption": "Ruda Śląska · 2025",
+        "hint": "Ziehen zum Vergleichen"
+      }
+    },
+    "coverageMap": {
+      "eyebrow": "Montage mit eigenen Teams — ohne Subunternehmer",
+      "heading": ["47 Städte.", "Ein Team."],
+      "ariaLabel": "Karte Polens mit den Projektstädten von bolt-sport",
+      "paragraph": "Die Montage übernehmen wir selbst — mit demselben Team, das die Ausstattung in unserer Halle gebaut hat. Anfahrt und Übernachtung sind im Angebot enthalten, auch wenn es ans andere Ende des Landes geht.",
+      "hoverPrompt": "Punkt berühren",
+      "selectedKicker": "Referenz",
+      "defaultRegion": "Ganz Polen",
+      "referenceLabel": "Referenzobjekt",
+      "installedLabel": "Montage abgeschlossen",
+      "footerStat": "47 Städte · 200+ Objekte"
+    },
+    "process": {
+      "eyebrow": "Vom ersten Anruf bis zur Übergabe",
+      "heading": ["So läuft", "die Zusammenarbeit."],
+      "phases": [
+        { "number": "01", "title": "Beratung", "description": "Ein Gespräch über Disziplin, Anzahl der Trainierenden und vorhandene Ausstattung. Endet mit einer Ausstattungsliste, nicht mit einem Angebot.", "duration": "1 Tag" },
+        { "number": "02", "title": "Vor-Ort-Termin", "description": "Vermessung der Halle, Prüfung von Decke und Wänden, Fotos. Kostenlos in ganz Polen.", "duration": "bis zu 10 Tagen" },
+        { "number": "03", "title": "Produktion", "description": "Schweißen, Polstern, Lackieren in Krasiejów. Wöchentliche Fortschrittsfotos.", "duration": "3–6 Wochen" },
+        { "number": "04", "title": "Montage", "description": "Das Team rückt an, baut auf und verankert vor Ort. Ein typischer Raum — zwei Tage.", "duration": "1–4 Tage" },
+        { "number": "05", "title": "Abnahme", "description": "Test der Befestigungen, Protokoll, Garantien, Einweisung. Service innerhalb von 48 Stunden landesweit.", "duration": "am selben Tag" }
+      ]
+    },
+    "qualifier": {
+      "eyebrow": "Keine Online-Preise — ein Angebot ohne Vermessung ist eine Schätzung",
+      "heading": ["Vier Fragen.", "Dann rufen wir zurück."],
+      "stepLabel": "Schritt",
+      "steps": ["Objekttyp", "Fläche", "Budget", "Kontakt"],
+      "initialProof": "Füllen Sie das Formular aus — wir zeigen Ihnen, wie viele ähnliche Objekte wir bereits ausgestattet haben.",
+      "selectOnePrompt": "Wählen Sie eine Option, um fortzufahren.",
+      "contactValidationPrompt": "Bitte Name, Telefon und E-Mail angeben — ohne diese Angaben können wir nicht zurückrufen.",
+      "proofWithCount": "Wir haben {count} Objekte in dieser Kategorie ausgestattet. Beim Vor-Ort-Termin zeigen wir Ihnen die zwei nächstgelegenen — mit Rechnungen und Kontakt zum Club.",
+      "submittedProofWithCount": "Wir haben {count} Objekte in dieser Kategorie ausgestattet.",
+      "submittedProofNoCount": "Vielen Dank — wir melden uns innerhalb eines Werktages.",
+      "questions": [
+        { "group": "typ", "legend": "Was möchten Sie ausstatten?", "options": [
+            { "eyebrow": "Typ 01", "label": "Boxclub" },
+            { "eyebrow": "Typ 02", "label": "MMA-Club" },
+            { "eyebrow": "Typ 03", "label": "Sporteinrichtung oder Schule" },
+            { "eyebrow": "Typ 04", "label": "Gala-Arena" }
+          ]
+        },
+        { "group": "metraz", "legend": "Wie groß ist die Fläche?", "options": [
+            { "eyebrow": "Fläche", "label": "bis 150 m²" },
+            { "eyebrow": "Fläche", "label": "150–300 m²" },
+            { "eyebrow": "Fläche", "label": "300–600 m²" },
+            { "eyebrow": "Fläche", "label": "über 600 m²" }
+          ]
+        },
+        { "group": "budzet", "legend": "Welches Nettobudget?", "options": [
+            { "eyebrow": "Budget", "label": "50–100 Tsd. PLN", "proofCount": 41 },
+            { "eyebrow": "Budget", "label": "100–150 Tsd. PLN", "proofCount": 37 },
+            { "eyebrow": "Budget", "label": "150–220 Tsd. PLN", "proofCount": 14 },
+            { "eyebrow": "Budget", "label": "220–300 Tsd. PLN", "proofCount": 9 }
+          ]
+        }
+      ],
+      "contactLegend": "Wohin sollen wir zurückrufen?",
+      "fields": { "name": "Name", "phone": "Telefon", "email": "E-Mail", "city": "Standort des Objekts" },
+      "nextLabel": "Weiter",
+      "submitLabel": "Anfrage senden",
+      "backLabel": "← Zurück",
+      "submittedHeading": "Anfrage eingegangen.",
+      "submittedBefore": "Wir rufen innerhalb eines Werktages zurück und vereinbaren einen kostenlosen Vor-Ort-Termin. Wenn es eiliger ist —",
+      "submittedAfter": "."
+    },
+    "faq": {
+      "eyebrow": "Sechs Fragen vor der Unterschrift",
+      "heading": ["Was Sie fragen,", "bevor Sie unterschreiben."],
+      "items": [
+        { "question": "Trägt meine Decke einen Ring und hängende Sandsäcke?", "answer": "Beim Vor-Ort-Termin prüfen wir den Deckentyp und die verfügbare Gebäudedokumentation. Ein Ring verteilt seine Last über die gesamte Podestfläche und ist in der Praxis selten ein Problem; hängende Sandsäcke häufiger. Wenn die Decke keine Sicherheit bietet, wechseln wir zu freistehenden Konstruktionen oder Rahmen, die die Last auf tragende Wände übertragen. Wir montieren nicht nach Augenmaß und verlangen von Kunden nicht, dieses Risiko selbst zu tragen." },
+        { "question": "Rechnung mit Zahlungsziel — ist das möglich?", "answer": "Ja. Standardmäßig arbeiten wir mit Anzahlung und Restzahlung nach der Abnahme. Für kommunale Einrichtungen, Schulen und städtische Objekte bieten wir ein Zahlungsziel von 30 oder 60 Tagen ohne Anzahlung, auf Basis eines Vertrags oder einer öffentlichen Bestellung." },
+        { "question": "Bereiten Sie Ausschreibungsunterlagen vor?", "answer": "Ja. Wir liefern die Leistungsbeschreibung, technische Datenblätter, Prüfzeugnisse und Materialzertifikate sowie einen Kostenvoranschlag im vom Auftraggeber geforderten Format. Die Beschreibungen erstellen wir gleichwertig, ohne ein bestimmtes Produkt zu benennen, damit das Verfahren nicht angefochten werden kann." },
+        { "question": "Unser Raum hat eine untypische Form und niedrige Decken. Geht da etwas?", "answer": "Meist ja. Wir fertigen selbst, daher sind Ringmaß, Pfostenhöhe und Rahmenlänge eine Änderung in der Zeichnung, kein separater Auftrag bei einem externen Hersteller. Bei niedrigen Decken wechseln wir von Aufhängungen zu wandmontierten und freistehenden Konstruktionen — das Ergebnis nutzt den Raum in der Regel besser als der ursprüngliche Plan." },
+        { "question": "Wie lange dauert das Ganze wirklich?", "answer": "Von der Unterschrift bis zur Abnahme meist 4–8 Wochen: 3–6 Wochen Produktion und 1–4 Tage Montage. Den Termin nennen wir nach der Vermessung, nicht davor. Bei einem festen Eröffnungs- oder Gala-Termin sagen wir sofort, ob wir ihn einhalten können." },
+        { "question": "Fahren Sie auch ans andere Ende Polens?", "answer": "Ja — wir montieren in ganz Polen mit eigenen Teams, ohne Subunternehmer. Anfahrt, Übernachtung und Montageausrüstung sind im Angebot enthalten, unabhängig von der Entfernung zu Krasiejów. Der Garantieservice erfolgt innerhalb von 48 Stunden." }
+      ]
+    },
+    "contact": {
+      "kicker": "Kontakt",
+      "heading": "Rufen Sie an oder vereinbaren Sie einen Termin.",
+      "paragraph": "Am schnellsten geht es telefonisch — in fünf Minuten wissen wir, ob wir für Ihr Objekt überhaupt der richtige Partner sind.",
+      "labels": { "phone": "Telefon", "email": "E-Mail", "production": "Produktion", "hours": "Öffnungszeiten" },
+      "officeHours": "Mo–Fr 7:00–16:00"
+    },
+    "closing": {
+      "heading": "Fangen wir mit der Vermessung an.",
+      "ctaPrimary": "Vor-Ort-Termin vereinbaren"
+    },
+    "stickyCta": {
+      "stat": "15 Jahre · 200+ Objekte · Montage in ganz Polen",
+      "call": "Anrufen",
+      "bookVisit": "Termin vereinbaren"
+    }
   }
 }

@@ -1,9 +1,11 @@
 import { Container } from "@/src/components/ui";
-import { processPhases } from "@/src/lib/facilities-data";
+import type { FacilitiesDictionary } from "../_lib/types";
 import { cn } from "@/src/lib/utils";
 import { SectionHeading } from "./section-heading";
 
-export function ProcessTimeline() {
+type ProcessTimelineProps = { content: FacilitiesDictionary["process"] };
+
+export function ProcessTimeline({ content }: ProcessTimelineProps) {
   return (
     <section
       id="proces"
@@ -13,16 +15,16 @@ export function ProcessTimeline() {
         <SectionHeading
           title={
             <>
-              Jak z nami
+              {content.heading[0]}
               <br />
-              pracujesz.
+              {content.heading[1]}
             </>
           }
-          eyebrow="Od telefonu do odbioru"
+          eyebrow={content.eyebrow}
         />
 
         <div className="grid border-t border-border sm:grid-cols-2 xl:grid-cols-5">
-          {processPhases.map((phase, index) => (
+          {content.phases.map((phase, index) => (
             <div
               key={phase.number}
               data-reveal

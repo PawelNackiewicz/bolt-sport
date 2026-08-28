@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, type RefObject } from "react";
 
-import { ScrollTrigger } from "@/src/lib/gsap";
+import { ScrollTrigger } from "../_lib/gsap";
 
 type UseVideoScrubOptions = {
   /** Element the <video> tags get appended to. Must be positioned. */

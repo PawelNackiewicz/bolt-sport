@@ -1,9 +1,11 @@
 import { Container } from "@/src/components/ui";
-import { facilityTypes } from "@/src/lib/facilities-data";
+import type { FacilitiesDictionary } from "../_lib/types";
 import { cn } from "@/src/lib/utils";
 import { SectionHeading } from "./section-heading";
 
-export function FacilityTypes() {
+type FacilityTypesProps = { content: FacilitiesDictionary["facilityTypes"] };
+
+export function FacilityTypes({ content }: FacilityTypesProps) {
   return (
     <section
       id="typy"
@@ -13,16 +15,16 @@ export function FacilityTypes() {
         <SectionHeading
           title={
             <>
-              Cztery rodzaje
+              {content.heading[0]}
               <br />
-              zleceń.
+              {content.heading[1]}
             </>
           }
-          eyebrow="Wybierz najbliższy — kwalifikator dobierze resztę"
+          eyebrow={content.eyebrow}
         />
 
         <div className="grid border-t border-border sm:grid-cols-2 xl:grid-cols-4">
-          {facilityTypes.map((type, index) => (
+          {content.items.map((type, index) => (
             <div
               key={type.kind}
               data-reveal
@@ -47,7 +49,7 @@ export function FacilityTypes() {
                 href="#kwalifikator"
                 className="kicker mt-4 font-mono transition-colors hover:text-primary"
               >
-                Sprawdź zakres →
+                {content.checkCta}
               </a>
             </div>
           ))}

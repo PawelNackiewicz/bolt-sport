@@ -1,8 +1,10 @@
 import { Container } from "@/src/components/ui";
-import { facilitiesFaq } from "@/src/lib/facilities-data";
+import type { FacilitiesDictionary } from "../_lib/types";
 import { SectionHeading } from "./section-heading";
 
-export function FacilitiesFaq() {
+type FacilitiesFaqProps = { content: FacilitiesDictionary["faq"] };
+
+export function FacilitiesFaq({ content }: FacilitiesFaqProps) {
   return (
     <section
       id="faq"
@@ -12,16 +14,16 @@ export function FacilitiesFaq() {
         <SectionHeading
           title={
             <>
-              To, o co pytacie
+              {content.heading[0]}
               <br />
-              przed podpisem.
+              {content.heading[1]}
             </>
           }
-          eyebrow="Sześć najczęstszych wątpliwości"
+          eyebrow={content.eyebrow}
         />
 
         <div className="border-t border-border">
-          {facilitiesFaq.map((entry) => (
+          {content.items.map((entry) => (
             <details
               key={entry.question}
               data-reveal

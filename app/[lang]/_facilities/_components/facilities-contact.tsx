@@ -1,11 +1,13 @@
 import { Container } from "@/src/components/ui";
-import { officeHours } from "@/src/lib/facilities-data";
+import type { FacilitiesDictionary } from "../_lib/types";
 import { company } from "@/src/lib/site-data";
 
-export function FacilitiesContact() {
+type FacilitiesContactProps = { content: FacilitiesDictionary["contact"] };
+
+export function FacilitiesContact({ content }: FacilitiesContactProps) {
   const rows: Array<[label: string, value: React.ReactNode]> = [
     [
-      "Telefon",
+      content.labels.phone,
       <a
         key="phone"
         href={company.phoneHref}
@@ -15,7 +17,7 @@ export function FacilitiesContact() {
       </a>,
     ],
     [
-      "E-mail",
+      content.labels.email,
       <a
         key="email"
         href={company.emailHref}
@@ -24,8 +26,8 @@ export function FacilitiesContact() {
         {company.email}
       </a>,
     ],
-    ["Produkcja", `${company.address.street}, ${company.address.city}`],
-    ["Godziny", officeHours],
+    [content.labels.production, `${company.address.street}, ${company.address.city}`],
+    [content.labels.hours, content.officeHours],
   ];
 
   return (
@@ -36,13 +38,14 @@ export function FacilitiesContact() {
       <Container>
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:gap-20">
           <div data-reveal>
-            <p className="kicker font-mono text-muted-foreground">Kontakt</p>
+            <p className="kicker font-mono text-muted-foreground">
+              {content.kicker}
+            </p>
             <h2 className="mt-6 max-w-[12ch] font-display text-4xl leading-[1.15] font-bold tracking-tight uppercase sm:text-5xl lg:text-6xl">
-              Zadzwoń albo umów wizję.
+              {content.heading}
             </h2>
             <p className="mt-6 max-w-[56ch] text-muted-foreground">
-              Najszybciej idzie telefonicznie — w pięć minut wiemy, czy w ogóle
-              jesteśmy dobrym wykonawcą dla tego obiektu.
+              {content.paragraph}
             </p>
           </div>
 

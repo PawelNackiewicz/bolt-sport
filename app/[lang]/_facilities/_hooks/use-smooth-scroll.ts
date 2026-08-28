@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
 
-import { gsap, ScrollTrigger } from "@/src/lib/gsap";
+import { gsap, ScrollTrigger } from "../_lib/gsap";
 
 /**
  * Wires Lenis smooth scrolling into the GSAP ticker and keeps ScrollTrigger in

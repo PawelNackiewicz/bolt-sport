@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
 
 import { Container, Logo, Separator } from "@/src/components/ui";
-import { navItems, company } from "@/src/lib/site-data";
+import { navItems, resolveNavHref, company } from "@/src/lib/site-data";
 import { localePath, type Dictionary, type Locale } from "@/src/i18n/config";
 import type { ContactData } from "@/src/lib/storyblok";
 
@@ -71,9 +71,9 @@ export function Footer({ locale, dictionary, contactData }: FooterProps) {
             </span>
             <ul className="grid grid-cols-2 gap-x-6 gap-y-2.5">
               {navItems.map((item) => (
-                <li key={item.href}>
+                <li key={item.key}>
                   <Link
-                    href={href(item.href)}
+                    href={href(resolveNavHref(item, locale))}
                     className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                   >
                     {navT.items[item.key]}
