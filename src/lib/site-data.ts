@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import type { Dictionary } from "@/src/i18n/config";
+import type { Dictionary, Locale } from "@/src/i18n/config";
 import {
   Dumbbell,
   Building2,
@@ -58,13 +58,32 @@ export const company = {
 /*  Navigation                                                                */
 /* -------------------------------------------------------------------------- */
 
-export type NavItem = { key: keyof Dictionary["nav"]["items"]; href: string };
+/**
+ * URL slug for the "wyposazenie-sal" gym fit-out page, per locale — each
+ * locale gets its own route folder under `app/[lang]/` (see that folder's
+ * `page.tsx` files), not one shared Polish slug.
+ */
+export const facilitiesSlugs: Record<Locale, string> = {
+  pl: "wyposazenie-sal",
+  en: "gym-fit-out",
+  de: "hallenausstattung",
+};
+
+export type NavItem = {
+  key: keyof Dictionary["nav"]["items"];
+  /** Either a fixed path, or a path resolved per locale (e.g. a translated slug). */
+  href: string | ((locale: Locale) => string);
+};
+
+export function resolveNavHref(item: NavItem, locale: Locale): string {
+  return typeof item.href === "function" ? item.href(locale) : item.href;
+}
 
 export const navItems: NavItem[] = [
   { key: "shop", href: "/sklep" },
   { key: "configurator", href: "/konfigurator" },
   { key: "bagConfigurator", href: "/konfigurator-worka" },
-  { key: "facilities", href: "/#wyposazenie" },
+  { key: "facilities", href: (locale) => `/${facilitiesSlugs[locale]}` },
   { key: "rings", href: "/#ringi" },
   { key: "projects", href: "/#realizacje" },
   { key: "blog", href: "/blog" },

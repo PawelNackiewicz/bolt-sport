@@ -31,5 +31,176 @@
   "footer": {
     "description": "Polish manufacturer of combat sports equipment. We make our products in Krasiejów — from training gear to rings, MMA cages, and complete gym fit-outs.",
     "navHeading": "Navigation"
+  },
+  "facilities": {
+    "meta": {
+      "title": "Boxing & MMA gym fit-outs — rings, cages, bags, mats | bolt-sport",
+      "description": "We design, manufacture and install equipment for boxing and MMA gyms — rings, cages, punching bags and mats. Manufactured in Krasiejów, installed anywhere in Poland."
+    },
+    "hero": {
+      "scrollLabel": "Scroll — step inside",
+      "headline": ["We build arenas,", "not just rooms."],
+      "ctaPrimary": "Book a site visit",
+      "ctaSecondary": "See our projects"
+    },
+    "stats": [
+      { "value": "15", "countTo": 15, "label": "years in the market" },
+      { "value": "200+", "countTo": 200, "suffix": "+", "label": "gyms fitted out" },
+      { "value": "PL", "label": "installed across Poland" },
+      { "value": "PLN 50–300k", "label": "net — typical project" }
+    ],
+    "assembly": {
+      "eyebrow": "How a gym gets built — from measurement to handover",
+      "heading": ["Five stages.", "No surprises."],
+      "steps": [
+        { "stage": "Stage 01", "title": "Measurement & site survey", "description": "We come to you. We measure clear height, column spacing, service runs and the ceiling's real load capacity. That becomes the drawing production works from — not your floor-plan PDF." },
+        { "stage": "Stage 02", "title": "Mats & flooring", "description": "Thickness and hardness picked for the discipline: a different mat for wrestling and grappling than for stand-up. Cut to the room's exact dimensions, no offcuts along the walls." },
+        { "stage": "Stage 03", "title": "Mounts & structure", "description": "Bag brackets, wall frames, suspensions. Every anchor point is fixed to match what's actually in the wall — concrete, block, reinforced concrete — and recorded in as-built documentation." },
+        { "stage": "Stage 04", "title": "Ring or cage", "description": "Platform, structure, ropes or mesh installed. We build and level the ring on site; the cage goes together from sections sized to fit through your doors." },
+        { "stage": "Stage 05", "title": "Handover & documentation", "description": "Load test on the mounts, handover protocol, product data sheets and warranties. We show you how to take apart and rebuild whatever you'll be moving yourselves." }
+      ]
+    },
+    "production": {
+      "kicker": "Made in-house",
+      "heading": ["Everything is made", "in Krasiejów."],
+      "paragraph": "Welding, upholstery, cutting and finishing under one roof. We don't resell someone else's equipment — so a non-standard ring size or rope colour is a change to the drawing, not a reason to say no.",
+      "meta": [
+        ["Production hall", "1,400 m²"],
+        ["Installation crews", "3 teams"],
+        ["Typical timeline", "4–8 weeks"],
+        ["Installation coverage", "All of Poland"]
+      ]
+    },
+    "facilityTypes": {
+      "eyebrow": "Pick the closest match — the qualifier narrows down the rest",
+      "heading": ["Four kinds", "of projects."],
+      "checkCta": "See scope →",
+      "items": [
+        { "kind": "Type 01", "title": "Boxing club", "description": "5×5 or 6×6 ring, bag wall, mats across the whole training floor, mirrors and ladders. The typical first project for a club moving out of a rented room.", "budget": "PLN 50–110k" },
+        { "kind": "Type 02", "title": "MMA club", "description": "6–8 m octagon cage, 40 mm grappling mat zone, free-standing and wall-mounted bags. More than in boxing, it comes down to how easily it takes apart — clubs relocate every few years.", "budget": "PLN 90–180k" },
+        { "kind": "Type 03", "title": "Sports facility & school", "description": "Equipment built for shift use and facility-manager oversight: certificates, tender documentation, foldable and stowable gear. Deferred-payment invoicing available.", "budget": "PLN 70–200k" },
+        { "kind": "Type 04", "title": "Event arena", "description": "Ring or cage for fight nights, raised platform, sponsor banners, transport and on-site setup within a 24-hour window. Rental or purchase, depending on your event cycle.", "budget": "PLN 150–300k" }
+      ]
+    },
+    "ring360": {
+      "details": [
+        { "label": "Detail 01", "title": "Ropes", "description": "Steel core in a polyurethane sheath, wrapped in a cotton sleeve. It doesn't go slack after a season and doesn't graze forearm skin the way bare tarpaulin does.", "spec": [ { "label": "Material", "value": "⌀8 mm steel + PU + cotton" }, { "label": "Turnbuckles", "value": "M16 turnbuckles, zinc-plated steel" }, { "label": "Colours", "value": "Red · white · blue" } ] },
+        { "label": "Detail 02", "title": "Corner post", "description": "Structural steel post with a high-resilience foam guard in a PVC cover. The cover can be printed — club logo, sponsor, or ours.", "spec": [ { "label": "Post", "value": "S235 steel, ⌀102 mm" }, { "label": "Guard", "value": "60 mm HR foam + 650 g PVC" }, { "label": "Print", "value": "Screen print, sweat- and UV-resistant" } ] },
+        { "label": "Detail 03", "title": "Platform", "description": "Bolted frame from closed profiles, 22 mm OSB deck and shock-absorbing foam under the canvas. Takes apart — fits through a standard door.", "spec": [ { "label": "Frame", "value": "60×40×3 mm profile" }, { "label": "Deck", "value": "22 mm OSB + 30 mm foam" }, { "label": "Height", "value": "20 / 60 / 100 cm" } ] },
+        { "label": "Detail 04", "title": "Canvas", "description": "Ring canvas over foam with controlled rebound — soft enough to fall on, firm enough to work your footwork. Non-slip and washable.", "spec": [ { "label": "Canvas", "value": "900 g PVC, non-slip" }, { "label": "Foam", "value": "30 mm, 200 kg/m³ density" }, { "label": "Colour", "value": "Black, optional stripes" } ] }
+      ]
+    },
+    "projects": {
+      "eyebrow": "A selection from the last six quarters",
+      "heading": ["Recent", "projects."],
+      "rows": [
+        { "city": "Opole", "scope": "Boxing club — 6×6 ring, bag wall", "area": "240 m²", "value": "PLN 96k" },
+        { "city": "Katowice", "scope": "MMA club — 8 m cage, grappling zone", "area": "410 m²", "value": "PLN 178k" },
+        { "city": "Wrocław", "scope": "Municipal hall — shift-use equipment", "area": "620 m²", "value": "PLN 204k" },
+        { "city": "Lublin", "scope": "Sports school — mats, bags, ladders", "area": "180 m²", "value": "PLN 71k" },
+        { "city": "Gdynia", "scope": "Fight-night arena — raised ring, banners", "area": "900 m²", "value": "PLN 286k" },
+        { "city": "Rzeszów", "scope": "Boxing club — 5×5 ring, mats", "area": "150 m²", "value": "PLN 58k" }
+      ],
+      "beforeAfter": {
+        "before": "Before — warehouse hall, 340 m²",
+        "after": "After — MMA club, 8 m cage + grappling zone",
+        "caption": "Ruda Śląska · 2025",
+        "hint": "Drag to compare"
+      }
+    },
+    "coverageMap": {
+      "eyebrow": "Installed by our own crews — no subcontractors",
+      "heading": ["47 cities.", "One crew."],
+      "ariaLabel": "Map of Poland with bolt-sport project cities",
+      "paragraph": "We handle installation ourselves, with the same crew that built the equipment in our hall. Travel and lodging are included in the quote — even when the job is on the other side of the country.",
+      "hoverPrompt": "Hover over a point",
+      "selectedKicker": "Project",
+      "defaultRegion": "All of Poland",
+      "referenceLabel": "Reference site",
+      "installedLabel": "Installation completed",
+      "footerStat": "47 cities · 200+ sites"
+    },
+    "process": {
+      "eyebrow": "From the first call to handover",
+      "heading": ["How working with us", "actually goes."],
+      "phases": [
+        { "number": "01", "title": "Consultation", "description": "A conversation about the discipline, how many people train, and what you already have. Ends with an equipment list, not a quote.", "duration": "1 day" },
+        { "number": "02", "title": "Site visit", "description": "Room measurements, ceiling and wall checks, photos. Free anywhere in Poland.", "duration": "up to 10 days" },
+        { "number": "03", "title": "Production", "description": "Welding, upholstery, finishing in Krasiejów. Progress photos every week.", "duration": "3–6 weeks" },
+        { "number": "04", "title": "Installation", "description": "Crew arrives, assembles and anchors on site. A typical room takes two days.", "duration": "1–4 days" },
+        { "number": "05", "title": "Handover", "description": "Mount testing, protocol, warranties, walkthrough. 48-hour service nationwide.", "duration": "same day" }
+      ]
+    },
+    "qualifier": {
+      "eyebrow": "No online quotes — a quote without a measurement is a guess",
+      "heading": ["Four questions.", "Then we call you."],
+      "stepLabel": "Step",
+      "steps": ["Facility type", "Floor area", "Budget", "Contact"],
+      "initialProof": "Fill it in and we'll show you how many similar sites we've already fitted out.",
+      "selectOnePrompt": "Pick one option to continue.",
+      "contactValidationPrompt": "Fill in your name, phone and email — we can't call back without them.",
+      "proofWithCount": "We've completed {count} projects in this range. On the site visit we'll show you the two closest to yours — with invoices and a contact at the club.",
+      "submittedProofWithCount": "We've completed {count} projects in this range.",
+      "submittedProofNoCount": "Thanks — we'll be in touch within one business day.",
+      "questions": [
+        { "group": "typ", "legend": "What are you fitting out?", "options": [
+            { "eyebrow": "Type 01", "label": "Boxing club" },
+            { "eyebrow": "Type 02", "label": "MMA club" },
+            { "eyebrow": "Type 03", "label": "Sports facility or school" },
+            { "eyebrow": "Type 04", "label": "Event arena" }
+          ]
+        },
+        { "group": "metraz", "legend": "How much floor area?", "options": [
+            { "eyebrow": "Floor area", "label": "up to 150 m²" },
+            { "eyebrow": "Floor area", "label": "150–300 m²" },
+            { "eyebrow": "Floor area", "label": "300–600 m²" },
+            { "eyebrow": "Floor area", "label": "over 600 m²" }
+          ]
+        },
+        { "group": "budzet", "legend": "What's the net budget?", "options": [
+            { "eyebrow": "Budget", "label": "PLN 50–100k", "proofCount": 41 },
+            { "eyebrow": "Budget", "label": "PLN 100–150k", "proofCount": 37 },
+            { "eyebrow": "Budget", "label": "PLN 150–220k", "proofCount": 14 },
+            { "eyebrow": "Budget", "label": "PLN 220–300k", "proofCount": 9 }
+          ]
+        }
+      ],
+      "contactLegend": "Where should we call you back?",
+      "fields": { "name": "Full name", "phone": "Phone", "email": "E-mail", "city": "Facility location" },
+      "nextLabel": "Next",
+      "submitLabel": "Send request",
+      "backLabel": "← Back",
+      "submittedHeading": "Request received.",
+      "submittedBefore": "We'll call back within one business day and set up a free site visit. If it's more urgent —",
+      "submittedAfter": "."
+    },
+    "faq": {
+      "eyebrow": "Six questions we hear before signing",
+      "heading": ["What you ask", "before signing."],
+      "items": [
+        { "question": "Will my ceiling take a ring and hanging bags?", "answer": "On the site visit we check the ceiling type and whatever building documentation is available. A ring spreads its load across the whole platform footprint and is rarely an issue in practice; hanging bags more often are. If the ceiling can't be trusted, we switch to free-standing structures or frames that transfer the load to load-bearing walls. We don't install by guesswork, and we don't ask the client to carry that risk." },
+        { "question": "Deferred-payment invoicing — is that possible?", "answer": "Yes. Our standard terms are a deposit plus final payment on handover. For local-government bodies, schools and municipal facilities we offer 30- or 60-day deferred terms with no deposit, based on a contract or public order." },
+        { "question": "Can you prepare tender documentation?", "answer": "Yes. We provide the scope of supply, technical data sheets, certificates and material approvals, plus a cost breakdown in whatever format the contracting authority requires. We write specifications in equivalent terms, without naming a specific product, so the procedure can't be challenged." },
+        { "question": "Our room has an odd shape and low ceilings. Can anything be done?", "answer": "Usually, yes. We manufacture in-house, so ring size, post height and frame length are a change to the drawing, not a separate order with an outside supplier. With low ceilings we move from suspended mounts to wall-mounted and free-standing structures — that usually ends up using the room better than the original plan." },
+        { "question": "How long does the whole thing actually take?", "answer": "From signing to handover, usually 4–8 weeks: 3–6 weeks of production and 1–4 days of installation. We give you a date after the measurement, not before. If you have a fixed opening or fight-night date, we'll tell you straight away whether we can make it." },
+        { "question": "Will you travel to the other end of Poland?", "answer": "Yes — we install anywhere in Poland with our own crews, no subcontractors. Travel, lodging and installation equipment are included in the quote regardless of distance from Krasiejów. Warranty service is 48 hours." }
+      ]
+    },
+    "contact": {
+      "kicker": "Contact",
+      "heading": "Call, or book a visit.",
+      "paragraph": "The fastest way is by phone — in five minutes we'll know whether we're even the right fit for your site.",
+      "labels": { "phone": "Phone", "email": "E-mail", "production": "Production", "hours": "Hours" },
+      "officeHours": "Mon–Fri 7:00–16:00"
+    },
+    "closing": {
+      "heading": "Let's start with a measurement.",
+      "ctaPrimary": "Book a site visit"
+    },
+    "stickyCta": {
+      "stat": "15 years · 200+ sites · installed across Poland",
+      "call": "Call",
+      "bookVisit": "Book a visit"
+    }
   }
 }
